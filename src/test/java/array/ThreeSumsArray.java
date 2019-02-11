@@ -1,0 +1,31 @@
+package array;
+
+import java.util.Arrays;
+
+
+/**
+ * n^2 max
+ *
+ */
+public class ThreeSumsArray {
+    void sum(int[] arr, int target){
+        Arrays.sort(arr);// nlogn
+        for(int i = 0; i < arr.length; i++){ // n * n == n^2
+            int j = i, k = arr.length -1;
+            while(j != k){ // collapse it in
+                int sum = arr[i] + arr[j]+ arr[k];
+                if(sum  > target) k--; // we move backward
+                else if(sum < target) j++;
+                else if(sum == target) {
+                    System.out.printf("%d,%d,%d", i, j, k);
+                    break;
+                }
+            }
+        }
+    }
+
+
+    public static void main(String[] args) {
+           new ThreeSumsArray().sum(new int[]{2, 7, 11, 15}, 24);
+    }
+}
