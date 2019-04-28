@@ -4,8 +4,34 @@ import model.Point;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 public class BfsMap {
+
+    int minimumDistance(int numRows, int numColumns, List<List<Integer>> area)
+    {
+        int[] dx = {1, -1, 0, 0}, dy = {0, 0, 1, -1};
+        int n = area.size(), m = area.get(0).size();
+        LinkedList<Point> q = new LinkedList<>();
+        Point start = new Point(0, 0);
+        q.offer(start);
+        int[][] dist = new int[n][m];
+        for (int[] d : dist) Arrays.fill(d, -1);
+        dist[start.x][start.y] = 0;
+        while (!q.isEmpty()) {
+            Point p = q.poll();
+            for (int i = 0; i < 4; i++) { // neighbors or child nodes
+                int a = p.x + dx[i];
+                int b = p.y + dy[i];
+                if (a >= 0 && b >= 0 && a < n && b < m && dist[a][b] == -1 && area.get(a).get(b) != 0) {
+                    if (area.get(p.x).get(p.y) == 9) return dist[a][b]; // destination found return
+                    dist[a][b] = 1 + dist[p.x][p.y]; //add the value to dist
+                    q.offer(new Point(a, b)); // add this to out dfs
+                }
+            }
+        }
+        return -1;
+    }
     // solving min or max always requires dynamic programming storing values somewhere
     public static int minpath(int[][] arr) {
         // use bfs
