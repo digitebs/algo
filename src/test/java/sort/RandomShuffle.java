@@ -44,6 +44,7 @@ public class RandomShuffle {
     }
 
     static void shuffle4(char[][] grid, int k){
+
         int n = grid.length;
         List<Integer> list = new ArrayList<>();
         for(int i =0; i < n*n; i++) list.add(i<k?1:0);

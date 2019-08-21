@@ -12,6 +12,6 @@ public class ExcelColumn {
     }
 
     public static void main(String[] args) {
-        System.out.println(convertToTitle(5));
+        System.out.println(convertToTitle(500));
     }
 }
