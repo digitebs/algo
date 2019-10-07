@@ -42,7 +42,7 @@ public class ThreeSumsArray {
         }
     }
     
-    // print sum with unique index
+    // print sum with unique index O(n3)
     static void sumIndex(int[] arr, int target) {
         Arrays.sort(arr);// nlogn
         for (int i = 0; i < arr.length; i++) { // n * n == n^2
