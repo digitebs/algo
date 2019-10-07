@@ -24,7 +24,7 @@ public class ThreeSumsArray {
         }
     }
 
-    void sum(int[] arr, int target){
+    void sum2(int[] arr, int target){
         Arrays.sort(arr);// nlogn
         for(int i = 0; i < arr.length; i++){ // n * n == n^2
             int j = i+1, k = arr.length -1;
@@ -37,6 +37,26 @@ public class ThreeSumsArray {
                     i++;
                     k--;
                     //break;
+                }
+            }
+        }
+    }
+    
+    // print sum with unique index
+    static void sumIndex(int[] arr, int target) {
+        Arrays.sort(arr);// nlogn
+        for (int i = 0; i < arr.length; i++) { // n * n == n^2
+            int j = i + 1, k = arr.length - 1;
+            while (j < k) { // collapse it in
+                int sum = arr[i] + arr[j] + arr[k];
+                if (sum > target) k--; // we move backward
+                else if (sum < target) j++;
+                else if (sum == target) {
+                    System.out.printf("%d,%d,%d\n", i, j, k);
+                    for (int l = k; j < l-1 && arr[l] == arr[l - 1]; l--) {
+                        System.out.printf("%d,%d,%d\n", i, j, l - 1);
+                    }
+                    j++;
                 }
             }
         }
