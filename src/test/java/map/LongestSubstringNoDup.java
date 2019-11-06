@@ -7,7 +7,7 @@ import java.util.Set;
 public class LongestSubstringNoDup {
     // using hashmap to store dup index
     // a b c d e f g h c a
-    static int longestsub2(String str) {
+    static int longestsub(String str) {
         int maxLen = 0;
         int start = -1;
         HashMap<Character,Integer> hm = new HashMap<>();
@@ -22,7 +22,7 @@ public class LongestSubstringNoDup {
 
     // a b c d b c a f
     // sliding window, at least 2(n) due to backtrack removal
-    static int longestsub(String str) {
+    static int longestsub3(String str) {
         int res = 0,right=0,left=0;
         Set<Character> hs = new HashSet<>();
         while(right< str.length()){
@@ -34,6 +34,22 @@ public class LongestSubstringNoDup {
             }
         }
         return res;
+    }
+
+    // longestsub2 similar variation of longestsub
+    static int longestsub2(String s) {
+
+        HashMap<Character,Integer> hm = new HashMap<>(); // we store teh caharcter of string
+        int ans = 0;
+        for(int i=0,start = 0;i < s.length();i++){
+            char c = s.charAt(i);
+            if(hm.containsKey(c)){
+                start = Math.max(hm.get(c),start); // i is upto where
+            }
+            ans = Math.max(ans,i - start +1);
+            hm.put(c,i + 1);// update the character last position
+        }
+        return ans;
     }
 
     public static void main(String[] args) {
