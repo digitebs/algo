@@ -938,14 +938,6 @@ public class CrackCodeString {
     }
 
     @Test
-    public void plusOne() {
-        ArrayList a = Arrays.stream(new int[]{9, 9, 9}).boxed().collect(Collectors.toCollection(ArrayList::new));
-
-
-        System.out.println(plusOne(a));
-    }
-
-    @Test
     public void maxrray() {
         //System.out.println(maxSubArray(Arrays.asList(-2,1,-3,4,-1,2,1,-5,4)));
 
@@ -1095,31 +1087,6 @@ public class CrackCodeString {
         }
 
         return maxSum;
-    }
-
-    public ArrayList<Integer> plusOne(ArrayList<Integer> a) {
-        int carry = 1;
-
-        int j;
-        for (j = 0; j < a.size(); j++) {
-            if (a.get(j) != 0)
-                break;
-        }
-
-        for (int i = a.size() - 1; i >= j; i--) {
-            int val = a.get(i) + carry;
-            a.set(i, val % 10);
-            carry = val / 10;
-        }
-
-
-        if (carry != 0) {
-            a.add(j, carry);
-        }
-
-        a = new ArrayList<>(a.subList(j, a.size()));
-
-        return a;
     }
 
     @Test

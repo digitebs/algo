@@ -30,5 +30,6 @@ public class PlusOne {
 
     public static void main(String[] args) {
         out.println(plusOne(new ArrayList<>(Arrays.asList(1,2))));
+        out.println(plusOne(new ArrayList<>(Arrays.asList(9,9,9))));
     }
 }
