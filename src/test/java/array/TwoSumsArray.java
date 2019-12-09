@@ -2,6 +2,7 @@ package array;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -18,7 +19,26 @@ public class TwoSumsArray {
         return new int[]{-1,-1}; // wont happen;
     }
 
+    public static int countPairs(List<Integer> arr, long k) {
+        // Write your code here
+
+        int count = 0;
+        HashMap<Long,Integer> hm = new HashMap<>();
+        for(int i = 0; i < arr.size(); i++){
+            long val = arr.get(i);
+            if(hm.get(val)==null) hm.put(k -val, i);
+            else {
+                count++;
+            }
+        }
+
+        System.out.println(hm);
+        System.out.println(hm.get(46L));
+        return count; // wont happen;
+    }
+
     public static void main(String[] args) {
-            System.out.println(Arrays.toString(new TwoSumsArray().twoSum(new int[]{2, 7, 11, 15}, 9)));
+        System.out.println( countPairs(Arrays.asList(1,3,46,1,3,9),47));
+           // System.out.println(Arrays.toString(new TwoSumsArray().twoSum(new int[]{2, 7, 11, 15}, 9)));
     }
 }
