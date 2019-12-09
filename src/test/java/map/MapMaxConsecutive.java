@@ -2,6 +2,8 @@ package map;
 
 import java.util.HashMap;
 
+
+// The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
 public class MapMaxConsecutive {
     static int longestConsecutive(int[] nums) {
         HashMap<Integer,Integer> hm = new HashMap<>();

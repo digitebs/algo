@@ -28,4 +28,10 @@ public class FindPeakElement {
         return findPeakElement(nums, 0, nums.length - 1);
 
     }
+
+    public static void main(String[] args) {
+        FindPeakElement fpe = new FindPeakElement();
+        int[] nums = {42,-14,-5,7,8,40,8, 3};
+        System.out.println(nums[fpe.findPeakElement(nums)]);
+    }
 }
