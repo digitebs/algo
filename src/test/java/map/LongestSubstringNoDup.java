@@ -36,7 +36,7 @@ public class LongestSubstringNoDup {
         return res;
     }
 
-    // longestsub2 similar variation of longestsub
+    // longestsub2 similar variation of longestsub, move the start to where theres no duplicate
     static int longestsub2(String s) {
 
         HashMap<Character,Integer> hm = new HashMap<>(); // we store teh caharcter of string
@@ -60,5 +60,6 @@ public class LongestSubstringNoDup {
         System.out.println(longestsub("abcdacefgh"));
         System.out.println(longestsub("abdaeedfg"));
         System.out.println(longestsub("ninenine"));
+        System.out.println(longestsub2("faaaaaaaaaaaf"));
     }
 }

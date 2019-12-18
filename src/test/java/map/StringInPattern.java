@@ -23,18 +23,18 @@ public class StringInPattern {
             }
         }
 
-        String result = "";
+        StringBuilder result = new StringBuilder();
         HashMap<String, Integer> hm2 = new HashMap<>();
         for (int i = 0, l = 0; i < words.length; i++) {
             if (!hm2.containsKey(words[i])) {
                 hm2.put(words[i], l++);
             }
-            result += rev.get(hm2.get(words[i]));
+            result.append(rev.get(hm2.get(words[i])));
         }
 
         System.out.println(hm + " " + hm2);
         System.out.println(result);
-        return result.equals(a);
+        return result.toString().equals(a);
     }
 
     public static boolean isMatch(String pattern, String input) {

@@ -18,6 +18,24 @@ public class ArrayRotate {
         }
     }
 
+    // in place but linear time by immediatly jumping to the target
+    public void rotateInPlace(int[] nums, int k) {
+        k = k % nums.length;
+        int count = 0;
+        for (int start = 0; count < nums.length; start++) {
+            int current = start;
+            int prev = nums[start];
+            do {
+                int next = (current + k) % nums.length;
+                int temp = nums[next];
+                nums[next] = prev;
+                prev = temp;
+                current = next;
+                count++;
+            } while (start != current);
+        }
+    }
+
     public void rotateArray(int[] arr,int k){
         int[] result= new int[arr.length];
         for(int i=0;i < arr.length;i++){
@@ -54,6 +72,7 @@ public class ArrayRotate {
 
         ArrayRotate t = new ArrayRotate();
         int[] arr = new int[]{1,2,3,4,5,6,7};
-       t.rotateArray(arr,4);
+       t.rotateInPlace(arr,4);
+       System.out.println(Arrays.toString(arr));
     }
 }
