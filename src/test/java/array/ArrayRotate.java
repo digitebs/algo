@@ -36,26 +36,6 @@ public class ArrayRotate {
         }
     }
 
-    public void rotateArray(int[] arr,int k){
-        int[] result= new int[arr.length];
-        for(int i=0;i < arr.length;i++){
-
-            int newIndex = i-k;
-            if(newIndex < 0){
-                newIndex=(arr.length)+ (i -k);
-            }
-
-            result[newIndex]=arr[i]; //copy the values
-        }
-
-        //arr = result;
-        for(int i =0;i< result.length;i++){
-            System.out.println(result[i]);
-        }
-
-
-    }
-
     // rotate by reversal
     public void rotateReverse(int[] nums, int k) {
         k %= nums.length;
@@ -73,15 +53,13 @@ public class ArrayRotate {
         }
     }
 
+    // rotate with additional array
     public void rotate3(int[] A, int K){
         int[] r = new int[A.length];
         for(int i =0; i < A.length ; i++){
             r[(i+K)%A.length] = A[i];
         }
-        for(int i =0;i< r.length;i++){
-            System.out.println(r[i]);
-        }
-
+         System.out.println(Arrays.toString(r));
 
     }
 
@@ -91,5 +69,7 @@ public class ArrayRotate {
         int[] arr = new int[]{1,2,3,4,5,6,7};
        t.rotateInPlace(arr,4);
        System.out.println(Arrays.toString(arr));
+        int[] arr2 = new int[]{1,2,3,4,5,6,7};
+        t.rotate3(arr2,4);
     }
 }
