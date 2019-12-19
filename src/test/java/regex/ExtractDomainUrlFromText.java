@@ -25,14 +25,31 @@ public class ExtractDomainUrlFromText {
     }
 
     static void getUrlDomain(String str){
-        Pattern p = Pattern.compile("https*:\\/\\/(www.|ww2.|web.)?(.*)");
+        Pattern p = Pattern.compile(".*https*://(www.|ww2.|web.)?(.*([;]|\\b)*)");
         Matcher m = p.matcher(str);
 
-        m.find();
-        System.out.println(m.group(2).split("\\/")[0]);
+        int start = 0;
+        while (m.find(start)) {
+            String s = m.group(2);
+            System.out.println(s);
+            System.out.println(s.split("\\/")[0]);
+            start = m.end(2);
+            System.out.println(start);
+        }
+    }
+
+    static void testRegex2(String str){
+        Pattern p = Pattern.compile("fg");
+        Matcher m = p.matcher(str);
+
+        while (m.find()) {
+            System.out.println(m.end());
+        }
     }
 
     public static void main(String args[]){
-        getUrlDomain("https://web.xyz.com");
+
+        getUrlDomain("https://web.xyz.com;https://web.xyz.com");
+        //testRegex2("fgfgfg");
     }
 }
