@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * connect all children perfect binary tree
+ * connect all the children of perfect binary tree (using bfs)
  */
 public class ConnectPerfectTree {
     public Node connect(Node root) {
