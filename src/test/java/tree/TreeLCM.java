@@ -1,6 +1,6 @@
 package tree;
 
-import model.TreeNode;
+import model.Node;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  * class to find least common ancestor of 2 tree node
  */
 public class TreeLCM {
-    public boolean dfs(TreeNode root, TreeNode t, List<TreeNode> path) {
+    public boolean dfs(Node root, Node t, List<Node> path) {
         if (root == null) return false;
         path.add(root);
         if (root == t) return true;
@@ -19,8 +19,8 @@ public class TreeLCM {
         path.remove(path.size() - 1);
         return false;
     }
-    List<TreeNode> path1, path2;
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    List<Node> path1, path2;
+    public Node lowestCommonAncestor(Node root, Node p, Node q) {
         path1 = new ArrayList<>();
         path2 = new ArrayList<>();
         dfs(root, p, path1);

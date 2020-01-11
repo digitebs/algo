@@ -1,8 +1,6 @@
 package tree;
 
-import model.TreeNode;
-
-import java.util.HashMap;
+import model.Node;
 
 
 /** serialize using pre order traversal we need to add '#' to tag missing nodes
@@ -11,7 +9,7 @@ import java.util.HashMap;
 class TreeSerde {
 
 
-    public void serialize(TreeNode tn){
+    public void serialize(Node tn){
         if(tn == null) {
             System.out.print("# ");
             return;
@@ -24,7 +22,7 @@ class TreeSerde {
 
 
     // use reference
-    public TreeNode deserialize(String[] arr, int[] t){
+    public Node deserialize(String[] arr, int[] t){
         if(arr[t[0]].equals("#")) {
             return null;
         }
@@ -32,7 +30,7 @@ class TreeSerde {
         // 0
         // 1
         // 2
-        TreeNode tn = new TreeNode(Integer.parseInt(arr[t[0]]));
+        Node tn = new Node(Integer.parseInt(arr[t[0]]));
         t[0] = t[0] +1;
         tn.left = deserialize(arr,t);
         t[0] = t[0] +1;
@@ -46,12 +44,12 @@ class TreeSerde {
     public static void main(String[] args) {
         TreeSerde ts = new TreeSerde();
 
-        TreeNode root = new TreeNode(1);
-        TreeNode a = new TreeNode(2);
-        TreeNode b = new TreeNode(3);
-        TreeNode c = new TreeNode(4);
-        TreeNode d = new TreeNode(5);
-        TreeNode e = new TreeNode(6);
+        Node root = new Node(1);
+        Node a = new Node(2);
+        Node b = new Node(3);
+        Node c = new Node(4);
+        Node d = new Node(5);
+        Node e = new Node(6);
 
 
         root.left = a;

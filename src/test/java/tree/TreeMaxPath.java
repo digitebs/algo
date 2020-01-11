@@ -1,13 +1,13 @@
 package tree;
 
-import model.TreeNode;
+import model.Node;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
 public class TreeMaxPath {
 
-    public int print(TreeNode node, ArrayList path)
+    public int print(Node node, ArrayList path)
     {
         if(node==null)
         {
@@ -31,14 +31,14 @@ public class TreeMaxPath {
 
     @Test
     public void solution(){
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.left.left = new TreeNode(2);
-        root.left.right = new TreeNode(5);
-        root.right = new TreeNode(3);
-        root.right.left = new TreeNode(6);
-        root.right.right = new TreeNode(7);
-        root.right.right.right = new TreeNode(8);
+        Node root = new Node(1);
+        root.left = new Node(2);
+        root.left.left = new Node(2);
+        root.left.right = new Node(5);
+        root.right = new Node(3);
+        root.right.left = new Node(6);
+        root.right.right = new Node(7);
+        root.right.right.right = new Node(8);
         System.out.println(print(root, new ArrayList()));
         // System.out.println();
         //System.out.println(solutionStack("(())))("));

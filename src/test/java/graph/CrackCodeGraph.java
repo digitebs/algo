@@ -1,6 +1,6 @@
 package graph;
 
-import model.TreeNode;
+import model.Node;
 import org.junit.Test;
 
 import java.util.*;
@@ -64,17 +64,17 @@ public class CrackCodeGraph {
         return p;
     }
 
-         public ArrayList<ArrayList<Integer>> levelOrder(TreeNode a) {
-            // HashSet<TreeNode> end = new HashSet<>();
+         public ArrayList<ArrayList<Integer>> levelOrder(Node a) {
+            // HashSet<Node> end = new HashSet<>();
              ArrayList<ArrayList<Integer>> res = new ArrayList<>();
              ArrayList<Integer> data = new ArrayList<>();
-             Queue<TreeNode> q = new LinkedList<>();
+             Queue<Node> q = new LinkedList<>();
              q.add(a);
              //end.add(a);
              while (!q.isEmpty()) {
                  int ln = q.size();
                  while(ln --> 0) {
-                     TreeNode tn = q.poll();
+                     Node tn = q.poll();
                      if(tn == null) continue;
                      data.add(tn.val);
                      if (tn.left != null) q.add(tn.left);
@@ -90,14 +90,14 @@ public class CrackCodeGraph {
 
          @org.junit.Test
          public void levelOrder() {
-             TreeNode a = new TreeNode(3);
-             a.left = new TreeNode(9);
-             a.right = new TreeNode(20);
-             a.left.left = new TreeNode(6);
-             a.left.right = new TreeNode(8);
-             a.left.left.right = new TreeNode(9);
-             //a.right.left = new TreeNode(15);
-             //a.right.right = new TreeNode(7);
+             Node a = new Node(3);
+             a.left = new Node(9);
+             a.right = new Node(20);
+             a.left.left = new Node(6);
+             a.left.right = new Node(8);
+             a.left.left.right = new Node(9);
+             //a.right.left = new Node(15);
+             //a.right.right = new Node(7);
              System.out.println("BBBB");
              System.out.println(levelOrder(a));
          }

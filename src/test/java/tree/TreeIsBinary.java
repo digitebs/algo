@@ -1,6 +1,6 @@
 package tree;
 
-import model.TreeNode;
+import model.Node;
 
 public class TreeIsBinary {
     /**
@@ -8,7 +8,7 @@ public class TreeIsBinary {
      */
 
 
-    static boolean isBst(TreeNode tn, int min, int max ){
+    static boolean isBst(Node tn, int min, int max ){
 
         if(tn == null) return true; // we hit bottm just return true
 
@@ -19,11 +19,11 @@ public class TreeIsBinary {
     }
 
     public static void main(String[] args) {
-        TreeNode tn = new TreeNode(3);
-        TreeNode tn1 = new TreeNode(2);
-        TreeNode tn2 = new TreeNode(5);
-        TreeNode tn3 = new TreeNode(1);
-        TreeNode tn4 = new TreeNode(4);
+        Node tn = new Node(3);
+        Node tn1 = new Node(2);
+        Node tn2 = new Node(5);
+        Node tn3 = new Node(1);
+        Node tn4 = new Node(4);
 
         tn.left= tn1;
         tn.right= tn2;

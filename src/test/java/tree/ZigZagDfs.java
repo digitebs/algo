@@ -1,28 +1,27 @@
 package tree;
 
-import model.TreeNode;
+import model.Node;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Stack;
 
 public class ZigZagDfs {
-    static ArrayList<ArrayList<Integer>> zigzagLevelOrder(TreeNode a) {
+    static ArrayList<ArrayList<Integer>> zigzagLevelOrder(Node a) {
 
         // bfs but right first
 
         ArrayList<ArrayList<Integer>> outer = new ArrayList();
         ArrayList<Integer> inner;
 
-        Stack<TreeNode> r = new Stack();
-        Stack<TreeNode> l = new Stack();
+        Stack<Node> r = new Stack();
+        Stack<Node> l = new Stack();
         r.push(a);
 
 
         while (!r.isEmpty()) {
             inner = new ArrayList();
             while (!r.isEmpty()) {
-                TreeNode t = r.pop();
+                Node t = r.pop();
                 if (t.left != null) l.push(t.left);
                 if (t.right != null) l.push(t.right);
                 inner.add(t.val);
@@ -31,7 +30,7 @@ public class ZigZagDfs {
 
             inner = new ArrayList();
             while (!l.isEmpty()) {
-                TreeNode t = l.pop();
+                Node t = l.pop();
                 if (t.right != null) r.push(t.right);
                 if (t.left != null) r.push(t.left);
                 inner.add(t.val);
@@ -41,6 +40,6 @@ public class ZigZagDfs {
         return outer;
     }
     public static void main(String[] args) {
-        zigzagLevelOrder(new TreeNode(1));
+        zigzagLevelOrder(new Node(1));
     }
 }

@@ -1,10 +1,10 @@
 package tree;
 
-import model.TreeNode;
+import model.Node;
 
 public class TreeSymmetric {
     // recursively comparing the left to the right and the right to left
-    boolean isSymmetric(TreeNode l, TreeNode r){
+    boolean isSymmetric(Node l, Node r){
         if(r==null && l == null) return true;
         if(r!=null && l!= null && r.val == l.val){
             return isSymmetric(l.left, r.right) && isSymmetric(l.right, r.left);
@@ -12,7 +12,7 @@ public class TreeSymmetric {
         }
         return false;
     }
-    public boolean isSymmetric(TreeNode root) {
+    public boolean isSymmetric(Node root) {
         return isSymmetric(root.left, root.right);
     }
 }
