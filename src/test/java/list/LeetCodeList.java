@@ -38,35 +38,7 @@ public class LeetCodeList {
         }
         return false;
     }
-    @Test
-    public void reverseList() {
-        ListNode a = new ListNode(0);
-        ListNode b = new ListNode(1);
 
-        ListNode c = new ListNode(3);
-
-        ListNode d = new ListNode(4);
-
-        a.next=b;
-        b.next=c;
-        c.next=d;
-
-        printNode(reverseList(a));
-    }
-
-    public ListNode reverseList(ListNode head) {
-        ListNode res=null;
-        ListNode prev=null;
-
-        while(head!=null){
-                res =  new ListNode(head.val);
-                res.next=prev;
-                prev=res;
-            head=head.next;
-        }
-
-        return res;
-    }
 
     @Test
     public void deleteNode() {
