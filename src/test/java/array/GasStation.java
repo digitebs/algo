@@ -1,89 +1,62 @@
 package array;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
+/**
+ * There are N gas stations along a circular route, where the amount of gas at station i is gas[i].
+ * Return the starting gas station's index if you can travel around the circuit once in the clockwise direction, otherwise return -1.
+ * <p>
+ * gas  = [1,2,3,4,5]
+ * cost = [3,4,5,1,2]
+ * <p>
+ * output: 3
+ */
 public class GasStation {
-
-
-    // using sliding window techniq
-    public static int canCompleteCircuit2(final List<Integer> A, final List<Integer> B) {
-        List<Integer> gas = new ArrayList<>(A);
-        gas.addAll(A);
-        List<Integer> cost = new ArrayList<>(B);
-        cost.addAll(B);
-
-
-        int left = 0;
-        int right = 0;
+    // using sliding window against 2 arrays
+    public static int canCompleteCircuit2(int[] gas, int[] cost) {
+        int n = gas.length;
+        int l = 0;
+        int r = 0;
         int total = 0;
 
-        // start with the left
-        total += gas.get(left);
-        total -= cost.get(left);
-
-        while (right < gas.size()){
-
-            // we cant reach the total;
-            if(total< 0){
-                total -= gas.get(left);
-                total += cost.get(left);
-                left++;
-
-                if(left > right ){
-                    total=0;// reset to 0;
-                    right = left; // adjust the right
-                    System.out.println("L: "+ left +" "+ right +" "+total);
-                }
-            }else{
-
-                System.out.println("R: "+left +" "+ right + " "+total);
-
-                if((right - left) == A.size()){
-                    //System.out.println(gas.get(left) + " "+ gas.get(right));
-                    return left; // found the one
-                }
-
-
-                total += gas.get(right);
-                total -= cost.get(right);
-                right++;
+        while (l < n) {
+            if (total < 0) {
+                total -= gas[l];
+                total += cost[l];
+                l++;
+            } else {
+                if (r >= n && l == (r % n)) return l;
+                total += gas[r % n];
+                total -= cost[r % n];
+                r++;
             }
         }
-
-
         return -1;
 
     }
 
-    public static int canCompleteCircuit(final List<Integer> A, final List<Integer> B) {
-        List<Integer> gas = new ArrayList<>(A);
-        gas.addAll(A);
-        List<Integer> cost = new ArrayList<>(B);
-        cost.addAll(B);
-
-        for (int i = 0; i < A.size(); i++) {
-            int mygas = 0;
-            int j = i;
-            for (; j < i + A.size(); j++) {
-                mygas += gas.get(j);
-                mygas -= cost.get(j);
-                if (mygas < 0) break;
+    // brute force
+    public static int canCompleteCircuit(int[] gas, int[] cost) {
+        int n = gas.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0, mygas = 0; j <= n && mygas >= 0; j++) {
+                if (j == n) return i;
+                mygas += gas[(i + j) % n];
+                mygas -= cost[(i + j) % n];
             }
-
-            if (j == A.size() && mygas >= 0) return i; // return the path
         }
         return -1;
 
     }
 
     public static void main(String[] args) {
-        List a = Arrays.asList(959, 329, 987, 951, 942, 410, 282, 376, 581, 507, 546, 299, 564, 114, 474, 163, 953, 481, 337, 395, 679, 21, 335, 846, 878, 961, 663, 413, 610, 937, 32, 831, 239, 899, 659, 718, 738, 7, 209);
-        List b = Arrays.asList(982, 934, 504, 226, 710, 775, 705, 545, 647, 760, 161, 185, 95, 554, 750, 333, 773, 887, 279, 600, 9, 664, 555, 969, 203, 233, 440, 958, 399, 351, 393, 123, 367, 637, 235, 134, 664, 688, 70, 885, 326, 45, 659, 240, 827, 892, 481, 80, 208, 441, 213, 586, 970, 326, 960, 558, 563, 623, 177, 252, 598, 985, 18, 758, 496, 439, 622, 598, 97, 263, 275, 604, 861, 454, 376, 872, 873, 239, 964, 321, 187, 261, 499, 195, 4, 443, 414, 785, 809, 632, 431, 427, 271, 699, 699, 843, 33);
+        //int[] a = new int[]{959, 329, 987, 951, 942, 410, 282, 376, 581, 507, 546, 299, 564, 114, 474, 163, 953, 481, 337, 395, 679, 21, 335, 846, 878, 961, 663, 413, 610, 937, 32, 831, 239, 899, 659, 718, 738, 7, 209};
+        //int[] b = new int[]{982, 934, 504, 226, 710, 775, 705, 545, 647, 760, 161, 185, 95, 554, 750, 333, 773, 887, 279, 600, 9, 664, 555, 969, 203, 233, 440, 958, 399, 351, 393, 123, 367, 637, 235, 134, 664, 688, 70, 885, 326, 45, 659, 240, 827, 892, 481, 80, 208, 441, 213, 586, 970, 326, 960, 558, 563, 623, 177, 252, 598, 985, 18, 758, 496, 439, 622, 598, 97, 263, 275, 604, 861, 454, 376, 872, 873, 239, 964, 321, 187, 261, 499, 195, 4, 443, 414, 785, 809, 632, 431, 427, 271, 699, 699, 843, 33};
 
-      //  List a = Arrays.asList(1,2);
-       // List b = Arrays.asList(2,1);
-        System.out.println(canCompleteCircuit2(a, b));
+        int[] a = new int[]{1, 2};
+        int[] b = new int[]{2, 1};
+
+        //int[] a = new int[]{1, 2, 3, 4, 5};
+        //int[] b = new int[]{3, 4, 5, 1, 2};
+        System.out.println(canCompleteCircuit(a, b));
     }
 }

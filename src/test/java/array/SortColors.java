@@ -22,12 +22,12 @@ public class SortColors {
         int end = nums.length - 1;
         for(int i = 0; i <= end;){
             if(nums[i] == 0){
-                nums[i] = nums[start];
+                nums[i] = nums[start];// swap to 1st
                 nums[start] = 0;
                 start++;
                 i++;
             }else if(nums[i] == 2){
-                nums[i] = nums[end];
+                nums[i] = nums[end];//swap to end
                 nums[end] = 2;
                 end--;
             }else i++;
