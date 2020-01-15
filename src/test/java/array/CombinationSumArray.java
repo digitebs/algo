@@ -7,6 +7,10 @@ import java.util.stream.Collectors;
 
 import static java.lang.System.out;
 
+
+/**
+ * given number from arraylist find all combination that sums to given target
+ */
 public class CombinationSumArray {
     public void combinationSum(ArrayList<Integer> candidates, int j, int target, ArrayList<Integer> curr, ArrayList<ArrayList<Integer>> res) {
         if(target == 0){
