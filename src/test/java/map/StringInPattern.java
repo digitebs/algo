@@ -4,12 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ *
+ *
+ * given a pattern:
+ *      aaba
+ * see if:
+ *      apple apple orange apple true
+ * matches
  * @author john.lim
  */
 public class StringInPattern {
 
-    // aaba
-    // apple apple orange apple true
     static boolean isMatch2(String a, String s) {
         String[] words = s.split(" ");
         if (a.length() != words.length) return false;
