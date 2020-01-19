@@ -12,6 +12,12 @@ package math;
  *  356
  */
 public class StockMarketDay {
+    /**
+     * draw a graph is easier
+     *
+     * maximize profit find the best buy and sell.
+     * linear solution. using buy at min price and finding peak
+     */
     static int stockmarketday(int[] price){
 
         int max= 0;
@@ -25,6 +31,6 @@ public class StockMarketDay {
     }
 
     public static void main(String args[]){
-        System.out.println(stockmarketday(new int[]{23171,21011,21123,21366,21013,21367}));
+        System.out.println(stockmarketday(new int[]{7,1,5,3,6,4}));
     }
 }
