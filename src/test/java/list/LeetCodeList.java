@@ -24,20 +24,6 @@ public class LeetCodeList {
       d.next=b;
       return  a;
   }
-@Test
-    public void hasCycle() {
-        System.out.println(hasCycle(getSample()));
-    }
-    public boolean hasCycle(ListNode head) {
-        while(head!=null){
-            if(head.val==-1){
-                return true;
-            }
-            head.val=-1;
-            head=head.next;
-        }
-        return false;
-    }
 
 
     @Test

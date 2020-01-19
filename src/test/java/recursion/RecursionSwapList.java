@@ -29,6 +29,6 @@ public class RecursionSwapList {
         ln2.next = ln3;
         ln3.next = ln4;
         ListNode r = new RecursionSwapList().swapPairs(ln1);
-        ListNode.print(r);
+        r.print();
     }
 }

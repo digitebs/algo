@@ -21,17 +21,20 @@ public class ReverseList {
     }
 
     public void reverseList() {
-        ListNode a = new ListNode(0);
+        ListNode a = new ListNode(2);
         ListNode b = new ListNode(1);
 
-        ListNode c = new ListNode(3);
+        ListNode c = new ListNode(1);
 
-        ListNode d = new ListNode(4);
+        ListNode d = new ListNode(2);
 
         a.next=b;
         b.next=c;
         c.next=d;
-        printNode(reverseList2(a));
+        reverseList2(a).print();
+
+        // palindrome check
+        System.out.println(a.equals(reverseList(a)));
     }
 
     public ListNode reverseList(ListNode head) {
@@ -61,4 +64,6 @@ public class ReverseList {
         head=prev;
         return head;
     }
+
+
 }

@@ -4,6 +4,7 @@ import model.ListNode;
 
 public class LinkedListDetectCycle {
 
+    /* using fast and slow runner */
     static ListNode detectCycle(ListNode a) {
 
         ListNode fast = a;
@@ -27,6 +28,19 @@ public class LinkedListDetectCycle {
             return fast;
         }
 
+    }
+
+
+    /** using change of value */
+    public boolean hasCycle(ListNode head) {
+        while(head!=null){
+            if(head.val==-1){
+                return true;
+            }
+            head.val=-1;
+            head=head.next;
+        }
+        return false;
     }
 
     public static void main(String[] args) {
