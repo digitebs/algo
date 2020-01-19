@@ -9,7 +9,7 @@ import static java.lang.System.out;
  *
  * @author johnlim
  */
-public class LookAndSay {
+public class CountAndSay {
     // 2 iterator slow and fast
     static String evaluate(String s){
         StringBuilder say = new StringBuilder();
@@ -26,14 +26,17 @@ public class LookAndSay {
         }
         return say.toString();
     }
-    static void LookAndSay(int n){
+    static String LookAndSay(int n){
         String res = "1"; //starting point
         for (int i = 0; i < n; i++) {
             res = evaluate(res);
-            out.println(res);
+           // out.println(res);
         }
+        return res;
     }
     public static void main(String[] args) {
-        LookAndSay(20);
+        {
+            System.out.println(LookAndSay(4));
+        }
     }
 }

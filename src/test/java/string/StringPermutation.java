@@ -23,4 +23,28 @@ public class StringPermutation {
             }
         }
     }
+
+    @Test
+    public void isPermution() {
+
+        isPermution("", "cda", "bc");
+
+    }
+
+    private void isPermution(String prefix, String str, String str2) {
+
+        if (0 == str.length()) {
+            System.out.println(prefix);
+        } else {
+
+
+            // abc
+            // bac
+            // bca
+            for (int i = 0; i < str.length(); i++) {
+                isPermution(prefix + str.charAt(i), str.substring(0, i) + str.substring(i + 1), str2);
+            }
+
+        }
+    }
 }

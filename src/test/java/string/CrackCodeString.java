@@ -1017,6 +1017,7 @@ public class CrackCodeString {
         System.out.println(maxArr(arr));
     }
 
+
     public int maxArr(ArrayList<Integer> A) {
         int maxFar = A.get(0);
         int maxEnd = A.get(0);
@@ -1205,12 +1206,7 @@ public class CrackCodeString {
 
     }
 
-    @Test
-    public void isPermution() {
 
-        isPermution("", "cda", "bc");
-
-    }
 
     @Test
     public void spiral() {
@@ -1443,63 +1439,6 @@ public class CrackCodeString {
         urlify(new char[]{'t', ' ', 'h', 'e', ' ', 'b', ' ', ' ', ' ', ' '}, 6);
     }
 
-
-    @Test
-    public void editAway() {
-        Assert.assertFalse(editAway("pale", "pled"));
-        Assert.assertTrue(editAway("pales", "pale"));
-        Assert.assertFalse(editAway("paless", "pale"));
-        Assert.assertTrue(editAway("pale", "apale"));
-        Assert.assertFalse(editAway("pale", "aapale"));
-        Assert.assertTrue(editAway("pale", "bale"));
-        Assert.assertFalse(editAway("pale", "bake"));
-    }
-
-
-    private boolean editAway(String a, String b) {
-
-        int i = 0;
-        int j = 0;
-        int e = 0;
-
-
-        System.out.println("---- " + a + " vs " + b + "----");
-        while (true) {
-
-            System.out.println(i + " " + j + " " + e + " ");
-
-            if (e == 2)
-                return false;
-
-            if (i > a.length() - 1 || j > b.length() - 1) {
-                if (Math.abs(a.length() - b.length()) >= 2) {
-                    return false;
-                }
-
-                if (e == 1 && i != j && a.length() == b.length())
-                    return false;
-                else
-                    return true;
-            }
-
-            if (a.charAt(i) == b.charAt(j)) {
-                i++;
-                j++; //if match
-            } else if (a.charAt(i + 1) == b.charAt(j) && a.charAt(i + 2) == b.charAt(j + 1)) {
-                i++;
-                e++;  //insert
-            } else if (a.charAt(i) == b.charAt(j + 1) && a.charAt(i + 1) == b.charAt(j + 2)) {
-                j++;
-                e++; //delete
-            } else {
-                i++; //replace
-                j++;
-                e++;
-            }
-        }
-
-    }
-
     private void urlify(char a[], int len) {
 
         int index = a.length - 1;
@@ -1525,21 +1464,6 @@ public class CrackCodeString {
 
     }
 
-    private void isPermution(String prefix, String str, String str2) {
 
-        if (0 == str.length()) {
-            System.out.println(prefix);
-        } else {
-
-
-            // abc
-            // bac
-            // bca
-            for (int i = 0; i < str.length(); i++) {
-                isPermution(prefix + str.charAt(i), str.substring(0, i) + str.substring(i + 1), str2);
-            }
-
-        }
-    }
 
 }
