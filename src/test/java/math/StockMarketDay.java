@@ -30,6 +30,24 @@ public class StockMarketDay {
         return max;
     }
 
+    /**
+     * allow multiple transaction
+     */
+    public int maxProfit(int[] prices) {
+        int n = prices.length;
+        if(n == 0) return 0;
+        int min = prices[0];
+        int res = 0;
+        for(int i =0; i < prices.length-1; i++){
+            if(prices[i] > prices[i+1]){
+                res += prices[i] - min;
+                min = prices[i+1];
+            }
+        }
+        res += prices[n-1]- min;
+        return res;
+    }
+
     public static void main(String args[]){
         System.out.println(stockmarketday(new int[]{7,1,5,3,6,4}));
     }

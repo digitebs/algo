@@ -4,9 +4,9 @@ package array;
 
 import java.util.*;
 
-// you can write to stdout for debugging purposes, e.g.
-// System.out.println("this is a debug message");
-
+/**
+ * Given an unsorted array, find the maximum difference between the successive elements in its sorted form.
+ */
 public class AdjacentValues {
     public boolean isAdjacent(HashSet<Integer> hs, int a, int b) {
         if (a > b) {
@@ -36,6 +36,12 @@ public class AdjacentValues {
             }
         }
         return max;
+    }
+
+
+
+    public static void main(String[] args) {
+        System.out.println(new AdjacentValues().solution(new int[]{3,6,9,120}));
     }
 }
 
