@@ -24,7 +24,7 @@ public class CombinationArray {
         ArrayList<Integer> arr = new ArrayList<>();
         new CombinationArray().combine(res, arr,2,4,3);
 
-        /*Collections.sort(res, (o1, o2) -> {
+        /* Collections.sort(res, (o1, o2) -> {
             for (int i = 0; i < Math.min(o1.size(), o2.size()); i++) {
                 int c = o1.get(i).compareTo(o2.get(i));
                 if (c != 0) {
