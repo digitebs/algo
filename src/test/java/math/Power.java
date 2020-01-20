@@ -18,7 +18,13 @@ public class Power {
         return false;
     }
 
+    public static boolean isPowerOfThree(int n) {
+        return (Math.log10(n) / Math.log10(3)) % 1 == 0;
+        //  return n > 0 && 1162261467 % n == 0;
+    }
+
     public static void main(String[] args) {
         System.out.println(isPower(9));
+        System.out.println(isPowerOfThree(9));
     }
 }

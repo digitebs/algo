@@ -8,23 +8,7 @@ import java.util.List;
 /**
  * Created by johnlim on 3/2/17.
  */
-public class LeetCodeList {
-
-  private ListNode getSample(){
-      ListNode a = new ListNode(0);
-      ListNode b = new ListNode(1);
-
-      ListNode c = new ListNode(3);
-
-      ListNode d = new ListNode(4);
-
-      a.next=b;
-      b.next=c;
-      c.next=d;
-      d.next=b;
-      return  a;
-  }
-
+public class DeleteCurrentNode {
 
     @Test
     public void deleteNode() {
@@ -40,19 +24,16 @@ public class LeetCodeList {
         //sc.next=d;
 
         deleteNode(a);
-        printNode(a);
+        a.print();
 
     }
 
-    public void printNode(ListNode node) {
-        while(node!=null){
-            System.out.println(node.val);
-            node=node.next;
-        }
-    }
     public void deleteNode(ListNode node) {
 
-        ListNode prev = null;
+        node.val = node.next.val;
+        node.next = node.next.next;
+
+       /* ListNode prev = null;
         while(node!=null){
             if(node.next!=null && node.next.next==null ){
                 if(prev==null) {
@@ -67,7 +48,7 @@ public class LeetCodeList {
             }
             prev=node;
             node=node.next;
-        }
+        }*/
 
     }
 }

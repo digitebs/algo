@@ -10,6 +10,9 @@ import java.util.Comparator;
  */
 public class LeetCodeBinary {
 
+
+
+
     @Test
     public void guessNumber() {
         guessNumber(10);

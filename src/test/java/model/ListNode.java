@@ -21,7 +21,7 @@ public class ListNode{
             a =a.next;
             b =b.next;
         }
-        return a==null && b == null;
+        return true;
     }
 
     public void print(){
