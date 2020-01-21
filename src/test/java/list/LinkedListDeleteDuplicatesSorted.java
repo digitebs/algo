@@ -4,15 +4,15 @@ import model.ListNode;
 
 public class LinkedListDeleteDuplicatesSorted {
 
-    static ListNode deleteDuplicates(ListNode a) {
-        ListNode current=a;
-        while(a!=null){
-            while(a.next!=null && a.val == a.next.val){ // if next value is the same
-                a.next = a.next.next; //point current to next next
+    static ListNode deleteDuplicates(ListNode head) {
+        ListNode curr=head;
+        while(curr!=null){
+            while(curr.next!=null && curr.val == curr.next.val){
+                curr.next = curr.next.next; //point current to next next
             }
-            a = a.next;
+            curr = curr.next;
         }
-        return current;
+        return head;
     }
 
     static void printNode(ListNode n){
