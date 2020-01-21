@@ -1,6 +1,6 @@
 package search;
 
-public class BinaySearch {
+public class BinarySearch {
 
 
     /**
