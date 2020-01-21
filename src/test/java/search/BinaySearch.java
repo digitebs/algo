@@ -4,9 +4,9 @@ public class BinaySearch {
 
 
     /**
+     * Shifted Array Search
      * find the pivot using binary search
-     * @param arr
-     * @return
+     *
      */
     static int pivot(int[] arr) {
         int left = 0;
@@ -92,6 +92,33 @@ public class BinaySearch {
         return -1;
     }
 
+    /*
+    Given a sorted array arr of distinct integers,
+    write a function indexEqualsValueSearch that returns the lowest index i for which arr[i] == i. Return -1 if there is no such index.
+     Analyze the time and space complexities of your solution and explain its correctness.
+     */
+    static int indexEqualsValueSearch(int[] arr) {
+        // your code goes here
+
+        int left = 0;
+        int right = arr.length -1;
+        int mid = (left+right)/2;
+
+        int min =-1;
+        while(left <= right){
+            if( arr[mid] == mid){
+                min = mid;
+                right = mid-1;
+            }else if(arr[mid] < mid){
+                left = mid+1;
+            }else{
+                right = mid-1;
+            }
+            mid = (left+right)/2;
+        }
+        return min;
+    }
+
     public static void main(String[] args) {
         System.out.println(pivot(new int[]{6,1,2,3,4,5}));
         System.out.println(pivot(new int[]{1,2,3,4,5,0}));
@@ -101,6 +128,7 @@ public class BinaySearch {
         System.out.println(binarySearchS(new int[]{5,7,7,8,8,10},8));
         // end target
         System.out.println(binarySearchS(new int[]{5,7,7,8,8,10},8));
+        System.out.println(indexEqualsValueSearch(new int[]{-8,0,2,5}));
         // shiftedArrSearch(new int[]{9,12,17,2,4,5},2);
     }
 
