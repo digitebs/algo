@@ -29,6 +29,7 @@ public class DPMaxSubsetSum {
     }
     public static void main(String[] args) {
 
+        System.out.println(maxSubsetSum(new int[]{1,2,3,1}));
         //System.out.println(maxSubsetSum(new int[]{1,2,3,4,5}));
         System.out.println(maxSubsetSum(new int[]{2,100,5,4,3}));
     }

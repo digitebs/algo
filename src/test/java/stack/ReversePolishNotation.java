@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Stack;
 
 public class ReversePolishNotation {
+    /**
+     * operations are tricky b must come 1st before a
+     */
     static int compute(List<String> tokens){
         Stack<Integer> stack = new Stack<>();
         for (String t: tokens) {
