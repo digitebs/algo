@@ -25,6 +25,7 @@ public class Power {
 
     public static void main(String[] args) {
         System.out.println(isPower(9));
-        System.out.println(isPowerOfThree(9));
+        System.out.println(isPowerOfThree(7));
+        System.out.println((Math.log10(7) / Math.log10(3)));
     }
 }
