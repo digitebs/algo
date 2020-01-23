@@ -2,7 +2,7 @@ package dp;
 
 import java.util.Arrays;
 
-public class DPCoinProblem {
+public class CoinProblem {
 
     // if its sorted can just overlapped 2d array
     // 0 1 2 3 4 5
@@ -16,7 +16,7 @@ public class DPCoinProblem {
         for (long a : c)
             for (int j = 1; j <= n; j++) {
                 if (j >= a) dp[j] = dp[j] + dp[j - (int) a];
-                 System.out.print(Arrays.toString(dp));
+                 //System.out.print(Arrays.toString(dp));
             }
 
         return dp[(int) n];

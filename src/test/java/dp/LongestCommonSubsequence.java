@@ -1,6 +1,6 @@
 package dp;
 
-public class DPLongestCommonSubsequence {
+public class LongestCommonSubsequence {
     // longest common subsequence of 2 string
     static int common(String s1, String s2){
         int m = s1.length();

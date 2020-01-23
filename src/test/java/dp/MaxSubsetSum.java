@@ -7,7 +7,7 @@ import static java.lang.Math.max;
 /*
 non adjacent sum ( similar to rob house)
  */
-public class DPMaxSubsetSum {
+public class MaxSubsetSum {
 
     // 2 1 3 4 5
     // 2 2 5

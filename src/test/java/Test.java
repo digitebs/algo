@@ -18,6 +18,8 @@ public class Test {
 
     public static void main(String args[]) {
 
+
+        LinkedHashMap<Integer,Integer> hm = new LinkedHashMap<>();
         ArrayList<Integer>[] bag = new ArrayList[5];
         bag[0] = new ArrayList<Integer>();
         bag[0].add(1);

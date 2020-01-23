@@ -4,7 +4,7 @@ package dp;
  *
  * uses the max cost between B[i] or 1
  */
-public class DPSherlockCost {
+public class SherlockCost {
     static int cost(int[] B) {
         int n = B.length;
         int[][] memo = new int[n][2];

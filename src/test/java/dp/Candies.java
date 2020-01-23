@@ -2,7 +2,7 @@ package dp;
 
 import java.util.Arrays;
 
-public class DPCandies {
+public class Candies {
 
     // linear reverse traversal
     // 1 2 3 3 2 1

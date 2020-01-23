@@ -1,6 +1,6 @@
 package dp;
 
-public class DpNumEncoding {
+public class NumEncoding {
 
     public int numDecodings(String s) {
         int[] dp = new int[s.length()];
