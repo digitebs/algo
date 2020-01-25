@@ -22,6 +22,7 @@ public class Test {
         bag[0].add(1);
         System.out.println(Math.log(8));
 
+        HashSet hs;
         // String[] s = Arrays.stream(new String[]{"aa"}).distinct().toArray(String[]::new);
          //hs.stream().max(Comparator.comparing(String::length));
        // hs.stream().max(Comparator.comparingInt(String::length)).get().length();
