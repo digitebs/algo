@@ -1,9 +1,28 @@
 package math;
 
+import java.util.HashMap;
+
 /**
  * find if a number is power of i,j
  */
 public class Power {
+
+    HashMap<Integer,Double> hm = new HashMap<>();
+    /*
+        find the nth power of x
+        using recursion and memo
+     */
+    public double myPow(double x, int n) {
+        if(n == 0) return 1;
+        if(n == -1) return 1/x;
+        if(n == 1) return x;
+        if(!hm.containsKey(n)){
+            hm.put(n,myPow(x,n/2) * myPow(x,n/2 +
+                    (n%2 ==0? 0:(n < 0?-1:1))));
+        }
+        return hm.get(n);
+    }
+
     static boolean isPower(int a) {
         if(a==1) return true;
         for (int i = 2; i < a; i++) {
