@@ -12,6 +12,7 @@ public class ThreeSumsArray {
         Arrays.sort(arr);// nlogn
         for(int i = 0; i < arr.length; i++){ // n * n == n^2
             int j = i, k = arr.length -1;
+            // using 2 pointer
             while(j != k){ // collapse it in
                 int sum = arr[i] + arr[j]+ arr[k];
                 if(sum  > target) k--; // we move backward
