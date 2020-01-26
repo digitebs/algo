@@ -2,7 +2,7 @@ package array;
 
 import java.util.Arrays;
 
-public class LargestPermutationArray {
+public class Permutation {
     static int[] largestPermutation(int k, int[] arr) {
         int n = arr.length;
         int[]pos = new int[arr.length+1];
@@ -27,8 +27,8 @@ public class LargestPermutationArray {
     }
 
     public static void main(String[] args) {
-        long a = ((long)100000 * (1 + 100000))/2;
-        System.out.println(a);
-       //System.out.println(Arrays.toString(largestPermutation(1, new int[]{1,2,3})));
+      //  long a = ((long)100000 * (1 + 100000))/2;
+       // System.out.println(a);
+       System.out.println(Arrays.toString(largestPermutation(1, new int[]{1,2,3})));
     }
 }

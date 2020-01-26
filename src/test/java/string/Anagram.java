@@ -1,6 +1,9 @@
 package string;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author john.lim
@@ -21,6 +24,24 @@ public class Anagram {
             map.put(t.charAt(i),v-1);
         }
         return true;
+    }
+
+    /*
+    via sorting
+     */
+    public List<List<String>> groupAnagrams(String[] strs) {
+        HashMap<String, List<String>> hm = new HashMap<>();
+        for(int i =0;  i < strs.length; i++){
+            char[] chars = strs[i].toCharArray();
+            Arrays.sort(chars);
+            String key = new String(chars);
+            if(!hm.containsKey(key)){
+                hm.put(key, new ArrayList<>());
+            }
+            hm.get(key).add(strs[i]);
+        }
+
+        return new ArrayList<>(hm.values());
     }
 
     public static void main(String[]  arg){

@@ -8,6 +8,7 @@ import java.util.Stack;
 public class ReversePolishNotation {
     /**
      * operations are tricky b must come 1st before a
+     * postfix
      */
     static int compute(List<String> tokens){
         Stack<Integer> stack = new Stack<>();
