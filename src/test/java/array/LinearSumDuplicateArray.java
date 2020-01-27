@@ -23,15 +23,18 @@ public class LinearSumDuplicateArray {
         return res;
     }
 
+    // negating the position, if that position is seen again mean its negative
+    // since the array refers to itself only
     // works only on consecutive array from 1 - n
     static public void findDuplicates(int[] arr){
         for(int i =0; i < arr.length; i++){
             int val = Math.abs(arr[i]);
             if(arr[val] >= 0) arr[val] = -arr[val];
             else System.out.println(val);
+            System.out.println(Arrays.toString(arr));
         }
     }
     public static void main(String[] args) {
-        findDuplicates(new int[]{1,2,6,4,5,4,3});
+        findDuplicates(new int[]{3,1,6,4,5,4,3});
     }
 }
