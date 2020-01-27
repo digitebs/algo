@@ -1,9 +1,11 @@
-package tree;
+package graph;
 
 import model.GraphNode;
 
 /*
  Given a node rootNode, write a function getCheapestCost that calculates the minimal Sales Path cost in the tree.
+
+ using dfs
  */
 public class MinimumSalesPath {
     static int getCheapestCost(GraphNode rootNode, int sum) {
