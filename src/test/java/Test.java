@@ -22,6 +22,7 @@ public class Test {
         bag[0].add(1);
         System.out.println(Math.log(8));
 
+        String s;
        LinkedList ll;
         StringBuilder sb;
         // String[] s = Arrays.stream(new String[]{"aa"}).distinct().toArray(String[]::new);
