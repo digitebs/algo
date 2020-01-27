@@ -8,24 +8,19 @@ import model.GraphNode;
  using dfs
  */
 public class MinimumSalesPath {
-    static int getCheapestCost(GraphNode rootNode, int sum) {
-        if (rootNode == null) return sum;
+    int getCheapestCost(GraphNode rootNode) {
+        // your code goes here
+        if (rootNode == null) return 0;
         GraphNode[] c = rootNode.children;
-        if (c == null || c.length == 0) {
-            // lowest = Math.min(sum, lowest);
-            return sum;
-        }
+        if(c == null) return rootNode.val;
+        if (c.length == 0) return rootNode.val;
+
         int min=Integer.MAX_VALUE;
         for (int i = 0; i < c.length; i++) {
-            min = Math.min(getCheapestCost(c[i], sum + c[i].val),min);
+            min = Math.min(rootNode.val + getCheapestCost(c[i]),min);
         }
         return min;
         // your code goes here
-    }
-
-    int getCheapestCost(GraphNode rootNode) {
-        // your code goes here
-        return getCheapestCost(rootNode, rootNode.val);
     }
 
     /*********************************************
@@ -33,7 +28,7 @@ public class MinimumSalesPath {
      *********************************************/
 
     public static void main(String[] args) {
-        GraphNode n = new GraphNode(7);
+        GraphNode n = new GraphNode(0);
         GraphNode a, b, c, d, e, f, g, h, i, j, k;
         n.children = new GraphNode[]{
                 a = new GraphNode(5),
