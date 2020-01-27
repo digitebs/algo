@@ -31,7 +31,7 @@ public class LinkedListDetectCycle {
     }
 
 
-    /** using change of value */
+    /** using change of val */
     public boolean hasCycle(ListNode head) {
         while(head!=null){
             if(head.val==-1){

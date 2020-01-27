@@ -16,7 +16,7 @@ public class GraphDfsBfs {
         Queue<GraphNode> q = new LinkedList();
         q.add(root);
         while (!q.isEmpty() && (child = q.remove()) != null) {
-            System.out.println(child.value);
+            System.out.println(child.val);
             for (int i = 0; child.children != null && i < child.children.length; i++) {
                 q.offer(child.children[i]);
             }
@@ -29,7 +29,7 @@ public class GraphDfsBfs {
 
         if (root == null)
             return;
-        System.out.println(root.value);
+        System.out.println(root.val);
         for (int i = 0; root.children != null && i < root.children.length; i++) {
             //System.out.println(root.children[i]);
             dfs(root.children[i]);
@@ -39,7 +39,7 @@ public class GraphDfsBfs {
     public static void main(String args[]) {
 
         GraphNode n = new GraphNode(0);
-        n.value = 0;
+        n.val = 0;
 
         GraphNode n1 = new GraphNode(1);
         GraphNode n4 = new GraphNode(4);

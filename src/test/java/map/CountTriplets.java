@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CountTriplets {
 
-    // interesting problem to study using {{HashMap}} progression using 2 maps. assigning the next value to the next, adding increment
+    // interesting problem to study using {{HashMap}} progression using 2 maps. assigning the next val to the next, adding increment
     // of previous one
     private static long countTriplets(List<Long> arr, long r) {
         HashMap<Long,Long> h = new HashMap<>();

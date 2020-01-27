@@ -4,7 +4,7 @@ import model.ListNode;
 
 /**
  * 1 -> 0 -> 1
- * binary value: 5
+ * binary val: 5
  */
 public class ListToInt {
     public static int getDecimalValue(ListNode head) {

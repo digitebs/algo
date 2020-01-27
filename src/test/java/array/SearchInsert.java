@@ -1,7 +1,7 @@
 package array;
 
 /**
- *  search, return the index to insert if not found, else return the value
+ *  search, return the index to insert if not found, else return the val
  */
 public class SearchInsert {
     /*

@@ -24,8 +24,6 @@ public class Test {
 
        LinkedList ll;
         StringBuilder sb;
-
-
         // String[] s = Arrays.stream(new String[]{"aa"}).distinct().toArray(String[]::new);
          //hs.stream().max(Comparator.comparing(String::length));
        // hs.stream().max(Comparator.comparingInt(String::length)).get().length();

@@ -1267,7 +1267,7 @@ public class CrackCodeString {
 
 
     /**
-     * use arbitrary value except 0
+     * use arbitrary val except 0
      *
      * @param matrix
      * @return

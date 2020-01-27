@@ -25,7 +25,7 @@ public class BfsMap {
                 int b = p.y + dy[i];
                 if (a >= 0 && b >= 0 && a < n && b < m && dist[a][b] == -1 && area.get(a).get(b) != 0) {
                     if (area.get(p.x).get(p.y) == 9) return dist[a][b]; // destination found return
-                    dist[a][b] = 1 + dist[p.x][p.y]; //add the value to dist
+                    dist[a][b] = 1 + dist[p.x][p.y]; //add the val to dist
                     q.offer(new Point(a, b)); // add this to out dfs
                 }
             }
@@ -49,7 +49,7 @@ public class BfsMap {
                 int a = p.x + dx[i];
                 int b = p.y + dy[i];
                 if (a >= 0 && b >= 0 && a < n && b < m && dist[a][b] == -1 && arr[a][b] != 0) {
-                    dist[a][b] = 1 + dist[p.x][p.y]; //add the value to dist
+                    dist[a][b] = 1 + dist[p.x][p.y]; //add the val to dist
                     if (arr[p.x][p.y] == 9) return dist[a][b]; // destination found return
                     q.offer(new Point(a, b)); // add this to out dfs
                 }
