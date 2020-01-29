@@ -9,14 +9,14 @@ public class BinarySearch {
      */
     static int binarySearchS(int[] arr, int target) {
         int left = 0;
-        int right = arr.length -1;
+        int right = arr.length-1;
         int mid = (left + right)/2;
         while(left <= right){
             if((mid > left && arr[mid]!= arr[mid-1] && target == arr[mid]) ||
                     (mid == left  && target == arr[mid])){
                 return mid;
             }else if(target == arr[mid] || target < arr[mid] ){
-                right = mid -1;
+                right = mid-1;
             }else{
                 left = mid +1;
             }
@@ -92,7 +92,9 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         // start target
-        System.out.println(binarySearchS(new int[]{5,7,7,8,8,10},8));
+        System.out.println(binarySearchS(new int[]{5,7,7,8,8,10},7));
+        System.out.println(binarySearchS(new int[]{5,7,7,8,8,10,10,10},10));
+        System.out.println(binarySearchS(new int[]{5,7,7,8,8,10,10,10},10));
         // end target
         System.out.println(binarySearchS(new int[]{5,7,7,8,8,10},8));
         System.out.println(indexEqualsValueSearch(new int[]{-8,0,2,5}));

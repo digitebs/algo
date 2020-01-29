@@ -1,6 +1,11 @@
 package search;
 
 
+/*
+    right can be n-1( using mid-1) or n (using mid) as range
+
+    if right is n-1 exit loop is <= else <
+ */
 public class BinarySearchPivot {
 
     /**
@@ -15,15 +20,12 @@ public class BinarySearchPivot {
         int right = n;
         int mid = (left + right)/2;
         while(left <= right){
-            if(left == right) return left;
             //   System.out.println(arr[mid-1] +" "+arr[mid] +" "+arr[mid+1] );
-            if(mid < right && arr[mid] > arr[mid+1]){
+            if(mid == n || arr[mid] > arr[mid+1]){
                 return mid;
-            }else if(mid > left && arr[mid] < arr[mid-1] ){
-                return mid -1;
-            }else if(arr[left] >= arr[mid]){
+            }else if(arr[left] >  arr[mid]){
                 // System.out.println("to the left");
-                right = mid -1;
+                right = mid-1;
             }else{
                 // System.out.println("to the right");
                 left = mid+1;
