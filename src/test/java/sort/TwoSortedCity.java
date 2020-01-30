@@ -28,7 +28,8 @@ public class TwoSortedCity {
         Arrays.sort(costs,(arr1, arr2)->{
 
             // arr1[0]-arr1[1] negative means  x is smaller than y, forces x to go to the 1st
-
+            // interestingly if the gap is bigger it goes higher in the list
+            // so you sort by x and y as well as the gap
             return arr1[0]-arr1[1]-(arr2[0]-arr2[1]);
         });
 
