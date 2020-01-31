@@ -48,12 +48,12 @@ public class StringInPattern {
         if (ch.length != word.length) {
             return false;
         }
-        Map<Character, String> map = new HashMap<>();
+        Map<String,Character > map = new HashMap<>();
         for (int i = 0; i < word.length; i++) {
-            if (!map.containsKey(ch[i])) {
-                map.put(ch[i], word[i]);
+            if (!map.containsKey(word[i])) {
+                map.put(word[i], ch[i]);
             } else {
-                if (!map.get(ch[i]).equalsIgnoreCase(word[i])) {
+                if (map.get(word[i]) != ch[i]) {
                     return false;
                 }
             }
@@ -62,7 +62,8 @@ public class StringInPattern {
     }
 
     public static void main(String args[]) {
-        System.out.println(isMatch("aaba", "apple apple orange apple"));
-        System.out.println(isMatch("aaba", "apple apple orange big"));
+        //System.out.println(isMatch("aaba", "apple apple orange apple"));
+
+        System.out.println(isMatch("aaaa", "dog apple apple dog"));
     }
 }
