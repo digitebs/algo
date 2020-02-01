@@ -91,6 +91,8 @@ public class HTreeVisual {
         queue.offer(new Double[]{xr,yd}); //11
 
 
+
+
         g.drawLine((int) xl, (int) yu, (int) xl, (int) yd); // left segment
         g.drawLine((int) xr, (int) yu, (int) xr, (int) yd); // right segment
         g.drawLine((int) xl, (int) y, (int) xr, (int) y);   // connecting segment
