@@ -55,15 +55,13 @@ public class DeleteDistance {
             else count += large.length() - o -1;  // maybe -1 also
             large= large.substring(0,o);
             right--;
-
         }
-
-
         return count + large.length();
     }
 
     public static void main(String[] args) {
         System.out.println(deletionDistance("aabcd","abccab"));
+        System.out.println(deletionDistance("",""));
     }
 
 }
