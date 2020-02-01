@@ -25,6 +25,7 @@ public class Test {
 
 
         String s;
+        s.rep
         //*s.indexOf()
        LinkedList ll;
         StringBuilder sb;
