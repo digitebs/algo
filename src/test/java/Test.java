@@ -25,6 +25,7 @@ public class Test {
 
 
         String s;
+
         //*s.indexOf()
         // String[] s = Arrays.stream(new String[]{"aa"}).distinct().toArray(String[]::new);
          //hs.stream().max(Comparator.comparing(String::length));

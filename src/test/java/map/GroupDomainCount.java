@@ -3,7 +3,7 @@ package map;
 import java.util.HashMap;
 
 /**
- * click count seperated by domain
+ * return click count seperated by domain
  */
 public class GroupDomainCount {
     static void test(String[] counts) {
