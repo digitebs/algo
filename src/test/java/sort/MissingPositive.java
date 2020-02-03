@@ -20,13 +20,13 @@ public class MissingPositive {
 
     /**
      *
-     * the missing positive should be within the array
+     * the missing positive should be within the array, no duplicate allowed
      */
-    public int firstMissingPositiveNonNegative(int[] nums) {
+    public int firstMissingPositiveDistinct(int[] nums) {
         for(int i= 0; i < nums.length; i++){
             int temp = nums[i];
             // 3 1, 2, 0
-            if(temp!=i && temp < nums.length){
+            if(temp>0 && temp!=i && temp < nums.length){
                 int t2 =  nums[temp];
                 nums[temp] = nums[i];
                 nums[i] = t2;
@@ -45,6 +45,6 @@ public class MissingPositive {
         out.println(mp.firstMissingPositive(new int[]{-1,-3,-3,2, 6}));
         out.println(mp.firstMissingPositive(new int[]{-1,-3}));
         out.println(mp.firstMissingPositive(new int[]{6}));
-        out.println(mp.firstMissingPositiveNonNegative(new int[]{600,100,60,5}));
+        out.println(mp.firstMissingPositiveDistinct(new int[]{600,100,60,5}));
     }
 }
