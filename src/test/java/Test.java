@@ -22,7 +22,8 @@ public class Test {
         bag[0].add(1);
         System.out.println(Math.log(8));
 
-
+        int[] arr = new int[]{};
+        int[] temp = new int[arr.length];
 
         String s;
 
