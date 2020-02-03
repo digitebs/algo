@@ -1,7 +1,5 @@
 package search;
 
-import java.text.DecimalFormat;
-
 public class RootNumber {
     /*
         root of a number
@@ -14,7 +12,7 @@ public class RootNumber {
             double mid = (right + left)/2;
             double num = Math.pow(mid,n);
             if(Math.abs(num - x) <= E){
-                return Double.parseDouble(new DecimalFormat("#.###").format(mid).toString());
+                return Double.parseDouble(String.format("%.3f",mid));
             }else if(x < num){
                 right = mid;
             }else{
