@@ -1,4 +1,4 @@
-package array;
+package matrix;
 
 import model.Point;
 import model.Tuple;
