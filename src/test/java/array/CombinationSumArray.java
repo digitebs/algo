@@ -9,32 +9,33 @@ import static java.lang.System.out;
 
 
 /**
- * given number from arraylist find all combination that sums to given target
+ *
+ * Given a set of candidate numbers (candidates) (without duplicates) and a target number (target),
+ * find all unique combinations in candidates where the candidate numbers sums to target.
  */
 public class CombinationSumArray {
-    public void combinationSum(ArrayList<Integer> candidates, int j, int target, ArrayList<Integer> curr, ArrayList<ArrayList<Integer>> res) {
+    public void combinationSum(int[] candidates, int j, int target, ArrayList<Integer> curr, ArrayList<ArrayList<Integer>> res) {
         if(target == 0){
             res.add(new ArrayList<>(curr));
             return;
         }
-        for(int i = j; i < candidates.size(); i++){
-            if(target < candidates.get(i))
-                return;
-            curr.add(candidates.get(i)); // forward
-            combinationSum(candidates,i,target - candidates.get(i),curr,res);
+
+        if(target < 0)  return;
+        for(int i = j; i < candidates.length; i++){
+            curr.add(candidates[i]); // forward
+            combinationSum(candidates,i,target - candidates[i],curr,res);
             curr.remove(curr.size()-1); // backtrack
         }
     }
 
-    public ArrayList<ArrayList<Integer>> combinationSum(ArrayList<Integer> a, int target) {
+    public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
         ArrayList<ArrayList<Integer>> res = new ArrayList<>();
-        Collections.sort(a);
-        a = a.stream().distinct().collect(Collectors.toCollection(ArrayList::new));
-        combinationSum(a,0,target,new ArrayList<>(),res);
+        combinationSum(candidates,0,target,new ArrayList<>(),res);
         return res;
     }
 
     public static void main(String[] args) {
-        out.println(new CombinationSumArray().combinationSum(new ArrayList<>(Arrays.asList(7,8,10,6,8)),28));
+      //  out.println(new CombinationSumArray().combinationSum(new int[]{7,8,10,6,8},28));
+        out.println(new CombinationSumArray().combinationSum(new int[]{2,3,6,7},7));
     }
 }
