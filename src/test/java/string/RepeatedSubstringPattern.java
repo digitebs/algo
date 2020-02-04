@@ -88,6 +88,7 @@ public class RepeatedSubstringPattern {
         // Preprocess the pattern (calculate lps[] array)
         computeLPSArray(str, n, lps);
 
+        System.out.println(Arrays.toString(lps));
         // Find length of longest suffix
         // which is also prefix of str.
         int len = lps[n-1];
@@ -100,10 +101,12 @@ public class RepeatedSubstringPattern {
         // value of n/(n-len) for more clarity.
 
         System.out.println(n +" "+len);
+        // mode check if its repeatable of x times
         return (len > 0 && n%(n-len) == 0)? true: false;
     }
 
     public static void main(String[] args) {
+        // EEEKS EEEKS EEEKS
         System.out.println(new RepeatedSubstringPattern().isRepeat("EEEKSEEEKSEEEKS"));
        // System.out.println(new RepeatedSubstringPattern().repeatedSubstringPattern("abab"));
     }
