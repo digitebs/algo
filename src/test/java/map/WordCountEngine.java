@@ -25,9 +25,7 @@ public class WordCountEngine {
 
         HashMap<Integer,List<String>> sorted = new HashMap<>();
         for(Map.Entry<String,Integer> e: count.entrySet()){
-            if(!sorted.containsKey(e.getValue())){
-                sorted.put(e.getValue(), new ArrayList<>());
-            }
+            sorted.putIfAbsent(e.getValue(), new ArrayList<>());
             List<String> list = sorted.get(e.getValue());
             list.add(e.getKey());
             sorted.put(e.getValue(),list);

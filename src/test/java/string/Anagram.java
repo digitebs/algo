@@ -35,9 +35,7 @@ public class Anagram {
             char[] chars = strs[i].toCharArray();
             Arrays.sort(chars);
             String key = new String(chars);
-            if(!hm.containsKey(key)){
-                hm.put(key, new ArrayList<>());
-            }
+            hm.putIfAbsent(key, new ArrayList<>());
             hm.get(key).add(strs[i]);
         }
 

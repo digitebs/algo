@@ -38,9 +38,7 @@ public class ReconstructItinerary {
         HashMap<String,ArrayList<String>> hm = new HashMap<>();
         for(int i = 0; i < tickets.size(); i++){
             String key = tickets.get(i).get(0);
-            if(!hm.containsKey(key)){
-                hm.put(key,new ArrayList<>());
-            }
+            hm.putIfAbsent(key,new ArrayList<>());
             ArrayList<String> ts = hm.get(key);
             ts.add(tickets.get(i).get(1));
 
