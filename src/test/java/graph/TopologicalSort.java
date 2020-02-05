@@ -3,7 +3,7 @@ package graph;
 import java.util.*;
 
 /*
-    topological sort uses stack
+    topological sort uses stack, to find teh sort of dependencies
  */
 public class TopologicalSort {
     private int V;   // No. of vertices
@@ -77,9 +77,8 @@ public class TopologicalSort {
         g.addEdge(1, 3);
         g.addEdge(3, 5);
         // g.addEdge(7, 5);
-        g.addEdge(6, 7);
         g.addEdge(3, 9);
-        // g.addEdge(9, 5);
+         g.addEdge(9, 5);
 
 
         System.out.println("Following is a Topological " +
