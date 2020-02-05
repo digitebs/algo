@@ -26,7 +26,7 @@ public class TopologicalSort {
     void topologicalSortUtil(int v, HashMap<Integer,Boolean> visited,
                              Stack stack)
     {
-        System.out.println(v);
+       // System.out.println(v);
         // Mark the current node as visited.
         visited.put(v, true);
         Integer i;
@@ -40,7 +40,7 @@ public class TopologicalSort {
             if (!visited.get(i)) topologicalSortUtil(i, visited, stack);
         }
 
-        System.out.println(v);
+         System.out.println(v);
         // Push current vertex to stack which stores result
         stack.push(v);
     }
