@@ -2,7 +2,7 @@ package stack;
 
 import java.util.Stack;
 
-public class StackParenthesis {
+public class BalancedParenthesis {
     static String isBalanced(String s) {
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++) {

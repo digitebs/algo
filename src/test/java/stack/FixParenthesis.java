@@ -3,7 +3,7 @@ package stack;
 /**
  * how many count needed to fix the parenthesis
  */
-public class StackParenthesisFix {
+public class FixParenthesis {
     static int bracketMatch(String text) {
         // your code goes here
         int count=0;
