@@ -1,6 +1,5 @@
 package math;
 
-
 import java.util.HashMap;
 
 /*
@@ -10,18 +9,18 @@ Given an integer array with even length, where different numbers in this array r
  Return the MAXIMUM number of KINDS of candies the sister could gain.
  */
 public class DistributeCandies {
-    static public int distributeCandies(int[] candies) {
-        int n = candies.length;
-        HashMap<Integer, Integer> hm = new HashMap<>();
-        for(int i = 0; i < n; i++){
-            hm.put(candies[i], hm.getOrDefault(candies[i],0)+1);
-            // if(candies[i]%2 == 0) count +=2;
-            // else count ++;
-        }
-        return Math.min(hm.size(), n/2);
+  public static int distributeCandies(int[] candies) {
+    int n = candies.length;
+    HashMap<Integer, Integer> hm = new HashMap<>();
+    for (int i = 0; i < n; i++) {
+      hm.put(candies[i], hm.getOrDefault(candies[i], 0) + 1);
+      // if(candies[i]%2 == 0) count +=2;
+      // else count ++;
     }
+    return Math.min(hm.size(), n / 2);
+  }
 
-    public static void main(String[] args) {
-        System.out.println(distributeCandies(new int[]{1,1,2,3}));
-    }
+  public static void main(String[] args) {
+    System.out.println(distributeCandies(new int[] {1, 1, 2, 3}));
+  }
 }

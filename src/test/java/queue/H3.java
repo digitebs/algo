@@ -1,10 +1,6 @@
 package queue;
 
-
-/**
- * |-|
- *
- */
+/** |-| */
 /*
 public class H3 {
 

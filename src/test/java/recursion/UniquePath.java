@@ -8,25 +8,24 @@ The robot can only move either down or right at any point in time.
 
  */
 public class UniquePath {
-    static int[][] memo;
-    static int paths(int x, int y, int m, int n){
-        //  System.out.println(x+" "+y);
-        if(x >= m || y >= n) return 0;
+  static int[][] memo;
 
-        if( x== m -1 && y == n-1)
-            return 1; // concat
+  static int paths(int x, int y, int m, int n) {
+    //  System.out.println(x+" "+y);
+    if (x >= m || y >= n) return 0;
 
-        if(memo[x][y] == 0)
-            memo[x][y]=paths(x+1, y, m, n) + paths(x, y+1, m, n);
-        return memo[x][y];
-    }
+    if (x == m - 1 && y == n - 1) return 1; // concat
 
-    static int uniquePaths(int m, int n) {
-        memo = new int[m][n];
-        return paths(0,0,m,n);
-    }
+    if (memo[x][y] == 0) memo[x][y] = paths(x + 1, y, m, n) + paths(x, y + 1, m, n);
+    return memo[x][y];
+  }
 
-    public static void main(String[] args) {
-        System.out.println(uniquePaths(3,2));
-    }
+  static int uniquePaths(int m, int n) {
+    memo = new int[m][n];
+    return paths(0, 0, m, n);
+  }
+
+  public static void main(String[] args) {
+    System.out.println(uniquePaths(3, 2));
+  }
 }

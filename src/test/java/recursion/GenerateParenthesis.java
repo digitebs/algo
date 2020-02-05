@@ -7,29 +7,29 @@ import java.util.List;
 Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
  */
 public class GenerateParenthesis {
-    List<String> arr = new LinkedList<>();
-    public void gen(StringBuilder sb,int o,int c) {
-        if(o == 0 && c==0){
-            arr.add(sb.toString());
-            return; // stop opening
-        }
-        if(o > 0) {
-            gen(sb.append('('),o-1,c);
-            sb.deleteCharAt(sb.length()-1); //backtracking
-        }
-        if(c > 0 && c > o) {
-            gen(sb.append(')'),o, c-1);
-            sb.deleteCharAt(sb.length()-1); //backtracking
-        }
-    }
+  List<String> arr = new LinkedList<>();
 
-    public List<String> generateParenthesis(int n) {
-        gen(new StringBuilder(n*2),n,n); // start blank
-        return arr;
+  public void gen(StringBuilder sb, int o, int c) {
+    if (o == 0 && c == 0) {
+      arr.add(sb.toString());
+      return; // stop opening
     }
-
-    public static void main(String[] args) {
-        new GenerateParenthesis().generateParenthesis(3);
+    if (o > 0) {
+      gen(sb.append('('), o - 1, c);
+      sb.deleteCharAt(sb.length() - 1); // backtracking
     }
+    if (c > 0 && c > o) {
+      gen(sb.append(')'), o, c - 1);
+      sb.deleteCharAt(sb.length() - 1); // backtracking
+    }
+  }
 
+  public List<String> generateParenthesis(int n) {
+    gen(new StringBuilder(n * 2), n, n); // start blank
+    return arr;
+  }
+
+  public static void main(String[] args) {
+    new GenerateParenthesis().generateParenthesis(3);
+  }
 }

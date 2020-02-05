@@ -24,44 +24,42 @@ output: 0
 
  */
 public class DeleteDistance {
-    static int deletionDistance(String str1, String str2) {
-        // your code goes here
-        String small = (str1.length() >= str2.length())? str2: str1;
-        String large = (str1.length() > str2.length())? str1: str2;
+  static int deletionDistance(String str1, String str2) {
+    // your code goes here
+    String small = (str1.length() >= str2.length()) ? str2 : str1;
+    String large = (str1.length() > str2.length()) ? str1 : str2;
 
-        int left = 0;
-        int right = small.length()-1;
-        int count=0;
+    int left = 0;
+    int right = small.length() - 1;
+    int count = 0;
 
-        while(left <= right){
-            // left
-            int o = large.indexOf(small.charAt(left));
-            if(o == -1) {
-                count++;
-                left++;
-                continue;
-            } else count+=o;
+    while (left <= right) {
+      // left
+      int o = large.indexOf(small.charAt(left));
+      if (o == -1) {
+        count++;
+        left++;
+        continue;
+      } else count += o;
 
-            large= large.substring(o+1);
-            left++;
+      large = large.substring(o + 1);
+      left++;
 
-            // right , 0
-            o = large.lastIndexOf(small.charAt(right));
-            if(o == -1){
-                count++;
-                right--;
-                continue;
-            }
-            else count += large.length() - o -1;  // maybe -1 also
-            large= large.substring(0,o);
-            right--;
-        }
-        return count + large.length();
+      // right , 0
+      o = large.lastIndexOf(small.charAt(right));
+      if (o == -1) {
+        count++;
+        right--;
+        continue;
+      } else count += large.length() - o - 1; // maybe -1 also
+      large = large.substring(0, o);
+      right--;
     }
+    return count + large.length();
+  }
 
-    public static void main(String[] args) {
-        System.out.println(deletionDistance("aabcd","abccab"));
-        System.out.println(deletionDistance("",""));
-    }
-
+  public static void main(String[] args) {
+    System.out.println(deletionDistance("aabcd", "abccab"));
+    System.out.println(deletionDistance("", ""));
+  }
 }
