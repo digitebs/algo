@@ -32,11 +32,12 @@ public class SmallestSubstring {
             if(needCharacter <=0){
                char  c=str.charAt(i);
                 if(hm.containsKey(c)) {
-                    hm.put(c, hm.get(c) + 1); // yes subtract
+                    hm.computeIfPresent(c,(k,v)-> ++v);
+                    //hm.put(c, hm.get(c) + 1); // yes subtract
                     if (hm.get(c) > 0) needCharacter++;
                    // System.out.println("brr "+ needCharacter);
                     if(needCharacter > 0 && min > j-i){
-                            min = Math.min(min, j-i);
+                            min = j-i;
                             res = str.substring(i,j);
                      //       System.out.println("i: "+res+" "+j +" "+i+ " "+hm);
                     }
@@ -45,10 +46,11 @@ public class SmallestSubstring {
             }else if(j < str.length()){
                 char c = str.charAt(j);
                 if(hm.containsKey(c)){
-                    hm.put(c,hm.get(c)-1); // yes subtract
+                    hm.computeIfPresent(c,(k,v)-> --v);
+                    //hm.put(c,hm.get(c)-1); // yes subtract
                     if(hm.get(c) >= 0) needCharacter--;
                     if(needCharacter < 0 && min > j-i){
-                            min = Math.min(min, j-i);
+                            min = j-i;
                             res = str.substring(i,j);
                       //      System.out.println("j: "+res+" "+j +" "+i+ " "+hm);
                     }
