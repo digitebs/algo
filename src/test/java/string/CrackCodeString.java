@@ -1126,40 +1126,6 @@ public class CrackCodeString {
     }
 
 
-    @Test
-    public void rotateMatrx() {
-
-        byte[][] b = new byte[][]{{0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11}, {12, 13, 14, 15}};
-        System.out.println(b);
-        System.out.println(rotateMatrix(b));
-    }
-
-    /**
-     * 0,0 0,1 0,2
-     * 1,0 1,1 1,2
-     * 2,0 2,1 2,2
-     * <p>
-     * 2,0 1,0 0,0
-     * 2,1 1,1 0,1
-     * 2,2 1,2 0,2
-     *
-     * @param src
-     */
-
-    private byte[][] rotateMatrix(byte[][] src) {
-        byte[][] img = new byte[src.length][src.length];
-
-        for (int i = 0; i < src.length; i++) {
-            for (int j = 0; j < src.length; j++) {
-                img[i][j] = src[src.length - 1 - j][i];
-                System.out.print(img[i][j]);
-            }
-            System.out.print("\n");
-        }
-        return img;
-
-    }
-
 
     private void printMatrix(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {

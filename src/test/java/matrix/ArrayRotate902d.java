@@ -14,7 +14,7 @@ public class ArrayRotate902d {
     // 15 11 7 3
     // 16 12 8 4
 
-    // can be done by layer
+    // can be done by layer inplace
     static int[][] rotate(int[][] arr) {
         int n = arr.length;
         for (int i = 0; i < n / 2; i++) { // layer
@@ -27,6 +27,21 @@ public class ArrayRotate902d {
             }
         }
         return arr;
+    }
+
+    /* using new array */
+    private int[][] rotateMatrix(int[][] src) {
+        int[][] img = new int[src.length][src.length];
+
+        for (int i = 0; i < src.length; i++) {
+            for (int j = 0; j < src.length; j++) {
+                img[i][j] = src[src.length - 1 - j][i];
+                System.out.print(img[i][j]+" ");
+            }
+            System.out.print("\n");
+        }
+        return img;
+
     }
 
     public static void main(String[] args) {
