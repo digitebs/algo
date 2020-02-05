@@ -224,47 +224,6 @@ public class CrackCodeString {
         return -1;
     }
 
-
-    @Test
-    public void diagonal() {
-        ArrayList p = new ArrayList();
-        p.add(new ArrayList<>(Arrays.asList(1,2,3)));
-        p.add(new ArrayList<>(Arrays.asList(4,5,6)));
-        p.add(new ArrayList<>(Arrays.asList(7,8,9)));
-        System.out.println(diagonal(p));
-    }
-    public ArrayList<ArrayList<Integer>> diagonal(ArrayList<ArrayList<Integer>> a) {
-
-        ArrayList res = new ArrayList();
-        for (int i = 0; i < a.size(); i++) {
-                   ArrayList row = new ArrayList();
-            for (int j = 0; j <= i; j++) {
-                row.add(a.get(j).get(i-j));
-              // System.out.println(a.get(j).get(i-j));
-
-            }
-
-            res.add(row);
-        }
-
-
-        for (int i = 1; i < a.size(); i++) {
-            ArrayList row = new ArrayList();
-            for (int j = a.size()-1; j >=i; j--) {
-                //System.out.println(i+" "+j);
-
-                row.add(0,a.get(j).get((a.size()-1)-j +i));
-                //System.out.println(a.get(j).get((a.size()-1)-j +i));
-
-            }
-
-            res.add(row);
-        }
-
-        return res;
-    }
-
-
     @Test
     public void generateMatrix() {
         System.out.println(generateMatrix(7));
@@ -977,14 +936,6 @@ public class CrackCodeString {
 
     }
 
-    @Test
-    public void isUnique() {
-
-        String a = "abcdz";
-        assertTrue(isUnique(a));
-
-    }
-
 
 
     @Test
@@ -1113,18 +1064,6 @@ public class CrackCodeString {
         return result;
 
     }
-
-    private boolean isUnique(String str) {
-        for (int i = 0; i < str.length() - 1; i++) {
-            for (int j = i + 1; j < str.length(); j++) {
-                if (str.charAt(i) == str.charAt(j))
-                    return false;
-            }
-        }
-
-        return true;
-    }
-
 
 
     private void printMatrix(int[][] matrix) {
