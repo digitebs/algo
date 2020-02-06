@@ -40,4 +40,8 @@ public class RotateDigits {
     }
     return count;
   }
+
+  public static void main(String[] args) {
+    System.out.println(new RotateDigits().rotatedDigits(10));
+  }
 }

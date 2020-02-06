@@ -1,12 +1,8 @@
 package queue;
 
-import org.apache.commons.collections.buffer.CircularFifoBuffer;
-import org.junit.*;
 import org.junit.Test;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.LinkedList;
 
 /** Created by johnlim on 1/3/17. */
 public class CircularBuffer {
