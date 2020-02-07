@@ -36,8 +36,6 @@ public class CountAndSay {
   }
 
   public static void main(String[] args) {
-    {
-      System.out.println(LookAndSay(4));
-    }
+    System.out.println(LookAndSay(4));
   }
 }

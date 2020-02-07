@@ -1,5 +1,6 @@
 package math;
 
+import java.math.BigInteger;
 import java.util.HashMap;
 
 /*
@@ -20,7 +21,8 @@ public class DistributeCandies {
     return Math.min(hm.size(), n / 2);
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args)
+  {
     System.out.println(distributeCandies(new int[] {1, 1, 2, 3}));
   }
 }
