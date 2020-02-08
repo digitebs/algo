@@ -4,6 +4,17 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
+
+/*
+    Input:
+    beginWord = "hit",
+    endWord = "cog",
+    wordList = ["hot","dot","dog","lot","log","cog"]
+
+    must only transform if 1 edit
+
+    Output: 5
+ */
 public class WordLadder {
     /* bfs */
     static int shortestWordEditPath(String source, String target, String[] words) {
