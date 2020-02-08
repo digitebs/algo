@@ -1,5 +1,6 @@
 package array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -13,6 +14,33 @@ public class TwoSumsArray {
       else return new int[] {hm.get(nums[i]), i};
     }
     return new int[] {-1, -1}; // wont happen;
+  }
+
+
+  // no duplicates
+  // x - y = k // difference
+  // order by y
+  static int[][] findPairsWithGivenDifference(int[] arr, int k) {
+    // your code goes here
+    // x - k,  x
+    HashMap<Integer,Integer> hm = new HashMap<>();
+    for(int i = 0; i < arr.length; i++){
+      hm.put(arr[i]-k, arr[i]); // (y ,x) pair
+    }
+
+    List<int[]> list = new ArrayList<>();
+    for(int i = 0; i < arr.length; i++){
+      if(hm.containsKey(arr[i])){
+        list.add(new int[]{hm.get(arr[i]),arr[i]}); // dyanmic
+      }
+      //hm.add(i);
+    }
+    int[][] res = new int[list.size()][2];
+    int l = 0;
+    //list tp int[][]
+    for(int[] m : list) res[l++] = m;
+    //  System.out.println(list);
+    return res;
   }
 
   public static int countPairs(List<Integer> arr, long k) {

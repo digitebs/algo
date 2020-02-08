@@ -11,9 +11,9 @@ public class MinimumSalesPath {
   int getCheapestCost(GraphNode rootNode) {
     // your code goes here
     if (rootNode == null) return 0;
+
     GraphNode[] c = rootNode.children;
-    if (c == null) return rootNode.val;
-    if (c.length == 0) return rootNode.val;
+    if (c == null || c.length == 0) return rootNode.val;
 
     int min = Integer.MAX_VALUE;
     for (int i = 0; i < c.length; i++) {
@@ -28,26 +28,31 @@ public class MinimumSalesPath {
    * *******************************************
    */
   public static void main(String[] args) {
-    GraphNode n = new GraphNode(0);
-    GraphNode a, b, c, d, e, f, g, h, i, j, k;
-    n.children = new GraphNode[] {a = new GraphNode(5), b = new GraphNode(3), c = new GraphNode(6)};
-    a.children = new GraphNode[] {d = new GraphNode(4)};
+    GraphNode r = new GraphNode(0);
+    GraphNode a = new GraphNode(5);
+    GraphNode b = new GraphNode(3);
+    GraphNode c = new GraphNode(6);
+    GraphNode d = new GraphNode(4);
+    GraphNode e = new GraphNode(2);
+    GraphNode f = new GraphNode(0);
+    GraphNode g = new GraphNode(1);
+    GraphNode h = new GraphNode(5);
+    GraphNode i = new GraphNode(1);
+    GraphNode j = new GraphNode(1);
+    GraphNode k = new GraphNode(10);
 
-    b.children =
-        new GraphNode[] {
-          e = new GraphNode(2), f = new GraphNode(0),
-        };
+    r.children = new GraphNode[] {a, b, c};
 
-    c.children =
-        new GraphNode[] {
-          g = new GraphNode(1), h = new GraphNode(5),
-        };
 
-    e.children = new GraphNode[] {i = new GraphNode(1)};
-    i.children = new GraphNode[] {j = new GraphNode(1)};
+    a.children = new GraphNode[] {d};
+    b.children = new GraphNode[] {e, f};
+    c.children = new GraphNode[] {g, h};
 
-    f.children = new GraphNode[] {k = new GraphNode(10)};
+    e.children = new GraphNode[] {i};
+    f.children = new GraphNode[] {k};
 
-    System.out.println(new MinimumSalesPath().getCheapestCost(n));
+    i.children = new GraphNode[] {j};
+
+    System.out.println(new MinimumSalesPath().getCheapestCost(r));
   }
 }

@@ -1,22 +1,25 @@
 package recursion;
 
 public class ReverseWords {
-  static void reverse(char[] str, int s, int e) {
+  /*
+    O(n) ???
+   */
+  static void reverse(char[] str, int start, int end) {
 
-    // for(int i =e-1;i< s;i--){
+    // for(int i =end-1;i< start;i--){
     // check its a space mark teh index
-    while (s < e) {
+    while (start < end) {
       // swap
-      swap(str, s, e);
-      s++;
-      e--;
+      swap(str, start, end);
+      start++;
+      end--;
     }
   }
 
   static char[] swap(char[] arr, int i, int j) {
-    char t = arr[i];
+    char tmp = arr[i];
     arr[i] = arr[j];
-    arr[j] = t;
+    arr[j] = tmp;
     return arr;
   }
 
@@ -27,17 +30,17 @@ public class ReverseWords {
    * @return
    */
   static char[] reverseString(char[] str) {
-    int e = str.length - 1;
-    reverse(str, 0, e);
-    for (int i = e; i > 0; i--) {
+    int end = str.length - 1;
+    reverse(str, 0, end);
+    for (int start = end; start > 0; start--) {
       // check its a space mark teh index
-      if (str[i] == ' ') {
-        reverse(str, i + 1, e);
-        e = i - 1;
+      if (str[start] == ' ') {
+        reverse(str, start + 1, end);
+        end = start - 1;
       }
     }
     // reverse the last word
-    reverse(str, 0, e);
+    reverse(str, 0, end);
 
     return str;
   }
