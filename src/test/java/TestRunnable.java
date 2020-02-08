@@ -32,7 +32,6 @@ public class TestRunnable {
     Thread t2 = new Thread(l);
 
     t1.start();
-    ;
     t2.start();
   }
 }

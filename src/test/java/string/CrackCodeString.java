@@ -241,98 +241,6 @@ public class CrackCodeString {
     return -1;
   }
 
-  @Test
-  public void generateMatrix() {
-    System.out.println(generateMatrix(7));
-  }
-
-  public ArrayList<ArrayList<Integer>> generateMatrix(int a) {
-    ArrayList<ArrayList<Integer>> result = new ArrayList<>();
-
-    for (int i = 0; i < a; i++) {
-      ArrayList r = new ArrayList<>();
-      for (int j = 0; j < a; j++) {
-        r.add(0);
-      }
-      result.add(r);
-    }
-
-    // int[] dir= new int[]{0,1,2,3};
-    int dir = 0;
-    int l = 0;
-    int m = a - 1;
-
-    int rounds = 0;
-    int loc = -1;
-    for (int i = 0; i < a * a - 1; i++) {
-
-      if (dir % m == 0) {
-        dir = 0;
-        rounds++;
-        loc++;
-
-        if (loc == 4) loc = 0;
-      }
-
-      if (rounds == 5 - l) {
-        l++;
-        rounds = 0;
-        m -= l * 2;
-        System.out.println("reset rounds: " + l + " " + rounds + " " + m);
-      }
-
-      System.out.println("rounds" + rounds);
-      System.out.println(loc + " " + dir + " " + m + " " + i + " " + l);
-
-      /* top */
-      if (loc == 0) {
-        result.get(l).set(dir + l, i + 1);
-      }
-
-      if (loc == 1) result.get(dir + l).set(a - 1 - l, i + 1);
-
-      if (loc == 2) result.get(a - 1 - l).set(a - 1 - dir - l, i + 1);
-
-      if (loc == 3) result.get(a - 1 - l - (dir)).set(l, i + 1);
-
-      dir++;
-      System.out.println(result);
-    }
-
-    return result;
-  }
-
-  @Test
-  public void setZeroes() {
-    ArrayList<ArrayList<Integer>> arrays = new ArrayList<ArrayList<Integer>>();
-    arrays.add(new ArrayList(Arrays.asList(1, 1)));
-    arrays.add(new ArrayList(Arrays.asList(1, 0)));
-
-    System.out.println(arrays + " " + arrays.size());
-    setZeroes(arrays);
-    System.out.println(arrays);
-  }
-
-  public void setZeroes(ArrayList<ArrayList<Integer>> a) {
-
-    boolean current = false;
-    boolean previous = false;
-
-    int rowSize = a.size();
-    int colSize = a.get(0).size();
-
-    for (int i = 0; i <= colSize; i++) {
-      if (a.get(i).contains(0)) {
-        a.get(i).set(i, 0);
-      }
-    }
-
-    for (int i = 0; i <= rowSize; i++) {
-      if (a.get(i).contains(0)) {
-        a.get(i).set(i, 0);
-      }
-    }
-  }
 
   @Test
   public void insert() {
@@ -503,35 +411,6 @@ public class CrackCodeString {
     }
 
     return res;
-  }
-
-  @Test
-  public void getRow() {
-
-    System.out.println(getRow(4));
-  }
-
-  public ArrayList<Integer> getRow(int a) {
-    ArrayList<Integer> prev = null;
-    ArrayList<Integer> curr;
-    int k = 1;
-
-    if (a == 0) {
-      curr = new ArrayList<>();
-      curr.add(k);
-      return curr;
-    }
-    for (int i = 0; i < a; i++) {
-      curr = new ArrayList<>();
-      curr.add(k);
-      for (int j = 0; prev != null && j < prev.size() - 1; j++) {
-        curr.add(prev.get(j) + prev.get(j + 1));
-      }
-      curr.add(k);
-      prev = curr;
-    }
-
-    return prev;
   }
 
   @Test

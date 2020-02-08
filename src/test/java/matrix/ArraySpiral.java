@@ -91,7 +91,7 @@ public class ArraySpiral {
   }
 
   public static void main(String[] args) {
-    int[][] arr = spiral2(3);
+    int[][] arr = spiral2(7);
     System.out.print(Arrays.deepToString(arr));
   }
 }
