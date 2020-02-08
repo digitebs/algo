@@ -9,26 +9,24 @@ public class LargestSmallestNumber {
   */
   static int binarySearch(List<Integer> arr, int target) {
     int left = 0;
-    int right = arr.size();
-    int mid = (left + right) / 2;
+    int right = arr.size() ;
+
     // 5 9 11 12 13 14 20 25
     while (left < right) {
-      // System.out.println(left + " " + right + " " + mid);
-      if (right - left <= 1 && arr.get(mid) <= target) {
-        return mid;
-      } else if (target <= arr.get(mid)) {
-        right = mid;
-      } else {
-        left = mid;
-      }
-      mid = (left + right) / 2;
+      int mid = (left + right) / 2;
+        if (target <= arr.get(mid)) {
+           right = mid;
+        } else {
+            left = mid+1;
+        }
+    //  System.out.println(right+ " "+mid+" "+left);
     }
-    return -1;
+    return left-1;
   }
 
   public static void main(String[] args) {
     //
     List list = Arrays.asList(5, 9, 11, 12, 13, 14, 20, 25);
-    System.out.println(LargestSmallestNumber.binarySearch(list, 1));
+    System.out.println(LargestSmallestNumber.binarySearch(list, 6));
   }
 }
