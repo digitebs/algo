@@ -53,14 +53,14 @@ public class ZeroMatrix {
   }
 
   static int[][] setZeroes2(int[][] matrix) {
-    int R = matrix.length;
-    int C = matrix[0].length;
+    int n = matrix.length;
+    int m = matrix[0].length;
     Boolean isCol = false;
-    for (int i = 0; i < R; i++) {
+    for (int i = 0; i < n; i++) {
       if (matrix[i][0] == 0) {
         isCol = true;
       }
-      for (int j = 1; j < C; j++) {
+      for (int j = 1; j < m; j++) {
         if (matrix[i][j] == 0) {
           matrix[i][0] = 0;
           matrix[0][j] = 0;
@@ -68,8 +68,8 @@ public class ZeroMatrix {
       }
     }
 
-    for (int i = 1; i < R; i++) {
-      for (int j = 1; j < C; j++) {
+    for (int i = 1; i < n; i++) {
+      for (int j = 1; j < m; j++) {
         if (matrix[i][0] == 0 || matrix[0][j] == 0) {
           matrix[i][j] = 0;
         }
@@ -78,14 +78,14 @@ public class ZeroMatrix {
 
     // 1st row
     if (matrix[0][0] == 0) {
-      for (int j = 0; j < C; j++) {
+      for (int j = 0; j < m; j++) {
         matrix[0][j] = 0;
       }
     }
 
     // 1st column
     if (isCol) {
-      for (int i = 0; i < R; i++) {
+      for (int i = 0; i < n; i++) {
         matrix[i][0] = 0;
       }
     }
