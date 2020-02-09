@@ -27,6 +27,7 @@ public class CourseSchedule {
     return false;
   }
 
+  /* Edges is represented as edge list, need extra sorting */
   public boolean canFinish(int n, int[][] edges) {
     Arrays.sort(edges, (a, b) -> a[0] - b[0]);
     boolean[] visited = new boolean[n];

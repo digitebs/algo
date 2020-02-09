@@ -3,6 +3,13 @@ package sort;
 import java.util.Arrays;
 
 public class PancakeSort {
+
+  /**
+   * Sort the array using pancakeSort
+   *
+   * @param arr array to be modified
+   * @return sorted array
+   */
   static int[] pancakeSort(int[] arr) {
     // your code goes here
     int k = arr.length;
@@ -17,24 +24,29 @@ public class PancakeSort {
     return arr;
   }
 
-  /*
-   you need to find the max
-  */
+  /**
+   * Find the index of max element for the given arr
+   * O(n)
+   * @param arr
+   * @param k
+   * @return index of max element
+   */
   static int max(int[] arr, int k) {
-    int idx = 0;
+    int index = 0;
     for (int i = 0; i < k; i++) {
-      if (arr[idx] < arr[i]) {
-        //  max = arr[i];
-        idx = i;
-      }
-    }
-    return idx;
+      if (arr[index] < arr[i])  index = i;
+    return index;
   }
 
+  /**
+   * Reverse arr
+   * O(n/2)
+   * @param arr the array to be reverse
+   * @param k exclusive of k
+   */
   static void flip(int[] arr, int k) {
     // floor((k+1)/ 2)
     for (int i = 0; i < k / 2; i++) {
-      // System.out.println(k -i);
       int temp = arr[i];
       arr[i] = arr[k - i - 1]; // swap
       arr[k - i - 1] = temp;
@@ -42,10 +54,10 @@ public class PancakeSort {
   }
 
   public static void main(String[] args) {
-    int[] arr = new int[] {1, 5, 4, 3, 2};
-    // flip(arr, 5);
-    // System.out.println(Arrays.toString(arr));
+    int[] arr = new int[] {2,1};
+//    flip(arr, arr.length);
+//    System.out.println(Arrays.toString(arr));
     PancakeSort.pancakeSort(arr);
-    // System.out.println(Arrays.toString(arr));
+    System.out.println(Arrays.toString(arr));
   }
 }
