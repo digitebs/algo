@@ -2,6 +2,16 @@ package string;
 
 import java.util.Arrays;
 
+/**
+ Input:
+ ["a","a","b","b","c","c","c"]
+
+ Output:
+ Return 6, and the first 6 characters of the input array should be: ["a","2","b","2","c","3"]
+
+ Explanation:
+ "aa" is replaced by "a2". "bb" is replaced by "b2". "ccc" is replaced by "c3".
+ */
 public class StringCompression {
   static String compression(String s1) {
     StringBuilder res = new StringBuilder().append(s1.charAt(0));
@@ -17,6 +27,9 @@ public class StringCompression {
     return res.length() < s1.length() ? res.toString() : s1;
   }
 
+  /*
+   Given an array of characters, compress it in-place.
+  */
   static int compression(char[] chars) {
     // StringBuilder res = new StringBuilder().append(s1.charAt(0));
     int p = 0, count = 0;
