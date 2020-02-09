@@ -12,10 +12,9 @@ public class NumberOfIslands {
 
   // using recursion, dfs
   public void connect(char[][] grid, int x, int y) {
-    if (x < 0 || y < 0 || x >= grid.length || y >= grid[0].length) return;
-    if (grid[x][y] == '0') return;
+    if (x < 0 || y < 0 || x >= grid.length || y >= grid[0].length || grid[x][y] == '0') return;
     grid[x][y] = '0';
-    for (int k = 0; k < 4; k++) connect(grid, x + dx[k], y + dy[k]);
+    for (int d = 0; d < 4; d++) connect(grid, x + dx[d], y + dy[d]);
   }
 
   public int numIslands(char[][] grid) {

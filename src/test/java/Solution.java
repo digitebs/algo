@@ -18,7 +18,6 @@ public class Solution {
     strings.add("Hello, World!");
     strings.add("Welcome to CoderPad.");
 
-    Collections.binarySearch(strings,"sss");
     for (String string : strings) {
       System.out.println(string);
     }
