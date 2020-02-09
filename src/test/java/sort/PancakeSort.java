@@ -33,7 +33,7 @@ public class PancakeSort {
    */
   static int max(int[] arr, int k) {
     int index = 0;
-    for (int i = 0; i < k; i++) {
+    for (int i = 0; i < k; i++)
       if (arr[index] < arr[i])  index = i;
     return index;
   }
