@@ -13,7 +13,6 @@ import static java.lang.System.out;
 
 /** Created by johnlim on 10/2/16. */
 public class Solution {
-
   public static void main(String args[]) {
     ArrayList<String> strings = new ArrayList<String>();
     strings.add("Hello, World!");
