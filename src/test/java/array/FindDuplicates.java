@@ -28,6 +28,7 @@ public class FindDuplicates {
     return res.stream().mapToInt(c -> c).toArray();
   }
 
+  /* O(nlogn) */
     static int[] findDuplicate2(int[] arr1, int[] arr2) {
         List<Integer> res = new ArrayList<>();
         for(int a: arr1){

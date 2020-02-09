@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 /*
-    4 sum return 1st duplicate
- */
+   4 sum return 1st duplicate
+*/
 public class FourSumArray {
   static int[] findArrayQuadruplet(int[] arr, int s) {
     // your code goes here
