@@ -2,6 +2,19 @@ package dp;
 
 import java.util.Arrays;
 
+/*
+  There are N children standing in a line. Each child is assigned a rating value.
+
+  You are giving candies to these children subjected to the following requirements:
+
+  Each child must have at least one candy.
+  Children with a higher rating get more candies than their neighbors.
+  What is the minimum candies you must give?
+
+  Input: [1,0,2]
+  Output: 5
+  Explanation: You can allocate to the first, second and third child with 2, 1, 2 candies respectively.
+ */
 public class Candies {
 
   // linear reverse traversal

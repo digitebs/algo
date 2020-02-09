@@ -1,6 +1,6 @@
 package tree;
 
-import model.Node;
+import model.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
 public class RightSideView {
   List<Integer> res = new ArrayList<>();
 
-  public void preorder(Node root, int level) {
+  public void preorder(TreeNode root, int level) {
 
     if (root == null) return;
     if (res.size() <= level) res.add(root.val);
@@ -18,7 +18,7 @@ public class RightSideView {
     preorder(root.right, level + 1);
   }
 
-  public List<Integer> rightSideView(Node root) {
+  public List<Integer> rightSideView(TreeNode root) {
     preorder(root, 0);
     return res;
   }

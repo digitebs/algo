@@ -2,7 +2,6 @@ package string;
 
 import java.util.Arrays;
 
-import static java.lang.Math.min;
 import static java.lang.System.out;
 
 public class VersionCompare {
@@ -24,7 +23,7 @@ public class VersionCompare {
     arr1 = (arr1.length == 0) ? new String[] {a} : clearZero(arr1);
     arr2 = (arr2.length == 0) ? new String[] {b} : clearZero(arr2);
 
-    for (int i = 0; i < min(arr1.length, arr2.length); i++) {
+    for (int i = 0; i < Math.min(arr1.length, arr2.length); i++) {
       arr1[i] = cropZero(arr1[i]);
       arr2[i] = cropZero(arr2[i]);
 
