@@ -1,8 +1,6 @@
 package array;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.lang.System.out;
@@ -16,7 +14,7 @@ import static java.lang.System.out;
  * <p>Input: candidates = [2,3,6,7], target = 7, Output: [ [7], [2,2,3] ]
  */
 public class CombinationSumArray {
-  public void combinationSum(
+  void combinationSum(
       int[] candidates,
       int j,
       int target,
@@ -35,7 +33,7 @@ public class CombinationSumArray {
     }
   }
 
-  public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
+  ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
     ArrayList<ArrayList<Integer>> res = new ArrayList<>();
     combinationSum(candidates, 0, target, new ArrayList<>(), res);
     return res;
