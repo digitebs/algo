@@ -16,23 +16,30 @@ public class WordCountEngine {
     document = document.replaceAll("[^a-zA-Z ]", "");
     String[] tokens = document.toLowerCase().split(" ");
 
-    LinkedHashMap<String, Integer> count = new LinkedHashMap<>();
-    for (String t : tokens) {
-      if (!t.isEmpty()) count.put(t, count.getOrDefault(t, 0) + 1);
-    }
+    HashMap<String, Integer> countMap = new HashMap<>();
+    for (String token : tokens)
+      if (!token.isEmpty()) countMap.put(token, countMap.getOrDefault(token, 0) + 1);
 
-    HashMap<Integer, List<String>> sorted = new HashMap<>();
-    for (Map.Entry<String, Integer> e : count.entrySet()) {
-      sorted.putIfAbsent(e.getValue(), new ArrayList<>());
-      List<String> list = sorted.get(e.getValue());
-      list.add(e.getKey());
-      sorted.put(e.getValue(), list);
+    // used the tokens as ordering
+    HashMap<Integer, List<String>> sortedMap = new HashMap<>();
+    for (String token : tokens) {
+      if (countMap.containsKey(token)) {
+        Integer key = countMap.remove(token);
+        sortedMap.putIfAbsent(key, new ArrayList<>());
+        sortedMap.get(key).add(token);
+      }
     }
-
+    /*
+      // if you use linked hashmap for count
+      for (Map.Entry<String, Integer> e : count.entrySet()) {
+        sorted.putIfAbsent(e.getValue(), new ArrayList<>());
+        sorted.get(e.getValue()).add(e.getKey());
+      }
+    }*/
     List<String[]> res = new ArrayList<>();
-    for (int i = tokens.length; i >= 1; i--) {
-      if (sorted.get(i) == null) continue;
-      for (String s : sorted.get(i)) {
+    for (int i = tokens.length; i >= 1; i--) { // start counting backward
+      if (sortedMap.get(i) == null) continue;
+      for (String s : sortedMap.get(i)) {
         String[] tmp = new String[2];
         tmp[0] = s;
         tmp[1] = String.valueOf(i);
