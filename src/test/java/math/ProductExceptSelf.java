@@ -12,12 +12,14 @@ public class ProductExceptSelf {
     // (1) * (3 * 4)
     // (1 * 2) * (4)
     // (1 * 2 * 3)
-    int[] dp = new int[nums.length];
-    for (int i = 0, product = 1; i < nums.length; i++) {
+    int n = nums.length;
+    int[] dp = new int[n];
+    if(n <= 1) return new int[]{};
+    for (int i = 0, product = 1; i < n; i++) {
       dp[i] = product;
       product *= nums[i]; // 1, 1*2, 1*2,*3 1st half
     }
-    for (int i = nums.length - 1, product = 1; i >= 0; i--){
+    for (int i = n - 1, product = 1; i >= 0; i--){
       dp[i] *= product;
       product *= nums[i]; // 4, 4*3, 4*3*2 lower half
     }
