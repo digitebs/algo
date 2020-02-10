@@ -16,17 +16,17 @@ public class WordCountEngine {
     document = document.replaceAll("[^a-zA-Z ]", "");
     String[] tokens = document.toLowerCase().split(" ");
 
-    HashMap<String, Integer> countMap = new HashMap<>();
+    Map<String, Integer> countMap = new HashMap<>();
     for (String token : tokens)
       if (!token.isEmpty()) countMap.put(token, countMap.getOrDefault(token, 0) + 1);
 
     // used the tokens as ordering
-    HashMap<Integer, List<String>> sortedMap = new HashMap<>();
+    Map<Integer, List<String>> sortedMap = new HashMap<>();
     for (String token : tokens) {
       if (countMap.containsKey(token)) {
-        Integer key = countMap.remove(token);
-        sortedMap.putIfAbsent(key, new ArrayList<>());
-        sortedMap.get(key).add(token);
+        int freq = countMap.remove(token);
+        sortedMap.putIfAbsent(freq, new ArrayList<>());
+        sortedMap.get(freq).add(token);
       }
     }
     /*
@@ -37,13 +37,10 @@ public class WordCountEngine {
       }
     }*/
     List<String[]> res = new ArrayList<>();
-    for (int i = tokens.length; i >= 1; i--) { // start counting backward
-      if (sortedMap.get(i) == null) continue;
-      for (String s : sortedMap.get(i)) {
-        String[] tmp = new String[2];
-        tmp[0] = s;
-        tmp[1] = String.valueOf(i);
-        res.add(tmp);
+    for (int freq = tokens.length; freq >= 1; freq--) { // start counting backward
+      if (sortedMap.get(freq) == null) continue;
+      for (String word : sortedMap.get(freq)) {
+        res.add(new String[]{word, Integer.toString(freq)});
       }
     }
     return res.toArray(new String[0][]);
