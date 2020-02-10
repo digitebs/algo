@@ -40,5 +40,8 @@ public class DroneMinEnergy {
               {10, 12, 15},
               {10, 10, 8}
             }));
+    System.out.println(
+        calcDroneMinEnergy(
+            new int[][] {{0, 2, 2}, {3, 5, 38}, {9, 20, 6}, {10, 12, 15}, {10, 10, 8}}));
   }
 }

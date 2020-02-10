@@ -17,6 +17,16 @@ public class TwoSumsArray {
   }
 
 
+  // works sorted
+  static int[] twoSumPointers(int[] nums, int target){
+    int i =0, j = nums.length-1;
+    while(i < j){
+      if(nums[i] + nums[j] == target) return new int[]{i,j};
+      else if( nums[i] + nums[j] > target) j--;
+      else i++;
+    }
+    return new int[]{-1,-1};
+  }
   // no duplicates
   // x - y = k // difference
   // order by y
@@ -62,6 +72,7 @@ public class TwoSumsArray {
   }
 
   public static void main(String[] args) {
+    System.out.println(Arrays.toString(twoSumPointers(new int[]{0,2,5,6,8}, 11)));
     System.out.println(countPairs(Arrays.asList(1, 3, 46, 1, 3, 9), 47));
     // System.out.println(Arrays.toString(new TwoSumsArray().twoSum(new int[]{2, 7, 11, 15}, 9)));
   }
