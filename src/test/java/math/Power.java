@@ -34,6 +34,12 @@ public class Power {
     return false;
   }
 
+  /*
+       4^y = n
+       log4(n) = y
+       log10(n)/log10(3) formula for base change
+       %1 to check if its a whole number
+   */
   public static boolean isPowerOfThree(int n) {
     return (Math.log10(n) / Math.log10(3)) % 1 == 0;
     //  return n > 0 && 1162261467 % n == 0;

@@ -4,13 +4,13 @@ public class ReverseWords {
   /*
     O(n) ???
    */
-  static void reverse(char[] str, int start, int end) {
+  static void reverse(char[] arr, int start, int end) {
 
     // for(int i =end-1;i< start;i--){
     // check its a space mark teh index
     while (start < end) {
       // swap
-      swap(str, start, end);
+      swap(arr, start, end);
       start++;
       end--;
     }
