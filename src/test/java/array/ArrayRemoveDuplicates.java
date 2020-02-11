@@ -1,26 +1,47 @@
 package array;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import static java.lang.System.out;
 
+/*
+  only works on sort array
+ */
 public class ArrayRemoveDuplicates {
   public int removeDuplicates(ArrayList<Integer> a) {
     int k = 0;
     boolean seen = false;
     for (int i = 1; i < a.size(); i++) {
       if (a.get(k).equals(a.get(i))) {
-        if (!seen) {
+      /*  if (!seen) {
           seen = true;
           a.set(++k, a.get(i));
-        }
+        }*/
       } else {
-        seen = false; // reset //if they are not equal then we move our pointer to the next
         a.set(++k, a.get(i));
       }
     }
     return k + 1;
+  }
+
+  public static final void swap(int[] a, int i, int j) {
+    a[i] = a[i] ^ a[j];
+    a[j] = a[i] ^ a[j];
+    a[i] = a[i] ^ a[j];
+  }
+
+  public int removeDuplicates(int[] nums) {
+    int j = 0;
+    for (int i = 0; i < nums.length - 1; i++) {
+      if (nums[j] != nums[i + 1]) {
+        swap(nums, ++j, i + 1);
+      }
+    }
+    // System.out.println(Arrays.toString(nums));
+    return j + 1;
   }
 
   public static void main(String args[]) {
@@ -37,5 +58,10 @@ public class ArrayRemoveDuplicates {
     a.add(1005);
     out.println(new ArrayRemoveDuplicates().removeDuplicates(a));
     out.println(Arrays.toString(a.toArray()));
+    /*
+    System.out.println(removeDuplicates(new int[] {1}));
+    System.out.println(removeDuplicates(new int[] {1, 1, 2, 2}));
+    System.out.println(removeDuplicates(new int[] {1, 1, 2, 3, 3, 4, 350, 351}));
+    */
   }
 }
