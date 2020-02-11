@@ -1,5 +1,6 @@
 package map;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
@@ -18,6 +19,21 @@ public class LongestSubstringNoDup {
       hm.put(c, i); // update the index
     }
     return maxLen;
+  }
+
+  static int longestsub3(String s) {
+    int[] index = new int[256];
+    Arrays.fill(index,-1);
+    int max = 0;
+    int j = -1;
+
+    for (int i = 0; i < s.length(); i++) {
+      char c = s.charAt(i);
+      j = Math.max(j,index[c]);
+      max = Math.max(max, i -j);
+      index[c] = i;
+    }
+    return max;//= Math.max(max, s.length() - j);
   }
 
   // a b c d b c a f
@@ -45,5 +61,17 @@ public class LongestSubstringNoDup {
     System.out.println(longestsub("abdaeedfg"));
     System.out.println(longestsub("ninenine"));
     System.out.println(longestsub2("faaaaaaaaaaaf"));
+    System.out.println(longestsub("au"));
+
+    System.out.println("~$ " + longestsub3("a"));
+    System.out.println("~$ " + longestsub3("au"));
+    System.out.println("~$ " + longestsub3("bdb"));
+    System.out.println("~$ " + longestsub3("aa"));
+    System.out.println("~$ " + longestsub3("dvdf"));
+    System.out.println("~$ " + longestsub3("tmmzuxt"));
+    System.out.println("~$ " + longestsub3("tmmzuxtmbcdegtmbcdekgt"));
+    System.out.println("~$ " + longestsub3("abcabcbb"));
+    System.out.println("~$ " + longestsub3("nfpdmpi"));
+    System.out.println("~$ " + longestsub3("uqinntq"));
   }
 }
