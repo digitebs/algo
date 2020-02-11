@@ -1,9 +1,13 @@
-package recursion;
+package string;
 
+/*
+ given an array of characters reverse the order of words in the arrayseparated by' '.
+
+*/
 public class ReverseWords {
   /*
-    O(n) ???
-   */
+   O(n) ???
+  */
   static void reverse(char[] str, int start, int end) {
 
     // for(int i =end-1;i< start;i--){
@@ -46,6 +50,12 @@ public class ReverseWords {
   }
 
   public static void main(String[] args) {
-    System.out.print(ReverseWords.reverseString(new char[] {'a', 'b', ' ', 'c', 'd'}));
+    System.out.println(ReverseWords.reverseString(new char[] {'a', 'b', ' ', 'c', 'd'}));
+    System.out.println(
+        ReverseWords.reverseString(
+            new char[] {
+              'r', 'a', 'k', 'u', 't', 'e', 'n', ' ',' ',' ',' ',' ', 'i', 's', ' ', ' ', 'a', 'w', 'e', 's', 'o',
+              'm', 'e'
+            }));
   }
 }
