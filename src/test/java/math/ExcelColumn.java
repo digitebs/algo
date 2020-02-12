@@ -21,7 +21,9 @@ public class ExcelColumn {
   //
 
   public static void main(String[] args) {
-    // System.out.println(convertToTitle(500));
+    System.out.println(convertToTitle(1));
+    System.out.println(convertToTitle(26));
+    System.out.println(convertToTitle(500));
     System.out.println(titleToNumber("AAA"));
   }
 }
