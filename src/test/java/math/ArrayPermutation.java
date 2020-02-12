@@ -28,7 +28,7 @@ public class ArrayPermutation {
   }
 
   public static void main(String args[]) {
-    char[] arr = new char[] {'a', 'b', 'c', 'd'};
+    char[] arr = new char[] {'c', 'd', 'h', 'k'};
     combine(arr, 0);
     System.out.println(res);
   }
