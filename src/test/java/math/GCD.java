@@ -13,6 +13,11 @@ public class GCD {
     return gcd(b, a % b);
   }
 
+  //
+  static int lcm(int a, int b) {
+    return a * b / gcd(a, b);
+  }
+
   public static int generalizedGCD(int num, int[] arr) {
     // WRITE YOUR CODE HERE
     int a = arr[0];
