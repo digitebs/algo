@@ -1,13 +1,15 @@
 package math;
 
 public class ExcelColumn {
-  public static String convertToTitle(int a) {
-    String str = "ZABCDEFGHIJKLMNOPQRSTUVWXY";
+  /*
+    nice problem for interview!
+   */
+  public static String convertToTitle(int c) {
     StringBuilder sb = new StringBuilder();
-    for (int t = a; t > 0; t /= 26) { // 26 letters
-      sb.append(str.charAt(t % 26));
-      if (t % 26 == 0) t -= 1; // backtrack!
-    }
+
+    do {
+      sb.append((char) ('A' + (--c % 26))); // subtract t by 1 before mod
+    } while ((c /= 26) > 0);
     return sb.reverse().toString();
   }
 
@@ -21,7 +23,9 @@ public class ExcelColumn {
   //
 
   public static void main(String[] args) {
-    // System.out.println(convertToTitle(500));
+    System.out.println(convertToTitle(1));
+    System.out.println(convertToTitle(26));
+    System.out.println(convertToTitle(500));
     System.out.println(titleToNumber("AAA"));
   }
 }
