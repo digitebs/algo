@@ -33,7 +33,6 @@ public class TrimTree {
       a.left.right = new TreeNode(5);
       a.right.left = new TreeNode(6);
       a.right.right = new TreeNode(7);
-      deleteBST(a,7);
       System.out.println(a.toList());
   }
 }
