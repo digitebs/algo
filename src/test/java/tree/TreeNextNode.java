@@ -1,26 +1,24 @@
 package tree;
 
 import model.Node;
+import model.TreeNode;
 
 public class TreeNextNode {
   /*
      if your given the parent, find next. o(n) solution
   */
-  Node findInOrderSuccessor(Node node) {
+  static Node findInOrderSuccessor(Node node) {
 
     if (node == null) return null;
     if (node.right != null) {
       Node left = node.right; // initially left is node right
-
       while (left != null && left.left != null) left = left.left;
       return left;
     }
 
     if (node.right == null) {
       Node curr = node;
-      while (curr != null && curr.parent != null && curr.parent.left.val != curr.val)
-        curr = curr.parent;
-      if (curr == null) return null;
+      while (curr.parent != null && curr.parent.left.val != curr.val) curr = curr.parent;
       return curr.parent;
     }
     return null;
@@ -67,5 +65,22 @@ public class TreeNextNode {
 
   }
 
-  public static void main(String[] args) {}
+  public static void main(String[] args) {
+    //
+    Node a = new Node(20);
+    a.left = new Node(9);
+    a.left.parent = a;
+    a.right = new Node(25);
+    a.right.parent = a;
+    a.left.left = new Node(5);
+    a.left.left.parent = a.left;
+    a.left.right = new Node(12);
+    a.left.right.parent = a.left;
+    a.right.left = new Node(11);
+    a.right.left.parent = a.right;
+    a.right.right = new Node(14);
+    a.right.right.parent = a.right;
+
+    System.out.println(findInOrderSuccessor(a).val);
+  }
 }
