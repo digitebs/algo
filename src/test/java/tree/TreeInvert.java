@@ -33,7 +33,7 @@ public class TreeInvert {
     }
 
     /*
-        bfs print
+        bfs print tree
      */
     static List<Integer> toList(TreeNode root){
         List<Integer> res = new ArrayList<>();
