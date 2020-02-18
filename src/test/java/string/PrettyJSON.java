@@ -2,8 +2,6 @@ package string;
 
 import java.util.ArrayList;
 
-import static java.lang.System.out;
-
 public class PrettyJSON {
   static ArrayList<String> prettyJSON(String a) {
     ArrayList<String> res = new ArrayList<>();
@@ -35,8 +33,6 @@ public class PrettyJSON {
 
   public static void main(String[] args) {
     ArrayList<String> lines = prettyJSON("[\"foo\", {\"bar\":[\"baz\",null,1.0,2]}]");
-    for (String l : lines) {
-      out.println(l);
-    }
+    lines.forEach(System.out::println);
   }
 }
