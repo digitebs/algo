@@ -2,6 +2,8 @@ package graph;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class GraphRegex {
   // implemented using adjacency matrix. nfa. non deterministic finite automata
@@ -11,10 +13,10 @@ public class GraphRegex {
   static ArrayList<Integer>[] bag; // adjacency list;
   static boolean visited[];
 
-  static void dfs(ArrayList<Integer>[] adj, int i) {
+  static void dfs(int i) {
     visited[i] = true;
-    for (Integer b : adj[i]) {
-      if (!visited[b]) dfs(adj, b);
+    for (Integer b : bag[i]) {
+      if (!visited[b]) dfs(b);
     }
   }
 
@@ -22,30 +24,30 @@ public class GraphRegex {
     int M = p.length();
     bag = new ArrayList[M + 1];
     visited = new boolean[M + 1];
-
     char[] re = p.toCharArray();
     for (int i = 0; i <= M; i++) {
       bag[i] = new ArrayList<>();
     }
     for (int i = 0; i < M; i++) {
-      if (i < M - 1 && p.charAt(i + 1) == '*') { // create an edge from previos;
+      if (i < M - 1 && re[i + 1] == '*') { // create an edge from previos;
         bag[i].add(i + 1);
         bag[i + 1].add(i);
       }
-      if (p.charAt(i) == '*') bag[i].add(i + 1);
+      if (re[i] == '*') bag[i].add(i + 1);
     }
-    dfs(bag, 0);
+    //    System.out.println(Arrays.deepToString(bag));
+    dfs(0);
+    Queue<Integer> match = new LinkedList<>();
     for (int i = 0; i < s.length(); i++) {
-      char c1 = s.charAt(i);
-      ArrayList<Integer> match = new ArrayList<>();
+      char c = s.charAt(i);
       for (int j = 0; j < M; j++) {
-        if ( !visited[j]) continue;
-        if (c1 == re[j] || re[j] == '.') match.add(j + 1);
+        if (!visited[j]) continue;
+        if (c == re[j] || re[j] == '.') match.offer(j + 1);
       }
 
-      // System.out.println(match+" "+re[match.get(0)]);
       visited = new boolean[M + 1]; // clear it all
-      match.forEach(m -> dfs(bag, m));
+      while (!match.isEmpty()) dfs(match.poll());
+      // System.out.println(Arrays.toString(visited));
     }
 
     return visited[M];
@@ -54,12 +56,12 @@ public class GraphRegex {
   public static void main(String[] args) {
     //  System.out.println(isMatch("acd", "ab*c."));
     GraphRegex gr = new GraphRegex();
-   // System.out.println(gr.isMatch("ab", ".*c"));
-   //  System.out.println(gr.isMatch("aa", "a*"));
-   // System.out.println(gr.isMatch("aab","c*a*b"));
-   // System.out.println(gr.isMatch("mississippi", "mis*is*p*."));
-    System.out.println(gr.isMatch("mississippi", "mis*is*ip*."));
-    //  System.out.println(isMatch("abbbbaz", "a.*a*"));
-    // System.out.println(isMatch("abbbbaz", "ab*a*"));
+    System.out.println(gr.isMatch("ab", ".*c"));
+    //     System.out.println(gr.isMatch("aa", "a*"));
+    //    System.out.println(gr.isMatch("aab","c*a*b"));
+    //    System.out.println(gr.isMatch("mississippi", "mis*is*p*."));
+    //    System.out.println(gr.isMatch("mississippi", "mis*is*ip*."));
+    System.out.println(isMatch("abbbbaz", "a.*a*"));
+    System.out.println(isMatch("abbbbaz", "ab*a*"));
   }
 }
