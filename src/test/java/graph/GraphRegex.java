@@ -42,6 +42,8 @@ public class GraphRegex {
         if ( !visited[j]) continue;
         if (c1 == re[j] || re[j] == '.') match.add(j + 1);
       }
+
+      // System.out.println(match+" "+re[match.get(0)]);
       visited = new boolean[M + 1]; // clear it all
       match.forEach(m -> dfs(bag, m));
     }
@@ -53,9 +55,9 @@ public class GraphRegex {
     //  System.out.println(isMatch("acd", "ab*c."));
     GraphRegex gr = new GraphRegex();
    // System.out.println(gr.isMatch("ab", ".*c"));
-     //System.out.println(gr.isMatch("aa", "a*"));
-    //System.out.println(gr.isMatch("aab","c*a*b"));
-    //System.out.println(gr.isMatch("mississippi", "mis*is*p*."));
+   //  System.out.println(gr.isMatch("aa", "a*"));
+   // System.out.println(gr.isMatch("aab","c*a*b"));
+   // System.out.println(gr.isMatch("mississippi", "mis*is*p*."));
     System.out.println(gr.isMatch("mississippi", "mis*is*ip*."));
     //  System.out.println(isMatch("abbbbaz", "a.*a*"));
     // System.out.println(isMatch("abbbbaz", "ab*a*"));
