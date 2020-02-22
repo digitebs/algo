@@ -1,21 +1,24 @@
 package graph;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class GraphRegex {
-
   // implemented using adjacency matrix. nfa. non deterministic finite automata
-  ArrayList<Integer>[] bag; // adjacency list;
-  boolean visited[];
+  // ArrayList<Integer>[] bag; // adjacency list;
+  // boolean visited[];
 
-  public void dfs(ArrayList<Integer>[] bag, int i) {
+  static ArrayList<Integer>[] bag; // adjacency list;
+  static boolean visited[];
+
+  static void dfs(ArrayList<Integer>[] adj, int i) {
     visited[i] = true;
-    for (Integer b : bag[i]) {
-      if (!visited[b]) dfs(bag, b);
+    for (Integer b : adj[i]) {
+      if (!visited[b]) dfs(adj, b);
     }
   }
 
-  public boolean isMatch(String s, String p) {
+  static boolean isMatch(String s, String p) {
     int M = p.length();
     bag = new ArrayList[M + 1];
     visited = new boolean[M + 1];
@@ -32,28 +35,29 @@ public class GraphRegex {
       if (p.charAt(i) == '*') bag[i].add(i + 1);
     }
     dfs(bag, 0);
-    ArrayList<Integer> pc = new ArrayList<>();
-    for (int i = 0; i <= M; i++) {
-      if (visited[i]) pc.add(i);
-    }
     for (int i = 0; i < s.length(); i++) {
       char c1 = s.charAt(i);
       ArrayList<Integer> match = new ArrayList<>();
-      for (int v : pc) {
-        if (v == M) continue;
-        if (c1 == re[v] || re[v] == '.') match.add(v + 1);
+      for (int j = 0; j < M; j++) {
+        if ( !visited[j]) continue;
+        if (c1 == re[j] || re[j] == '.') match.add(j + 1);
       }
       visited = new boolean[M + 1]; // clear it all
-      for (Integer m : match) dfs(bag, m);
-      pc = new ArrayList<>();
-      for (int j = 0; j <= M; j++) {
-        if (visited[j]) pc.add(j);
-      }
+      match.forEach(m -> dfs(bag, m));
     }
 
-    for (int v : pc) {
-      if (v == M) return true;
-    }
-    return false;
+    return visited[M];
+  }
+
+  public static void main(String[] args) {
+    //  System.out.println(isMatch("acd", "ab*c."));
+    GraphRegex gr = new GraphRegex();
+   // System.out.println(gr.isMatch("ab", ".*c"));
+     //System.out.println(gr.isMatch("aa", "a*"));
+    //System.out.println(gr.isMatch("aab","c*a*b"));
+    //System.out.println(gr.isMatch("mississippi", "mis*is*p*."));
+    System.out.println(gr.isMatch("mississippi", "mis*is*ip*."));
+    //  System.out.println(isMatch("abbbbaz", "a.*a*"));
+    // System.out.println(isMatch("abbbbaz", "ab*a*"));
   }
 }

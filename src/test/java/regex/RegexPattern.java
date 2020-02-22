@@ -47,6 +47,7 @@ public class RegexPattern {
     //  System.out.println(isMatch("acd", "ab*c."));
 
     System.out.println(isMatch("ab", ".*c"));
+    System.out.println(isMatch("aa", "a*"));
     System.out.println(isMatch("mississippi", "mis*is*p*."));
     //  System.out.println(isMatch("abbbbaz", "a.*a*"));
     // System.out.println(isMatch("abbbbaz", "ab*a*"));
