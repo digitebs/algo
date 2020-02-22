@@ -4,6 +4,8 @@ package search;
    right can be n-1( using mid-1) or n (using mid) as range
 
    if right is n-1 exit loop is <= else <
+
+   works only on non duplcates
 */
 public class BinarySearchPivot {
 
