@@ -27,7 +27,7 @@ public class BusiestPeriod {
   static int findBusiestPeriod(int[][] a) {
     // your code goes here
     int max = 0;
-    int res = 0;
+    int ts = 0;
     int num = 0;
 
     int people = a[0][1];
@@ -35,12 +35,10 @@ public class BusiestPeriod {
     else num -= people;
 
     for (int i = 1; i < a.length; i++) {
-      // if( a[i][0] == a[i-1][0]){
-      //    }
       if (a[i][0] != a[i - 1][0]) {
         if (max < num) {
           max = num;
-          res = a[i - 1][0]; // 8
+          ts = a[i - 1][0]; // 8
         }
       }
       people = a[i][1];
@@ -49,10 +47,10 @@ public class BusiestPeriod {
     }
     if (max < num) {
       max = num;
-      res = a[a.length - 1][0];
+      ts = a[a.length - 1][0];
     }
     // 1487901211, 7,  0
-    return res;
+    return ts;
   }
 
   public static void main(String[] args) {
@@ -68,6 +66,18 @@ public class BusiestPeriod {
               {1487901013, 1, 0},
               {1487901211, 7, 1},
               {1487901211, 7, 0}
+            }));
+    System.out.println(
+        findBusiestPeriod(
+            new int[][] {
+              {1487799425, 14, 1},
+              {1487799425, 4, 1},
+              {1487799425, 2, 1},
+              {1487800378, 10, 1},
+              {1487801478, 18, 1},
+              {1487901013, 1, 1},
+              {1487901211, 7, 1},
+              {1487901211, 7, 1}
             }));
 
     System.out.println(findBusiestPeriod(new int[][] {{1487799426, 21, 1}}));
