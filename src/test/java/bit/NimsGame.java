@@ -16,7 +16,8 @@ public class NimsGame {
 
   public static void main(String[] args) {
       System.out.println(nimsGame(new int[]{3,0,6}));
-      // if your the 1st one to move its should be imbalance else you lose
+      // if your the 1st one to move it should be imbalance else you lose
+      // e.g. 2 2 4
       // keep it always imbalance
       // the job of the 2nd one to move is to keep it always balance to win
       //     1 + 1
