@@ -18,7 +18,7 @@ public class GenerateParenthesis {
       gen(sb.append('('), o - 1, c);
       sb.deleteCharAt(sb.length() - 1); // backtracking
     }
-    if (c > 0 && c > o) {
+    if (c > o) {
       gen(sb.append(')'), o, c - 1);
       sb.deleteCharAt(sb.length() - 1); // backtracking
     }
@@ -30,6 +30,6 @@ public class GenerateParenthesis {
   }
 
   public static void main(String[] args) {
-    new GenerateParenthesis().generateParenthesis(3);
+    System.out.println(new GenerateParenthesis().generateParenthesis(3));
   }
 }
