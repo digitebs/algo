@@ -3,6 +3,11 @@ package search;
 public class RootNumber {
   /*
      root of a number
+
+     false positive method
+        newton method // using tangent line, 1 point
+        secant line // using triangle, 2 points
+     bisection method
   */
   static double root(double x, int n) {
     final double E = 0.001; // precision
