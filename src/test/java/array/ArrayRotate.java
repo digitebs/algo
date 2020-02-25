@@ -2,7 +2,16 @@ package array;
 
 import java.util.Arrays;
 
-/** Created by johnlim on 10/2/16. */
+/**
+ * given an array rotate the array to the right k times
+ *
+ * Input:
+ * {1, 2, 3, 4, 5, 6, 7} ,4
+ *
+ * Output:
+ * [4, 5, 6, 7, 1, 2, 3]
+ * Created by johnlim on 10/2/16.
+ * */
 public class ArrayRotate {
 
   // using in place swwap
@@ -16,7 +25,7 @@ public class ArrayRotate {
     }
   }
 
-  // in place but linear time by immediatly jumping to the target
+  // in place but linear time by immediatly jumping to the target O(n)
   public void rotateInPlace(int[] nums, int k) {
     k = k % nums.length;
     int count = 0;
@@ -34,7 +43,7 @@ public class ArrayRotate {
     }
   }
 
-  // rotate by reversal
+  // rotate by reversal O(n)
   public void rotateReverse(int[] nums, int k) {
     k %= nums.length;
     reverse(nums, 0, nums.length - 1);
@@ -52,8 +61,8 @@ public class ArrayRotate {
     }
   }
 
-  // rotate with additional array
-  public void rotate3(int[] A, int K) {
+  // rotate with additional array O(n)
+  public void rotateNew(int[] A, int K) {
     int[] r = new int[A.length];
     for (int i = 0; i < A.length; i++) {
       r[(i + K) % A.length] = A[i];
@@ -68,6 +77,12 @@ public class ArrayRotate {
     t.rotateInPlace(arr, 4);
     System.out.println(Arrays.toString(arr));
     int[] arr2 = new int[] {1, 2, 3, 4, 5, 6, 7};
-    t.rotate3(arr2, 4);
+    t.rotateNew(arr2, 11);
+    int[] arr3 = new int[] {1, 2, 3, 4, 5, 6, 7};
+    t.rotate(arr3, 11);
+    System.out.println(Arrays.toString(arr3));
+    int[] arr4 = new int[] {1, 2, 3, 4, 5, 6, 7};
+    t.rotateReverse(arr4, 11);
+    System.out.println(Arrays.toString(arr4));
   }
 }
