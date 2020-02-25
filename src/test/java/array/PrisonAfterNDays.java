@@ -3,10 +3,12 @@ package array;
 import java.util.Arrays;
 
 /*
-  given an array of lightbulb and n days, find the state of lightbulb after n days
-  each day the state of the lightbulb changes base on:
-  1. if the adjacent lightbulb are the same you turn it on
-  2. else turn off, the 1st and last element has only 1 adjacent lightbulb thus turn off
+  given an array of lightbulb and switch, find the state of lightbulb after pressing the switch n times
+  each time you press the switch the state of the lightbulb changes base on:
+  1. if the adjacent lightbulb are the same the lightbulb turns it on
+  2. else turn off,
+
+  Note: the 1st and last element has only 1 adjacent lightbulb thus turn off
 
   {0 1 0 0 0 0 0 1}, n = 1
 
