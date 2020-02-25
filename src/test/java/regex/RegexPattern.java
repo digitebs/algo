@@ -2,9 +2,9 @@ package regex;
 
 /**
  * Given an input string (s) and a pattern (p), implement regular expression matching with support
- * for '.' and '*'.
+ * for a-z, '.' and '*'.
  *
- * <p>'.' Matches any single character. '*' Matches zero or more of the preceding element.
+ * '.' Matches any single character. '*' Matches zero or more of the preceding element.
  *
  * @see graph.GraphRegex
  */

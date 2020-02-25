@@ -1,7 +1,19 @@
 package array;
 
-import java.util.*;
+import java.util.Arrays;
 
+/*
+  given an array of lightbulb and n days, find the state of lightbulb after n days
+  consider:
+  each day the state of the lightbulb changes
+  1. if adjacent lightbulb are the same you turn it on
+  2. else turn off.
+
+  [0 1 0 0 0 0 0 1], n = 1
+
+  [0 1 0 1 1 1 0 0] 1
+  [0 1 1 0 1 0 0 0] 2
+ */
 public class PrisonAfterNDays {
   public int[] prisonAfterNDays(int[] cells, int N) {
     int m = cells.length;
@@ -19,8 +31,12 @@ public class PrisonAfterNDays {
   public static void main(String[] args) {
     PrisonAfterNDays pAnD = new PrisonAfterNDays();
     System.out.println(
+        Arrays.toString(pAnD.prisonAfterNDays(new int[] {1, 1, 0, 1, 1, 0, 1, 1}, 6)));
+    System.out.println(
         Arrays.toString(pAnD.prisonAfterNDays(new int[] {1, 0, 0, 1, 0, 0, 1, 0}, 1000000000)));
-    //  Arrays.toString(pAnD.prisonAfterNDays(new int[]{1,1,0,1,1,0,1,1},6))
-    // Arrays.toString(pAnD.prisonAfterNDays(new int[] {0, 1, 0, 1, 1, 0, 0, 1}, 7)));
+    System.out.println(
+        Arrays.toString(pAnD.prisonAfterNDays(new int[] {0, 1, 0, 1, 1, 0, 0, 1}, 7)));
+    System.out.println(
+        Arrays.toString(pAnD.prisonAfterNDays(new int[] {0, 1, 0, 0, 0, 0, 0, 1}, 10)));
   }
 }
