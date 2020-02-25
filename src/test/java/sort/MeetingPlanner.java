@@ -1,7 +1,31 @@
 package sort;
 
-public class MeetingPlanner {
+import java.util.Arrays;
 
+
+/*
+
+     given array of sorted free timeslot(start,end) of 2 person. find a timeslot where both person
+     can attend the meeting given the meeting last k time.
+
+      Input:
+      k = 8
+      person a:
+      {
+        {10, 50},
+        {50, 120},
+        {140, 210}
+      }
+
+      person b:
+      {
+        {0, 15},
+        {60, 70}
+      }
+
+      Output: [60, 68]
+ */
+public class MeetingPlanner {
   /*
      can use 2 pointer since they are sorted by start time.
      m + k
@@ -30,13 +54,18 @@ public class MeetingPlanner {
 
   public static void main(String[] args) {
 
-    meetingPlanner(
-        new int[][] {
-          {10, 50},
-          {50, 120},
-          {140, 210}
-        },
-        new int[][] {{0, 15}, {60, 70}},
-        8);
+    System.out.println(
+        Arrays.toString(
+            meetingPlanner(
+                new int[][] {
+                  {10, 50},
+                  {50, 120},
+                  {140, 210}
+                },
+                new int[][] {
+                  {0, 15},
+                  {60, 70}
+                },
+                8)));
   }
 }
