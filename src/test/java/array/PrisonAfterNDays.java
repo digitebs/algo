@@ -10,10 +10,12 @@ import java.util.Arrays;
 
   Note: the 1st and last element has only 1 adjacent lightbulb thus turn off
 
-  {0 1 0 0 0 0 0 1}, n = 1
+  {0, 1, 0, 0, 0, 0, 0, 1}
 
-  [0 1 0 1 1 1 0 0] 1
-  [0 1 1 0 1 0 0 0] 2
+  [0, 1, 0, 1, 1, 1, 0, 0] 1
+  [0, 1, 1, 0, 1, 0, 0, 0] 2
+  ...
+  [0, 1, 0, 1, 1, 0, 0, 0] 10
  */
 public class PrisonAfterNDays {
   public int[] prisonAfterNDays(int[] cells, int N) {
@@ -38,6 +40,6 @@ public class PrisonAfterNDays {
     System.out.println(
         Arrays.toString(pAnD.prisonAfterNDays(new int[] {0, 1, 0, 1, 1, 0, 0, 1}, 7)));
     System.out.println(
-        Arrays.toString(pAnD.prisonAfterNDays(new int[] {0, 1, 0, 0, 0, 0, 0, 1}, 10)));
+        Arrays.toString(pAnD.prisonAfterNDays(new int[] {0, 1, 0, 0, 0, 0, 0, 1}, 2)));
   }
 }
