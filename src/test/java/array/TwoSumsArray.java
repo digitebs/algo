@@ -7,6 +7,20 @@ import java.util.List;
 
 /** 2 sums can be solve by storing the diff in the hash, or n^2 loop */
 public class TwoSumsArray {
+  // just the count
+  private int twoSumDuplicate(int[] nums, int target) {
+    int count = 0;
+    int[] supplement = new int[target];
+    // HashMap<Integer, Integer> hm = new HashMap<>();
+    for (int i = 0; i < nums.length; i++) {
+      int sup = target - nums[i];
+      if (sup >= 0) {
+        count += supplement[sup];
+      }
+      supplement[nums[i]]++;
+    }
+    return count;
+  }
   private int[] twoSum(int[] nums, int target) {
     HashMap<Integer, Integer> hm = new HashMap<>();
     for (int i = 0; i < nums.length; i++) {
