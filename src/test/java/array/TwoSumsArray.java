@@ -8,17 +8,16 @@ import java.util.List;
 /** 2 sums can be solve by storing the diff in the hash, or n^2 loop */
 public class TwoSumsArray {
   // just the count
-  private int twoSumDuplicate(int[] nums, int target) {
+  static int twoSumDup(int[] nums, int target) {
     int count = 0;
-    int[] supplement = new int[target];
-    // HashMap<Integer, Integer> hm = new HashMap<>();
+    HashMap<Integer, Integer> hm = new HashMap<>();
     for (int i = 0; i < nums.length; i++) {
-      int sup = target - nums[i];
-      if (sup >= 0) {
-        count += supplement[sup];
-      }
-      supplement[nums[i]]++;
+      // if (hm.get(nums[i]) != null)
+      if(hm.get(nums[i])!=null)
+        count+=hm.get(nums[i]);
+      hm.put(target - nums[i], hm.getOrDefault(target - nums[i],0)+1);
     }
+    // System.out.println(count);
     return count;
   }
   private int[] twoSum(int[] nums, int target) {
@@ -86,8 +85,9 @@ public class TwoSumsArray {
   }
 
   public static void main(String[] args) {
-    System.out.println(Arrays.toString(twoSumPointers(new int[]{0,2,5,6,8}, 11)));
-    System.out.println(countPairs(Arrays.asList(1, 3, 46, 1, 3, 9), 47));
+    // System.out.println(Arrays.toString(twoSumPointers(new int[]{0,2,5,6,8}, 11)));
+    // System.out.println(countPairs(Arrays.asList(1, 3, 46, 1, 3, 9), 47));
+    System.out.println(twoSumDup(new int[]{2,2,2,2,2},4));
     // System.out.println(Arrays.toString(new TwoSumsArray().twoSum(new int[]{2, 7, 11, 15}, 9)));
   }
 }
