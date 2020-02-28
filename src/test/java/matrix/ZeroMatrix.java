@@ -33,20 +33,20 @@ public class ZeroMatrix {
   }
 
   static int[][] setZeroes(int[][] matrix) {
-    List<Point> p = new ArrayList<>();
+    List<Point> points = new ArrayList<>();
 
     for (int i = 0; i < matrix.length; i++) {
       for (int j = 0; j < matrix[0].length; j++) {
-        if (matrix[i][j] == 0) p.add(new Point(i, j)); // point with zero
+        if (matrix[i][j] == 0) points.add(new Point(i, j)); // point with zero
       }
     }
 
-    for (Point pt : p) {
+    for (Point point : points) {
       for (int i = 0; i < matrix.length; i++) {
-        matrix[pt.x][i] = 0;
+        matrix[point.x][i] = 0;
       }
       for (int i = 0; i < matrix.length; i++) {
-        matrix[i][pt.y] = 0;
+        matrix[i][point.y] = 0;
       }
     }
     return matrix;
