@@ -5,7 +5,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-/** 2 sums can be solve by storing the diff in the hash, or n^2 loop */
+/**
+ * given an array and target sum, find the pair that sums to the target
+ *
+ * 2 sums can be solve by storing the diff in the hash, or n^2 loop
+ * */
 public class TwoSumsArray {
   // just the count
   static int twoSumDup(int[] nums, int target) {
@@ -87,7 +91,8 @@ public class TwoSumsArray {
   public static void main(String[] args) {
     // System.out.println(Arrays.toString(twoSumPointers(new int[]{0,2,5,6,8}, 11)));
     // System.out.println(countPairs(Arrays.asList(1, 3, 46, 1, 3, 9), 47));
-    System.out.println(twoSumDup(new int[]{2,2,2,2,2},4));
+    // System.out.println(twoSumDup(new int[]{2,2,2,2,2},4));
+    System.out.println(twoSumDup(new int[]{3,2,1,2,1,2},4));
     // System.out.println(Arrays.toString(new TwoSumsArray().twoSum(new int[]{2, 7, 11, 15}, 9)));
   }
 }

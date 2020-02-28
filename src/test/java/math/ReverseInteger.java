@@ -3,6 +3,16 @@ package math;
 import static java.lang.Integer.*;
 import static java.lang.Math.abs;
 
+/*
+  given an integer n reverse the integer digits
+
+  -100
+  1
+
+  123
+  321
+
+ */
 public class ReverseInteger {
   static int reverse(int x) {
     long sign = x < 0 ? -1 : 1, y = (x = abs(x)) % 10; // keep it long so we dont overflow
