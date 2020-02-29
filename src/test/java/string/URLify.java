@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 /** assuming the character has enough space:- reverse traverse, with a pointer at the end */
 public class URLify {
-  static void URLify(char[] arr, int e) {
+  static void URLify(char[] arr, int n) {
     int j = arr.length - 1; // push it back to the end
-    for (int i = e - 1; i >= 0; i--) {
+    for (int i = n - 1; i >= 0; i--) {
       if (arr[i] == ' ') {
         arr[j--] = '0';
         arr[j--] = '2';
