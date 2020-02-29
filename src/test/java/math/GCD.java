@@ -7,6 +7,8 @@ public class GCD {
   // 0, 10
   // 0 , 5
 
+  // arithmetic progression = n(a1+an)/2
+  // combination = n!/r!(n-r)!, permutation = n!/(n-r)!
   // mod allows your tp flip who is greater in denominator
   static int gcd(int a, int b) {
     if (b == 0) return a;

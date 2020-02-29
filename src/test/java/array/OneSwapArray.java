@@ -19,8 +19,7 @@ public class OneSwapArray {
                     a1 = a[i];
                     b1 = b[i];
                 }
-                swap++;
-                if(swap > 2) return false;
+                if(2 <++swap) return false;
             }
         }
         return (a1 == b2 && b1 == a2);
