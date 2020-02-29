@@ -9,7 +9,7 @@ Easy* good sorting algo problem
 Some people are standing in a row in a park.
  There are trees between them which cannot be moved.
   Your task is to rearrange the people by their heights in a ascending order without moving the trees.
-   People can be very tall!
+
  */
 public class SortWithTree {
 

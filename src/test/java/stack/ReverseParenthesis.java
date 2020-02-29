@@ -6,6 +6,9 @@ import java.util.Stack;
 import java.util.stream.Collectors;
 
 /*
+
+medium*
+
   Write a function that reverses characters in parentheses in the input string.
   "ra(kut)en"
   "ratuken"
