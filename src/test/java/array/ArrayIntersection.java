@@ -2,6 +2,9 @@ package array;
 
 import java.util.Arrays;
 
+/*
+  given 2 array find teh intersection bewteen them, arrays can contain duplicate
+ */
 public class ArrayIntersection {
 
   void intersection(int[] a, int[] b) {
