@@ -19,6 +19,6 @@ public class ArrayIntersection {
   }
 
   public static void main(String[] args) {
-    new ArrayIntersection().intersection(new int[] {1, 2, 3, 4, 5}, new int[] {2, 5});
+    new ArrayIntersection().intersection(new int[] {1, 2,2,2, 3, 4, 5}, new int[] {2,2,2,2, 5});
   }
 }
