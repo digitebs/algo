@@ -35,14 +35,21 @@ public class Power {
   }
 
   /*
-       4^y = n
-       log4(n) = y
-       log10(n)/log10(3) formula for base change
-       %1 to check if its a whole number
-   */
+      4^y = n
+      log4(n) = y
+      log10(n)/log10(3) formula for base change
+      %1 to check if its a whole number
+  */
   public static boolean isPowerOfThree(int n) {
     return (Math.log10(n) / Math.log10(3)) % 1 == 0;
     //  return n > 0 && 1162261467 % n == 0;
+  }
+
+  int depositProfit(int deposit, int rate, int threshold) {
+    // t  = p * (1 + r)^y
+    // solve for y
+    // using base conversion
+    return (int) Math.ceil(Math.log10((double) threshold / deposit) / Math.log10(1 + rate / 100.));
   }
 
   public static void main(String[] args) {
