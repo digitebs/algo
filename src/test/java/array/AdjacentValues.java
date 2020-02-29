@@ -5,8 +5,13 @@ package array;
 import java.util.*;
 
 /**
- * Given an unsorted array, find the maximum difference between the successive elements in its
- * sorted form.
+  Given an unsorted array, find the maximum difference between the successive elements in its
+  sorted form.
+
+   Input: [3,6,9,1]
+   Output: 3
+   Explanation: The sorted form of the array is [1,3,6,9], either
+   (3,6) or (6,9) has the maximum difference 3.
  */
 public class AdjacentValues {
   public boolean isAdjacent(HashSet<Integer> hs, int a, int b) {
@@ -33,13 +38,13 @@ public class AdjacentValues {
     }
     for (int i = 0; i < A.length; i++) {
       for (int j = i + 1; j < A.length; j++) {
-        if (isAdjacent(hs, A[i], A[j])) max = Math.max(max, j - i);
+        if (isAdjacent(hs, A[i], A[j])) max = Math.max(max, A[j] - A[i]);
       }
     }
     return max;
   }
 
   public static void main(String[] args) {
-    System.out.println(new AdjacentValues().solution(new int[] {3, 6, 9, 120}));
+    System.out.println(new AdjacentValues().solution(new int[] {2, 6, 9, 3}));
   }
 }

@@ -1,6 +1,6 @@
 package array;
 
-public class ArrayGreatestDiff {
+public class ArrayMaximalDiff {
 
   private static int diff(int[] arr) {
     int min = arr[0]; // you can start with the 1st element
