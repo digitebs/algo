@@ -16,12 +16,9 @@ if there is tie return smaller x;
 
  */
 public class ClosestSortedArray {
-    int absoluteValuesSumMinimization(int[] a) {
+  int absoluteValuesSumMinimization(int[] a) {
 
-        if(a.length%2== 0)
-            return a[a.length/2-1];
-        return a[a.length/2];
-
+    return a[a.length / 2 - (a.length % 2 == 0 ? 1 : 0)];
     /*int min = (int)1e9+7, x = 0;
     for (int i = 0; i < a.length; i++) {
       int temp=0;
@@ -35,5 +32,11 @@ public class ClosestSortedArray {
     }
     return x;*/
 
-    }
+  }
+
+  public static void main(String[] args) {
+    //
+    ClosestSortedArray csa = new ClosestSortedArray();
+    System.out.println(csa.absoluteValuesSumMinimization(new int[] {2, 4, 7}));
+  }
 }
