@@ -18,7 +18,6 @@ public class WordLadder {
   /* bfs */
   static int shortestWordEditPath(String source, String target, String[] words) {
     // your code goes here
-
     Queue<String> q = new LinkedList<>();
     q.offer(source);
 
