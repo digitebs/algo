@@ -6,8 +6,15 @@ import static java.lang.Math.abs;
 import static java.lang.System.out;
 
 /**
+ *
+ * Ignore* anaylsis
+ *
  * We define a magic square to be an matrix of distinct positive integers from to where the sum of
  * any row, column, or diagonal of length is always equal to the same number: the magic constant.
+ *
+ * Given matrix s,
+ * convert it into a magic square at minimal cost by changing zero or more of its digits.
+ * The task is to find minimum cost.
  */
 public class MinCostMagicSquare {
   static int square(int[][] s) {
@@ -78,5 +85,13 @@ public class MinCostMagicSquare {
               {3, 5, 7},
               {8, 1, 5}
             }));
+
+    out.println(
+            MinCostMagicSquare.square(
+                    new int[][] {
+                            { 4, 8, 2 },
+                            { 4, 5, 7 },
+                            { 6, 1, 6 }
+                    }));
   }
 }
