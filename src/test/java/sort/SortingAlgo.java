@@ -25,10 +25,10 @@ public class SortingAlgo {
     int i = lo - 1;
     int j = hi + 1;
     while (true) {
-      do i++;
-      while (arr[i] < pivot);
-      do j--;
-      while (arr[j] > pivot);
+      //do i++;
+      while (arr[++i] < pivot);
+      //do j--;
+      while (arr[--j] > pivot);
       // System.out.println();
       if (i >= j) return j;
       swap(i, j, arr);
@@ -79,15 +79,11 @@ public class SortingAlgo {
 
   public void baloonSort(int[] arr) {
     for (int i = 0; i < arr.length; i++) {
-      for (int j = 0; j < arr.length; j++) {
-        if (arr[i] < arr[j]) {
+      for (int j = i+1; j < arr.length; j++) {
+        if (arr[i] > arr[j]) {
           swap(i, j, arr);
         }
       }
-    }
-
-    for (int i = 0; i < arr.length; i++) {
-      System.out.println(arr[i]);
     }
   }
 
@@ -109,9 +105,15 @@ public class SortingAlgo {
     }
   }
 
+  // pushing the data to correct post
   static void insertionSort(int[] arr) {
-    for (int i = 1; i < arr.length; i++)
-      for (int j = i - 1; j >= 0 && arr[j] > arr[j + 1]; j--) swap(j, j + 1, arr);
+    for (int i = 1; i < arr.length; i++) {
+      for (int j = i - 1; j >= 0 && arr[j] > arr[j + 1]; j--) {
+
+        swap(j, j + 1, arr);
+        System.out.println(Arrays.toString(arr));
+      }
+    }
   }
 
   static List mergeSort(List<Integer> arr) {
@@ -175,9 +177,11 @@ public class SortingAlgo {
     // System.out.print(arr[i]);
     // }
     // t.selectionSort(new int[]{3,7,4,9,5,2,6,1});
-
+    // t.baloonSort(arr);
     //  List arr = new ArrayList(Arrays.asList(1,7,5,4,3,9));
     t.quicksort(arr, 0, arr.length - 1);
-    System.out.println(Arrays.toString(arr));
+    //insertionSort(arr);
+     System.out.println(Arrays.toString(arr));
   }
+
 }
