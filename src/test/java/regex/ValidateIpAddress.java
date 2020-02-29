@@ -6,7 +6,7 @@ public class ValidateIpAddress {
     // 2.0.2
     // 2.0.0.0.0.0
     // +9.+9.+9.+5
-    String[] ips = ip.split("\\.");
+    String[] ips = ip.split("\\.",4);
     // System.out.println(ips.length);
     if (ips.length != 4) return false;
 

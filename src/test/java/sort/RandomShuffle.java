@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class RandomShuffle {
+public class  RandomShuffle {
 
   // 3 x 3
   // deterministic shuffle
@@ -44,7 +44,8 @@ public class RandomShuffle {
     }
   }
 
-  static void shuffle4(char[][] grid, int k) {
+  // mineweeper bomb
+  static void bomb(char[][] grid, int k) {
 
     int n = grid.length;
     List<Integer> list = new ArrayList<>();
@@ -61,7 +62,7 @@ public class RandomShuffle {
 
   public static void main(String[] args) {
     char[][] c = new char[3][3];
-    shuffle4(c, 5);
+    bomb(c, 5);
     for (char[] a : c) System.out.println(Arrays.toString(a));
   }
 }
