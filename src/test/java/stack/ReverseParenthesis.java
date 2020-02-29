@@ -1,32 +1,42 @@
 package stack;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
+import java.util.stream.Collectors;
 
+/*
+  Write a function that reverses characters in parentheses in the input string.
+  "ra(kut)en"
+  "ratuken"
+
+  "(ra(kut)en)"
+  "nekutar"
+ */
 public class ReverseParenthesis {
   public static void main(String[] args) {
     reverse("ad(oi(love)ew)jkl(bnm)");
+    reverse("(ra(kut)en)");
   }
 
   public static void reverse(String s) {
-    Stack<String> stack = new Stack<>();
+    Stack<Character> stack = new Stack<>();
+    Queue<Character> q = new LinkedList<>();
     for (int i = 0; i < s.length(); i++) {
       // n * S) where S is the numeber parenthsies n == character
       char c = s.charAt(i);
       if (c == ')') {
-        StringBuilder sb = new StringBuilder();
-        String p = stack.pop();
-        while (!p.isEmpty() && !p.equals("(")) {
-          sb.append(p);
-          p = stack.pop();
+        char p;
+        while ( (p = stack.pop()) !='(') {
+          q.offer(p);
         }
-        for (char ch : sb.toString().toCharArray()) {
-          stack.push(ch + ""); //
+        while(!q.isEmpty()){
+          stack.push(q.poll());
         }
-
       } else {
-        stack.push(c + "");
+        stack.push(c);
       }
     }
-    System.out.println(stack);
+    System.out.println(stack.stream().map(Object::toString).collect(Collectors.joining()));
   }
 }
