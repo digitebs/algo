@@ -5,6 +5,7 @@ At the end, the "skyline" when viewed from all four directions of the grid, i.e.
  bottom, left, and right, must be the same as the skyline of the original grid.
 
  // contour
+ medium* tricket to implement, understand
 
  */
 public class MaxSkyline {
