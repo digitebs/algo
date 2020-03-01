@@ -1,5 +1,12 @@
 package array;
 
+/*
+At the end, the "skyline" when viewed from all four directions of the grid, i.e. top,
+ bottom, left, and right, must be the same as the skyline of the original grid.
+
+ // contour
+
+ */
 public class MaxSkyline {
   // skyline of building view from side and top
   public int maxIncreaseKeepingSkyline(int[][] grid) {

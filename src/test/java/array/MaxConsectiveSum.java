@@ -12,7 +12,7 @@ package array;
     1 + 6 = 7.
     Thus, the answer is 8.
  */
-public class ConsectiveSum {
+public class MaxConsectiveSum {
   // sliding window
   int arrayMaxConsecutiveSum(int[] arr, int k) {
     int i = 0;
@@ -28,7 +28,7 @@ public class ConsectiveSum {
   }
 
   public static void main(String[] args) {
-    ConsectiveSum cs = new ConsectiveSum();
+    MaxConsectiveSum cs = new MaxConsectiveSum();
     System.out.println(cs.arrayMaxConsecutiveSum(new int[] {2, 3, 5, 1, 6}, 2));
     System.out.println(cs.arrayMaxConsecutiveSum(new int[] {2, 3, 5, 1, 6}, 3));
     System.out.println(cs.arrayMaxConsecutiveSum(new int[] {1, 3, 4, 2, 4, 2, 4}, 4));
