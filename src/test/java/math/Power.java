@@ -45,16 +45,22 @@ public class Power {
     //  return n > 0 && 1162261467 % n == 0;
   }
 
-  int depositProfit(int deposit, int rate, int threshold) {
+  static int depositProfit(int deposit, int rate, int threshold) {
     // t  = p * (1 + r)^y
     // solve for y
     // using base conversion
-    return (int) Math.ceil(Math.log10((double) threshold / deposit) / Math.log10(1 + rate / 100.));
+    return  ceil(Math.log10((double) threshold / deposit) / Math.log10(1 + rate / 100.));
+   // return (int) ((Math.log10((double) threshold / deposit)-1) / Math.log10(1 + rate / 100.)) + 1;
+  }
+
+  // how to ceil using cast
+  static int ceil(double num) {
+    return (int)num +(num == (int)num ? 0:1 ) ;
   }
 
   public static void main(String[] args) {
     System.out.println(isPower(9));
     System.out.println(isPowerOfThree(7));
-    System.out.println((Math.log10(7) / Math.log10(3)));
+    System.out.println(depositProfit(100,20,170));
   }
 }
