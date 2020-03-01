@@ -4,11 +4,22 @@ import java.util.HashMap;
 
 /*
 
-ith vote for
-persons and times
+medium* ng due to interface
+
+In an election, the i-th vote was cast for persons[i] at time times[i].
+
+Now, we would like to implement the following query function:
+TopVotedCandidate.q(int t) will return the number of the person that was leading the election at time t.
+
+Votes cast at time t will count towards our query.
+In the case of a tie, the most recent vote (among tied candidates) wins.
 
 Input: ["TopVotedCandidate","q","q","q","q","q","q"],
-    [[[0,1,1,0,0,1,0],[0,5,10,15,20,25,30]],[3],[12],[25],[15],[24],[8]]
+    [[
+      [0,1,1,0,0,1,0], // persons is 1, 0. ith is vote
+      [0,5,10,15,20,25,30] // times
+    ],
+    [3],[12],[25],[15],[24],[8]]
 Output: [null,0,1,1,0,0,1]
 Explanation:
 At time 3, the votes are [0], and 0 is leading.
@@ -42,21 +53,21 @@ public class TopVoteCandidate {
 
     int[] times;
 
-    HashMap<Integer, Integer> hm = new HashMap<>(); // leading at time
-    HashMap<Integer, Integer> hm1 = new HashMap<>(); // count
+    HashMap<Integer, Integer> leading = new HashMap<>(); // leading at time
+    HashMap<Integer, Integer> person = new HashMap<>(); // count
 
     public TopVotedCandidate(int[] persons, int[] times) {
 
       int person = -1;
       int max = 0; // maxcount
       for (int i = 0; i < persons.length; i++) {
-        hm1.put(persons[i], hm1.getOrDefault(persons[i], 0) + 1);
-        if (max <= hm1.get(persons[i])) {
-          max = hm1.get(persons[i]);
+        this.person.put(persons[i], this.person.getOrDefault(persons[i], 0) + 1);
+        if (max <= this.person.get(persons[i])) {
+          max = this.person.get(persons[i]);
           person = persons[i];
         }
-        // max = Math.max(max,hm1.get(persons[i]));
-        hm.put(i, person); // at time 5 leading
+        // max = Math.max(max,person.get(persons[i]));
+        leading.put(i, person); // at time 5 leading
       }
       this.times = times;
     }
@@ -64,7 +75,7 @@ public class TopVoteCandidate {
     public int q(int t) {
       int i = binarySearch(times, t);
       //  System.out.println(t +" "+i);
-      return hm.get(i);
+      return leading.get(i);
     }
   }
 
