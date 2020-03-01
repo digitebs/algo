@@ -13,19 +13,18 @@ import java.util.Arrays;
  "aa" is replaced by "a2". "bb" is replaced by "b2". "ccc" is replaced by "c3".
  */
 public class StringCompression {
-  static String compression(String s1) {
-    StringBuilder res = new StringBuilder().append(s1.charAt(0));
-    int cons = 0;
-    for (int i = 1; i < s1.length(); i++) {
-      cons++;
-      if (s1.charAt(i) != s1.charAt(i - 1)) {
-        res.append(cons).append(s1.charAt(i));
-        cons = 0; // set it to1
+  static String compression(String s) {
+    StringBuilder sb = new StringBuilder();
+    int c = 0;
+    for (int i = 0;i < s.length(); i++) {
+      c++;
+      if(i == s.length()-1 || s.charAt(i) != s.charAt(i + 1)) {
+        if(c > 1) sb.append(c);
+        sb.append(s.charAt(i));
+        c = 0;
       }
     }
-    res.append(++cons);
-    return res.length() < s1.length() ? res.toString() : s1;
-  }
+    return sb.length() <= s.length() ? sb.toString() : s;  }
 
   /*
    Given an array of characters, compress it in-place.
@@ -53,5 +52,6 @@ public class StringCompression {
 
     System.out.println(compression("aabcccccaaa".toCharArray()));
     System.out.println(compression("ab".toCharArray()));
+    System.out.println(compression("aabbbc"));
   }
 }
