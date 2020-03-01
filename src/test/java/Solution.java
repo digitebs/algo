@@ -22,5 +22,6 @@ public class Solution {
     for (String string : strings) {
       System.out.println(string);
     }
+   // System.out.println(magicalWell(1,2,3));
   }
 }
