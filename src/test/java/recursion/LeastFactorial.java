@@ -10,6 +10,7 @@ public class LeastFactorial {
         return res;
     }
 
+    /* 1 ≤ n ≤ 120 */
     int factorial( int n ){
         if(n == 0) return 1;
         return n * factorial(n-1);
