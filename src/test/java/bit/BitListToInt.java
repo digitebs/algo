@@ -3,7 +3,7 @@ package bit;
 import model.ListNode;
 
 /** 1 -> 0 -> 1 binary val: 5 */
-public class ListToInt {
+public class BitListToInt {
   public static int getDecimalValue(ListNode head) {
     int s = 0;
     while (head != null) {
