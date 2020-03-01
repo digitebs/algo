@@ -16,6 +16,8 @@ public class PairXor {
     return prd;
   }
 
+  // xor a b in logical operator is (not a and b) or (a and not b)
+  // can shorten 4 operands
   public static void main(String[] args) {
     System.out.println(PairXor.pair(new int[] {9, 3, 9, 3, 9, 7, 9}));
   }
