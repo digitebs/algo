@@ -6,6 +6,15 @@ import java.util.List;
 
 /*
 Find duplicates for both array
+
+
+Input:
+1, 2, 3, 5, 6, 7
+3, 6, 7, 8, 20
+
+
+Output:
+3, 6, 7
 */
 public class FindDuplicates {
   // O(M+N)

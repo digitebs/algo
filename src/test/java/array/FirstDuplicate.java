@@ -18,8 +18,7 @@ public class FirstDuplicate {
   public int firstDuplicate(final int[] a) {
     int[] index = new int[a.length + 1];
     for (int i = 0; i < a.length; i++) {
-      if (index[a[i]] == 1) return a[i];
-      index[a[i]] = 1;
+      if (index[a[i]]++ > 0) return a[i];
     }
     return -1;
   }
