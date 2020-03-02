@@ -41,26 +41,41 @@ public class Power {
       %1 to check if its a whole number
   */
   public static boolean isPowerOfThree(int n) {
-    return (Math.log10(n) / Math.log10(3)) % 1 == 0;
+    return isPower(n, 3);
     //  return n > 0 && 1162261467 % n == 0;
+  }
+
+  public static boolean isPowerOfFive(int n) {
+    return isPower(n, 5);
+    //  return n > 0 && 1162261467 % n == 0;
+  }
+
+  public static boolean isPower(int n, int k) {
+    // System.out.println(Math.pow(n, 1./3));
+    float x = (float)(Math.log(n) / Math.log(k));
+    // System.out.println(x);
+    return x%1 == 0; // some precision on 125, 5 tsktsk!!!
   }
 
   static int depositProfit(int deposit, int rate, int threshold) {
     // t  = p * (1 + r)^y
     // solve for y
     // using base conversion
-    return  ceil(Math.log10((double) threshold / deposit) / Math.log10(1 + rate / 100.));
-   // return (int) ((Math.log10((double) threshold / deposit)-1) / Math.log10(1 + rate / 100.)) + 1;
+    return ceil(Math.log10((double) threshold / deposit) / Math.log10(1 + rate / 100.));
+    // return (int) ((Math.log10((double) threshold / deposit)-1) / Math.log10(1 + rate / 100.)) +
+    // 1;
   }
 
   // how to ceil using cast
   static int ceil(double num) {
-    return (int)num +(num == (int)num ? 0:1 ) ;
+    return (int) num + (num == (int) num ? 0 : 1);
   }
 
   public static void main(String[] args) {
-    System.out.println(isPower(9));
-    System.out.println(isPowerOfThree(7));
-    System.out.println(depositProfit(100,20,170));
+    // System.out.println(isPower(9));
+    System.out.println(isPowerOfFive(125));
+    System.out.println(isPower(72,1));
+    // System.out.println(isPowerOfThree(243));
+    // System.out.println(depositProfit(100,20,170));
   }
 }

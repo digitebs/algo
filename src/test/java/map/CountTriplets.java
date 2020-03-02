@@ -44,6 +44,5 @@ public class CountTriplets {
     System.out.println(countTriplets(Arrays.asList(1L,4L,16L, 64L), 4));
     System.out.println(countTriplets(Arrays.asList(1L, 3L, 9L, 9L, 27L, 81L), 3));
     System.out.println(countTriplets(Arrays.asList(1L, 1L, 1L, 1L,1L), 1));
-
   }
 }
