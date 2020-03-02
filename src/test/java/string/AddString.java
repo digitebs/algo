@@ -2,6 +2,12 @@ package string;
 
 import java.util.stream.Stream;
 
+/*
+    Given two non-negative integers num1 and num2 represented as string, return the sum of num1 and num2.
+
+    // no zero in front
+
+ */
 public class AddString {
     public String addStrings(String num1, String num2) {
       int i= num1.length();
@@ -27,5 +33,7 @@ public class AddString {
 
       AddString as = new AddString();
       System.out.println(as.addStrings("11", "1"));
+      System.out.println(as.addStrings("56", "21"));
+      System.out.println(as.addStrings("123456788888889", "1"));
   }
 }

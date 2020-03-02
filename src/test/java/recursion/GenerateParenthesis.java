@@ -30,6 +30,6 @@ public class GenerateParenthesis {
   }
 
   public static void main(String[] args) {
-    System.out.println(new GenerateParenthesis().generateParenthesis(3));
+    System.out.println(new GenerateParenthesis().generateParenthesis(4));
   }
 }
