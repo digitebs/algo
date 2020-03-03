@@ -21,5 +21,13 @@ public class LinkedListAddTwo {
     return res.next;
   }
 
-  public static void main(String[] args) {}
+  public static void main(String[] args) {
+    ListNode a = new ListNode(9);
+    a.next = new ListNode(1);
+    ListNode b = new ListNode(2);
+
+    LinkedListAddTwo llat = new LinkedListAddTwo();
+    llat.addTwoNumbers(a,b).print();
+
+  }
 }
