@@ -1,5 +1,9 @@
 package array;
 
+
+/*
+  Given, an array of size n. Find an element which divides the array in two sub-arrays with equal sum
+ */
 public class LeftEqRightArray {
   public int pivotIndex(int[] nums) {
     int sum = 0;
