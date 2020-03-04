@@ -2,7 +2,14 @@ package array;
 
 
 /*
+
+conveyour belt
+ find which ith belt where the luggage total from left of i and the total from the right of i is the same, find the i
+ , return -1 if not found
+
   Given, an array of size n. Find an element which divides the array in two sub-arrays with equal sum
+
+  return the index
  */
 public class LeftEqRightArray {
   public int pivotIndex(int[] nums) {
@@ -15,5 +22,9 @@ public class LeftEqRightArray {
 
   public static void main(String[] args) {
     System.out.println(new LeftEqRightArray().pivotIndex(new int[] {1, 7, 3, 6, 5, 6}));
+    System.out.println(new LeftEqRightArray().pivotIndex(new int[] {1}));
+    System.out.println(new LeftEqRightArray().pivotIndex(new int[] {1,2}));
+    System.out.println(new LeftEqRightArray().pivotIndex(new int[] {2,1,1,1}));
+    System.out.println(new LeftEqRightArray().pivotIndex(new int[] {1,4,2,5}));
   }
 }

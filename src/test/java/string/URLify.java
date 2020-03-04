@@ -2,7 +2,14 @@ package string;
 
 import java.util.Arrays;
 
-/** assuming the character has enough space:- reverse traverse, with a pointer at the end */
+/**
+ * given an array string  and n, where n is the actual length of string excluding the space at the end.
+ *
+ * replace all ' ' with '0' '2' '%'. assuming the given array will always have extra space to fit the newly
+ * encoded string
+ *
+ * assuming the character has enough space:- reverse traverse, with a pointer at the end
+ * */
 public class URLify {
   static void URLify(char[] arr, int n) {
     int j = arr.length - 1; // push it back to the end

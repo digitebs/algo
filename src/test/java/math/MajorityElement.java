@@ -5,6 +5,11 @@ package math;
 
    using boyer moore voting,
 
+   its election day, find the candidate in voting array that is greater than half of total voting
+   its assume theres always a candidate
+
+   3, 4, 1, 4, 4, answer is 4
+
    forces at least 2 digit together if you dont start at beginning
 */
 public class MajorityElement {
@@ -28,5 +33,6 @@ public class MajorityElement {
 
   public static void main(String[] args) {
     System.out.println(new MajorityElement().majorityElement(new int[] {3, 4, 1, 4, 4}));
+    System.out.println(new MajorityElement().majorityElement(new int[] {3, 4, 4, 1, 1}));
   }
 }
