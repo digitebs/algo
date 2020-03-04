@@ -41,5 +41,6 @@ public class BinaryCode {
     BinaryCode bc = new BinaryCode();
 
     System.out.println(bc.base2("01001000"));
+    System.out.println(bc.messageFromBinaryCode("010010000110010101101100011011000110111100100001"));
   }
 }

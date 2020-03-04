@@ -20,7 +20,7 @@ public class CombinationArray {
   public static void main(String[] args) {
     ArrayList<ArrayList<Integer>> res = new ArrayList<>();
     ArrayList<Integer> arr = new ArrayList<>();
-    new CombinationArray().combine(res, arr, 2, 4, 3);
+    new CombinationArray().combine(res, arr, 1, 4, 4);
 
     /* Collections.sort(res, (o1, o2) -> {
         for (int i = 0; i < Math.min(o1.size(), o2.size()); i++) {

@@ -14,13 +14,13 @@ import java.util.Date;
  * Benjamin recently bought a digital clock at a magic trick shop. The seller never told Ben what was
  * so special about it, but mentioned that one day Benjamin would be faced with a surprise.
  *
- * <p>Indeed, the clock did surprise Benjamin: without warning, at someTime the clock suddenly
+ * Indeed, the clock did surprise Benjamin: without warning, at someTime the clock suddenly
  * started going in the opposite direction! Unfortunately, Benjamin has an important meeting very
  * soon, and knows that at leavingTime he should leave the house so as to not be late. Ben spent all
  * his money on the clock, so has to figure out what time his clock will show when it's time to
  * leave.
  *
- * <p>Given the someTime at which the clock started to go backwards, find out what time will be
+ * Given the someTime at which the clock started to go backwards, find out what time will be
  * shown on the curious clock at leavingTime
  *
  *

@@ -1,6 +1,19 @@
 package dp;
 
 /** uses the max cost between B[i] or 1 */
+/*
+
+[1 2 3]
+
+[1,1,1], [1,1,2], [1,1,3]
+[1,2,1], [1,2,2], [1,2,3]
+Our calculations for the arrays are as follows:
+
+|1-1| + |1-1| = 0	|1-1| + |2-1| = 1	|1-1| + |3-1| = 2
+|2-1| + |1-2| = 2	|2-1| + |2-2| = 1	|2-1| + |3-2| = 2
+The maximum value obtained is .2
+
+ */
 public class SherlockCost {
   static int cost(int[] B) {
     int n = B.length;
