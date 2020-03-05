@@ -2,6 +2,12 @@ package dp;
 
 import java.util.Arrays;
 
+
+/*
+
+# array coins and N
+# return the number of ways to can  the change using the coins. coins can be repeated
+ */
 public class CoinProblem {
 
   // if its sorted can just overlapped 2d array
@@ -24,5 +30,8 @@ public class CoinProblem {
 
   public static void main(String[] args) {
     System.out.println(getWays(5, new long[] {2, 3}));
+    System.out.println(getWays(5, new long[] {1, 2}));
+    System.out.println(getWays(11, new long[] {1, 2,5}));
+    System.out.println(getWays(4, new long[] {1, 2,3}));
   }
 }
