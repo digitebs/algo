@@ -2,6 +2,8 @@ package stack;
 
 import java.util.Stack;
 
+
+/* do it without split and reverse */
 public class ReverseStringSpace {
 
   static void reverse(String s) {
@@ -11,24 +13,24 @@ public class ReverseStringSpace {
       letter.push(s.charAt(i));
     }
 
-    Stack<String> words = new Stack<>();
+    Stack<StringBuilder> words = new Stack<>();
     StringBuilder sb = new StringBuilder();
     while (!letter.isEmpty()) {
       Character c = letter.pop();
       if (c == ' ') {
-        words.push(sb.toString());
+        words.push(sb);
         sb = new StringBuilder();
       } else sb.append(c);
     }
 
-    words.push(sb.toString());
+    words.push(sb);
     // System.out.print(words);
     while (!words.isEmpty()) {
       System.out.print(words.pop() + " ");
     }
   }
-
+  // emosewa si netukar
   public static void main(String[] args) {
-    reverse("the boy run");
+    reverse("rakuten is awesome");
   }
 }

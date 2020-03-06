@@ -27,6 +27,7 @@ public class Solution {
     for (String string : strings) {
       System.out.println(~1);
     }
+    "l".lastIndexOf("ll",1);
   }
   String curiousClock(String s, String l) throws Exception{
     //DateFormat f = new SimpleDateFormat("y-MM-dd HH:mm");
