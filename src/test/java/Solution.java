@@ -47,7 +47,6 @@ public class Solution {
     out.println(f.format(new Date(2*f.parse(s).getTime()-f.parse(l).getTime())));
     }catch (Exception e){e.printStackTrace();}*/
 
-    
      (new java.sql.Timestamp(2*p(s)-p(l))+"").substring(0,16);
   }
 
