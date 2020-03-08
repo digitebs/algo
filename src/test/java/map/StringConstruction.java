@@ -13,6 +13,14 @@ Given two strings a and b, both consisting only of lowercase English letters,
 
   a = "abc" and b = "abccba"
   output = 2
+
+  a: "c"
+  b: "abccbac"
+  o: 3
+
+  a: "hnccv"
+  b: "hncvohcjhdfnhonxddcocjncchnvohchnjohcvnhjdhihsn"
+  o: 3
  */
 public class StringConstruction {
   int stringsConstruction(String a, String b) {

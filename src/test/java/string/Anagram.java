@@ -30,6 +30,11 @@ public class Anagram {
 
    For s = "OVGHK" and t = "RPGUC", the output should be
    output: 4
+
+
+    s: "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZY"
+    t: "YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYZ"
+    output: 31
   */
   int createAnagram(String s, String t) {
     HashMap<Character, Integer> map = new HashMap<>();
