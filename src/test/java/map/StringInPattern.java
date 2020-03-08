@@ -10,32 +10,29 @@ import java.util.Map;
  */
 public class StringInPattern {
 
-  static boolean isMatch2(String a, String s) {
-    String[] words = s.split(" ");
-    if (a.length() != words.length) return false;
+    static boolean isMatch2(String a, String s) {
+      String[] words = s.split(" ");
+      if (a.length() != words.length) return false;
 
-    HashMap<Character, Integer> hm = new HashMap<>();
-    HashMap<Integer, Character> rev = new HashMap<>();
-    for (int i = 0, k = 0; i < words.length; i++) {
-      if (!hm.containsKey(a.charAt(i))) {
-        rev.put(k, a.charAt(i));
-        hm.put(a.charAt(i), k++);
+      Map<Character, Integer> hm = new HashMap<>();
+      Map<Integer, Character> rev = new HashMap<>();
+      for (int i = 0, k = 0; i < words.length; i++) {
+        if (!hm.containsKey(a.charAt(i))) {
+          rev.put(k, a.charAt(i));
+          hm.put(a.charAt(i), k++);
+        }
       }
-    }
 
-    StringBuilder result = new StringBuilder();
-    HashMap<String, Integer> hm2 = new HashMap<>();
-    for (int i = 0, l = 0; i < words.length; i++) {
-      if (!hm2.containsKey(words[i])) {
-        hm2.put(words[i], l++);
+      StringBuilder result = new StringBuilder();
+      Map<String, Integer> hm2 = new HashMap<>();
+      for (int i = 0, l = 0; i < words.length; i++) {
+        if (!hm2.containsKey(words[i])) {
+          hm2.put(words[i], l++);
+        }
+        result.append(rev.get(hm2.get(words[i])));
       }
-      result.append(rev.get(hm2.get(words[i])));
+      return result.toString().equals(a);
     }
-
-    System.out.println(hm + " " + hm2);
-    System.out.println(result);
-    return result.toString().equals(a);
-  }
 
   public static boolean isMatch(String pattern, String input) {
     char[] ch = pattern.toCharArray();

@@ -11,17 +11,40 @@ public class Anagram {
     HashMap<Character, Integer> map = new HashMap<>();
 
     if (s.length() != t.length()) return false;
-
-    for (int i = 0; i < s.length(); i++) {
-      map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
+    for (char i : s.toCharArray()) {
+      map.put(i, map.getOrDefault(i, 0) + 1);
     }
 
-    for (int i = 0; i < t.length(); i++) {
-      int v = map.getOrDefault(t.charAt(i), 0);
-      if (v <= 0) return false;
-      map.put(t.charAt(i), v - 1);
+    for (char i : t.toCharArray()) {
+      map.put(i, map.getOrDefault(i, 0) - 1);
+      if (map.get(i) < 0) return false;
     }
     return true;
+  }
+
+  /*
+   given 1 string how to replacement make string anagram
+
+   For s = "AABAA" and t = "BBAAA", the output should be
+   output: 1
+
+   For s = "OVGHK" and t = "RPGUC", the output should be
+   output: 4
+  */
+  int createAnagram(String s, String t) {
+    HashMap<Character, Integer> map = new HashMap<>();
+
+    for (int i = 0; i < s.length(); i++) {
+      char a = s.charAt(i), b = t.charAt(i);
+      map.put(a, map.getOrDefault(a, 0) + 1);
+      map.put(b, map.getOrDefault(a, 0) - 1);
+    }
+
+    int count = 0;
+    for (int m : map.values()) {
+      if (m > 0) count += m;
+    }
+    return count;
   }
 
   /*
