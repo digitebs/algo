@@ -2,6 +2,7 @@ package map;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 /*
 
@@ -12,21 +13,19 @@ import java.util.HashMap;
     the one which comes later will have an addition to its name in a form of (k),
      where k is the smallest positive integer such that the obtained name is not used yet.
 
-     For names = ["doc", "doc", "image", "doc(1)", "doc"], the output should be
-fileNaming(names) = ["doc", "doc(1)", "image", "doc(1)(1)", "doc(2)"]
+     For names = ["doc", "doc", "image", "doc(1)", "doc"],
+  output= ["doc", "doc(1)", "image", "doc(1)(1)", "doc(2)"]
  */
 public class FileNaming {
-  String[] fileNaming(String[] names) {    HashMap<String, Integer> hm = new HashMap<>();
+  String[] fileNaming(String[] names) {
+    Map<String, Integer> hm = new HashMap<>();
     for (int i = 0; i < names.length; i++) {
       int count = hm.getOrDefault(names[i], 0);
-      hm.put(names[i], count + 1);
       if (count > 0) {
-        while (hm.containsKey(names[i] + "(" + count + ")"))
-          count++;
+        while (hm.containsKey(names[i] + "(" + count + ")")) count++;
         names[i] = names[i] + "(" + count + ")";
-        hm.put(names[i], hm.getOrDefault(names[i], 0) + 1);
       }
-
+      hm.put(names[i], hm.getOrDefault(names[i], 0) + 1);
     }
     return names;
   }
