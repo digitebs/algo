@@ -6,6 +6,7 @@ import java.util.Arrays;
 /*
     medium*
 # array coins and N
+input is sorted
 # return the number of ways to can  the change using the coins. coins can be repeated
  */
 public class CoinProblem {
@@ -18,7 +19,7 @@ public class CoinProblem {
   static long getWays(long n, long[] c) {
     long[] dp = new long[(int) n + 1]; // damn max; owkay?
     dp[0] = 1; // / takes 1 on zero
-    Arrays.sort(c); // sort c so we can do change properly
+    // Arrays.sort(c); // sort c so we can do change properly
     for (long a : c) {
       for (int j = (int)a; j <= n; j++) {
         dp[j] = dp[j] + dp[j - (int) a];
@@ -37,5 +38,6 @@ public class CoinProblem {
     System.out.println(getWays(7, new long[] {1, 2}));
     System.out.println(getWays(4, new long[] {1, 2,3}));
     System.out.println(getWays(8, new long[] {1, 2,4}));
+    System.out.println(getWays(28, new long[] {1, 2,10}));
   }
 }

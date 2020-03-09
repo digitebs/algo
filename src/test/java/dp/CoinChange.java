@@ -1,5 +1,7 @@
 package dp;
 
+import java.util.Arrays;
+
 public class CoinChange {
   public int coinChange(int[] coins, int amount) {
     int n = coins.length;
@@ -24,7 +26,27 @@ public class CoinChange {
     return min[amount] == 0 ? -1 : min[amount];
   }
 
-  public static void main(String[] args) {
+  int minimalNumberOfCoins( int[] c,int n) {
+    int[] dp = new int[n + 1]; // damn max; owkay?
+    Arrays.fill(dp, 250);
+    for(int i : c){
+      dp[i] = 1;
+    }
+    for(int k = 0; k <= n ; k++){
+      for(int i = 1; i <= k ; i++){
+        if(dp[k-i]!=0)
+          dp[k]=Math.min(dp[k-i] + dp[i],dp[k]);
+      }
+      //System.out.println(Arrays.toString(dp));
+    }
+    return dp[n];
+  }
+
+  public static void main(String[] args)
+  {
     System.out.println(new CoinChange().coinChange(new int[] {1, 2, 5}, 11));
+    System.out.println(new CoinChange().coinChange(new int[] {1, 2, 10}, 28));
+    System.out.println(new CoinChange().minimalNumberOfCoins(new int[] {1, 2, 5}, 11));
+    System.out.println(new CoinChange().minimalNumberOfCoins(new int[] {1, 2, 10}, 28));
   }
 }
