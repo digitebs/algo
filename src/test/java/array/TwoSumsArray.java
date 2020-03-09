@@ -68,6 +68,19 @@ public class TwoSumsArray {
     return res;
   }
 
+  /*
+    Given N numbers , [N<=10^5] we need to count the total pairs of numbers that have a difference of K.
+ */
+  static int kDifference(int[] a, int k) {
+    Arrays.sort(a);
+    int ctr = 0;
+    for (int i = a.length - 1; i > 0; i--) {
+      for (int j = i - 1; j >= 0; j--) {
+        if (a[i] - a[j] == k) ctr++;
+      }
+    }
+    return ctr;
+  }
   public static int countPairs(List<Integer> arr, long k) {
     // Write your code here
 
