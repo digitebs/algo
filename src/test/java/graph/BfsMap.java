@@ -17,6 +17,8 @@ public class BfsMap {
     int[][] dist = new int[n][m];
     for (int[] d : dist) Arrays.fill(d, -1);
     dist[start.x][start.y] = 0;
+
+
     while (!q.isEmpty()) {
       Point p = q.poll();
       for (int i = 0; i < 4; i++) { // neighbors or child nodes
