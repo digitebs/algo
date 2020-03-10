@@ -31,35 +31,5 @@ public class Solution {
     for (String string : strings) {
       System.out.println(string);
     }
-
-    int l = 2;
-    HashMap<String,Integer> hm = new HashMap();
-    hm.entrySet().stream().sorted((a,b)-> b.getValue() - a.getValue()).limit(l).map(a -> a.getKey()).collect(Collectors
-                    .toCollection(ArrayList::new));
-
-    // "2016-08-29 10:00".
-    // DateFormat.
-   // DateFormat f = new SimpleDateFormat("y-MM-dd HH:mm");
-
-    String s="2016-08-26 22:40";
-   // String l = "2016-08-29 10:00";
-
-    // out.println(str);
-
-
-    /*DateFormat  f = DateFormat.getInstance();
-    try{
-      out.println(    java.time.LocalDateTime.parse(s+":0"));
-    out.println(f.format(new Date(2*f.parse(s).getTime()-f.parse(l).getTime())));
-    }catch (Exception e){e.printStackTrace();}*/
-
-   // (new java.sql.Timestamp(2*p(s)-p(l))+"").substring(0,16);
-  }
-
-  static java.time.LocalDateTime x(String s){
-    return java.time.LocalDateTime.parse(s.replace(" ","T"));
-  }
-  static long p(String s){
-    return java.sql.Timestamp.valueOf(s+":0").getTime();
   }
 }
