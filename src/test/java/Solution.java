@@ -26,7 +26,6 @@ public class Solution {
     strings.add("Hello, World!");
     strings.add("Welcome to CoderPad.");
 
-    System.out.println(1e0);
     StringBuilder sb = new StringBuilder();
     for (String string : strings) {
       System.out.println(string);
