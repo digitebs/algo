@@ -34,11 +34,8 @@ public class SwitchLights {
     int n = a.length;
     int flip = 0;
     for (int j = n - 1; j >= 0; j--) {
-      if (a[j] == 1) {
-        flip++;
-      }
-      // if(a[j] == 1)
-      a[j] = a[j] == (flip) % 2 ? 0 : 1;
+      if (a[j] == 1) flip++;
+      a[j] = a[j] == flip % 2 ? 0 : 1;
     }
     return a;
   }
