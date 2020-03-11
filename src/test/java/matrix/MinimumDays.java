@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 /*
-    power grid, determine how long it will take to turn all the power on. 1 is active 0 inactive.
+    given a power grid of 2d matrix, determine how long it will take to turn all the power on. 1 is active 0 inactive.
 
     an active cell can power its adjacent neighbor(up, down, left,right).
  */
