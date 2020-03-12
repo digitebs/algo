@@ -4,10 +4,13 @@ import java.util.Arrays;
 
 /**
  * @author john.lim
- *     <p>sort colors rgb(0,1,2)
- *     <p>Input: [2,0,2,1,1,0] Output: [0,0,1,1,2,2]
- *
- *     without using sorting library, green comes then blue then red
+
+ Given an array, sort the colors rgb(0,1,2)
+ Input: [2,0,2,1,1,0]
+ Output: [0,0,1,1,2,2]
+
+
+  *without using sorting library, green comes then blue then red
  */
 public class SortColors {
 

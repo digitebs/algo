@@ -4,7 +4,10 @@ import model.Tuple;
 
 import java.util.Stack;
 
-/** min stack */
+/*
+
+ Implement  a min stack, min stack has a get min method that returns the minimum element in the stack
+*/
 class MinStack {
   Stack<int[]> s = new Stack<>();
 
