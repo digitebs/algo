@@ -1,6 +1,26 @@
 package matrix;
 
-/** @author john.lim */
+/**
+ Given a 2D board and a word, find if the word exists in the grid.
+
+ The word can be constructed from letters of sequentially adjacent cell,
+ where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
+
+ Example:
+
+ board =
+ [
+ ['A','B','C','E'],
+ ['S','F','C','S'],
+ ['A','D','E','E']
+ ]
+
+ Given word = "ABCCED", return true.
+ Given word = "SEE", return true.
+ Given word = "ABCB", return false.
+
+ @author john.lim
+ */
 public class WordSearch {
   public boolean exist2(char[][] matrix, String word, int i, int j) {
     if (word.isEmpty()) return true;
@@ -28,5 +48,17 @@ public class WordSearch {
       }
     }
     return false;
+  }
+
+  public static void main(String[] args) {
+    WordSearch ws = new WordSearch();
+    char [][] board = {
+            {'A','B','C','E'},
+            {'S','F','C','S'},
+            {'A','D','E','E'}
+    };
+    System.out.println(ws.exist(board,"ABCCED"));
+    System.out.println(ws.exist(board,"SEE"));
+    System.out.println(ws.exist(board,"ABCB"));
   }
 }

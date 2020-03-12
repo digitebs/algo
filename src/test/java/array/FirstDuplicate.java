@@ -12,7 +12,7 @@ Given an array a that contains only numbers in the range from 1 to a.length,
    return the number for which the second occurrence has a smaller index
    than the second occurrence of the other number does. If there are no such elements, return -1.
 
-   its just means return the 1st duplicate you find by iterating
+   *its just means return the 1st duplicate you find by iterating
  */
 public class FirstDuplicate {
   public int firstDuplicate(final int[] a) {

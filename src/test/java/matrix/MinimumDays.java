@@ -7,9 +7,11 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 /*
-    given a power grid of 2d matrix, determine how long it will take to turn all the power on. 1 is active 0 inactive.
+    given a power grid of 2d matrix,
 
-    an active cell can power its adjacent neighbor(up, down, left,right).
+     determine how days it will take to turn all the power on. 1 is active 0 inactive.
+
+    per day an active cell can only power its adjacent neighbor(up, down, left,right).
  */
 public class MinimumDays {
   int minimumDays(int rows, int columns, List<List<Integer>> grid) {

@@ -47,9 +47,7 @@ public class PancakeSort {
   static void flip(int[] arr, int k) {
     // floor((k+1)/ 2)
     for (int i = 0; i < k / 2; i++) {
-      int temp = arr[i];
-      arr[i] = arr[k - i - 1]; // swap
-      arr[k - i - 1] = temp;
+      arr[i] = arr[i] ^ arr[k - i - 1] ^ (arr[k - i - 1] = arr[i]);
     }
   }
 

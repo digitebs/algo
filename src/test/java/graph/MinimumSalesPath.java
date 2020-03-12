@@ -5,6 +5,13 @@ import model.GraphNode;
 /*
 Given a node rootNode, write a function getCheapestCost that calculates the minimal Sales Path cost in the tree.
 
+         10
+     /   |    \
+    5    3     6
+   /   /  \   / \
+  4   2   0  1   5
+    /  \    /
+   1   10  1
 using dfs
 */
 public class MinimumSalesPath {

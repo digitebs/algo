@@ -17,8 +17,6 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static java.lang.System.out;
-
 /** Created by johnlim on 10/2/16. */
 public class Solution {
   public static void main(String args[]) {
@@ -26,9 +24,15 @@ public class Solution {
     strings.add("Hello, World!");
     strings.add("Welcome to CoderPad.");
 
+  //  System.out.println(Arrays.asList(new int[]{1},new int[]{2}));
     StringBuilder sb = new StringBuilder();
     for (String string : strings) {
       System.out.println(string);
     }
   }
+
+  public static void shit(int... a){
+    System.out.println(Arrays.toString(a));
+  }
+
 }
