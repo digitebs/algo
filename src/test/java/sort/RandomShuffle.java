@@ -44,7 +44,11 @@ public class  RandomShuffle {
     }
   }
 
-  // mineweeper bomb
+  /*
+   given a grid and k, randomly shuffle the k bomb in the grid
+
+   mineweeper bomb
+   */
   static void bomb(char[][] grid, int k) {
 
     int n = grid.length;

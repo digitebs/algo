@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /*
+  transform the word to end word, using only 1 edit
+
    Input:
    beginWord = "hit",
    endWord = "cog",
