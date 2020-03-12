@@ -3,13 +3,13 @@ package sort;
 import java.util.Arrays;
 
 /**
- * sorting where the lower x goes to teh top, and the lower y goes to the bottom * where the mid has
- * the highest x and y.
- *
- * double sort technique, top and bottom
- *
- * then you sum from top and bottom
- *
+  Sorting where the lower x goes to teh top, and the lower y goes to the bottom * where the mid has
+  the highest x and y.
+
+  double sort technique, top and bottom
+
+  then you sum from top and bottom
+
  There are 2N people a company is planning to interview. The cost of flying the i-th person to city A is costs[i][0],
  and the cost of flying the i-th person to city B is costs[i][1].
 
