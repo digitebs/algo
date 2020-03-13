@@ -2,8 +2,19 @@ package stack;
 
 import java.util.Stack;
 
+/*
+  check if a given string has balance parenthesis.
+  input can be '{','[','('
+
+
+    Input: "([)]"
+    Output: NO
+
+    Input: "{[]}"
+    Output: YES
+ */
 public class BalancedParenthesis {
-  static String isBalanced(String s) {
+   String isBalanced(String s) {
     Stack<Character> stack = new Stack<>();
     for (int i = 0; i < s.length(); i++) {
       char c = s.charAt(i);
@@ -15,5 +26,10 @@ public class BalancedParenthesis {
       }
     }
     return stack.isEmpty() ? "YES" : "NO";
+  }
+
+  public static void main(String[] args) {
+    BalancedParenthesis bp = new BalancedParenthesis();
+    System.out.println(bp.isBalanced("{[]}"));
   }
 }
