@@ -4,6 +4,15 @@ import java.util.Arrays;
 
 import static java.lang.System.out;
 
+
+/*
+    Compare 2 version of string,
+    return 1 if 1st input is greater than 2nd input, -1 if its less else zero if equal
+
+
+    Input: "13.0", "13.0.8"
+    Output: -1
+ */
 public class VersionCompare {
   public String cropZero(String s) {
     for (int i = 0; i < s.length(); i++) if (s.charAt(i) != '0') return s.substring(i);
