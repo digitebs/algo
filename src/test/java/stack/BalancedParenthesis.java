@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /*
   check if a given string has balance parenthesis.
-  input can be '{','[','('
+  input can be '{','[','(',')',']','}'
 
 
     Input: "([)]"
