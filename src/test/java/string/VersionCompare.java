@@ -15,8 +15,9 @@ import static java.lang.System.out;
  */
 public class VersionCompare {
   public String cropZero(String s) {
-    for (int i = 0; i < s.length(); i++) if (s.charAt(i) != '0') return s.substring(i);
-    return s.substring(s.length());
+    return s.replaceAll("^[0]+", "");
+   /* for (int i = 0; i < s.length(); i++) if (s.charAt(i) != '0') return s.substring(i);
+    return s.substring(s.length());*/
   }
 
   public String[] clearZero(String[] arr) {

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.stream.Stream;
 
 /** Created by johnlim on 10/2/16. */
 public class Solution {
@@ -12,6 +13,5 @@ public class Solution {
       System.out.println(string);
     }
 
-    System.out.println((-19)%26);
   }
 }
