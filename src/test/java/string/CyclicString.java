@@ -45,5 +45,8 @@ public class CyclicString {
     System.out.println(cs.cyclicString("abacabaabacab"));
     System.out.println(cs.cyclicString("zazazaza"));
     System.out.println(cs.cyclicString("abbaab"));
+
+    System.out.println(cs.cyclicString("tenrakutenra"));
+    System.out.println(cs.cyclicString("tenrakurakutentenraku"));
   }
 }
