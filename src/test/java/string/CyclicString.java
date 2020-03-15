@@ -2,7 +2,7 @@ package string;
 
 
 /*
-    medium*
+    medium* test case challenge
 
     You're given a substring s of some cyclic string.
     What's the minimum length of string that can be concatenated to itself many times
