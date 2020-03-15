@@ -8,6 +8,9 @@ import java.util.Arrays;
  * English letters only and its length will not exceed 10000.
  */
 public class RepeatedSubstringPattern {
+
+  // longets common prefix
+ // public int computeLPSArray(String s)
   public boolean repeatedSubstringPattern(String s) {
     int len = s.length();
     for (int i = len / 2; i > 0; i--) {
@@ -29,6 +32,7 @@ public class RepeatedSubstringPattern {
   }
 
   /** lps using dp storing the len in an array */
+  // longest prefix suffix
   static void computeLPSArray(String str, int M, int lps[]) {
     // lenght of the previous
     // longest prefix suffix
@@ -95,6 +99,8 @@ public class RepeatedSubstringPattern {
   public static void main(String[] args) {
     // EEEKS EEEKS EEEKS
     System.out.println(new RepeatedSubstringPattern().isRepeat("EEEKSEEEKSEEEKS"));
+   // System.out.println(new RepeatedSubstringPattern().isRepeat("ABCD"));
+   // System.out.println(new RepeatedSubstringPattern().isRepeat("ABAB"));
     // System.out.println(new RepeatedSubstringPattern().repeatedSubstringPattern("abab"));
   }
 }
