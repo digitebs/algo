@@ -1,7 +1,5 @@
 package model;
 
-import static java.lang.System.out;
-
 public class ListNode {
   public ListNode next;
   private ListNode last = this; // intializs to itself
@@ -27,10 +25,15 @@ public class ListNode {
   }
 
   public void print() {
+    System.out.println(this);
+  }
+
+  @Override
+  public String toString() {
     ListNode ln = this;
+    String res =String.valueOf(ln.val);
     assert ln != null;
-    out.print(ln.val);
-    while ((ln = ln.next) != null) out.printf("->%d", ln.val);
-    out.println();
+    while ((ln = ln.next) != null) res+= String.format("->%d", ln.val);
+    return res;
   }
 }
