@@ -14,13 +14,16 @@ package math;
  *
  * Input: "taiaiaertkixquxjnfxxdh"
  * Output: "thisisencryptedmessage"
- * .
+ *
  *
  * The initial message "thisisencryptedmessage" was encrypted as follows:
  *
  * letter 0: t -> 19 -> t;
  * letter 1: th -> (19 + 7) % 26 -> 0 -> a;
  * letter 2: thi -> (19 + 7 + 8) % 26 -> 8 -> i; etc.
+ *
+ * Input: rrbvosfnffbfxlxb
+ * Output: rakutenisawesome
  *
  * @author john.lim
  */
@@ -44,10 +47,33 @@ public class Cipher26 {
         return ans;
     }
 
+    String decrypt(String message) {
+        // c = (sum + y)%26
+        // c % 26 = sum + y;
+        // c-sum %26 = y;
+
+
+        //
+        int d = 0;
+        int sum  =0;
+        String ans ="";
+        for(char c : message.toCharArray()){
+            sum+=(c-97);
+             d = sum%26;
+            ans+= (char)(97+d);
+        }
+
+        return ans;
+    }
+
   public static void main(String[] args) {
     //
 
       Cipher26 cp = new Cipher26();
       cp.cipher26("taiaiaertkixquxjnfxxdh");
+
+    System.out.println(cp.decrypt("rakutenisawesome"));
+    System.out.println(cp.cipher26("rrbvosfnffbfxlxb"));
+    System.out.println(cp.cipher26("tai"));
   }
 }

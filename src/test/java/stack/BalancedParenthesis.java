@@ -31,5 +31,6 @@ public class BalancedParenthesis {
   public static void main(String[] args) {
     BalancedParenthesis bp = new BalancedParenthesis();
     System.out.println(bp.isBalanced("{[]}"));
+    System.out.println(bp.isBalanced("{[()[()]]([])}"));
   }
 }

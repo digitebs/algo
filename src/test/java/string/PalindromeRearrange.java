@@ -5,6 +5,9 @@ package string;
 Easy* no need to recompute all combination
 
 Given a string, find out if its characters can be rearranged to form a palindrome.
+
+Input: aabb
+Output: true
  */
 public class PalindromeRearrange {
   boolean palindromeRearranging(String s) {
