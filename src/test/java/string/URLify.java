@@ -3,12 +3,20 @@ package string;
 import java.util.Arrays;
 
 /**
+ *
+ * easy*
+ *
  * given an array string  and n, where n is the actual length of string excluding the space at the end.
  *
  * replace all ' ' with '0' '2' '%'. assuming the given array will always have extra space to fit the newly
  * encoded string
  *
  * assuming the character has enough space:- reverse traverse, with a pointer at the end
+ *
+ * Input:
+ * [rakuten is awseome    ]
+ * Output:
+ * [rakuten%20is%20awseome]
  * */
 public class URLify {
   static void URLify(char[] arr, int n) {

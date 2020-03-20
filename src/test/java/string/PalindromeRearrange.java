@@ -8,6 +8,10 @@ Given a string, find out if its characters can be rearranged to form a palindrom
 
 Input: aabb
 Output: true
+
+Input:  abba
+Output: true
+
  */
 public class PalindromeRearrange {
   boolean palindromeRearranging(String s) {

@@ -2,6 +2,9 @@ package sort;
 
 import java.util.Arrays;
 
+/*
+  find the 1st missing positive number in an array  input is >= 0
+ */
 public class MissingPositive {
   public int firstMissingPositive(int[] nums) {
     Arrays.sort(nums);
@@ -30,6 +33,8 @@ public class MissingPositive {
         nums[i] = nums[i] ^ nums[temp];
         i--; // backtrack
       }
+
+      System.out.println(Arrays.toString(nums));
     }
     for (int i = 0; i < nums.length; i++) {
       if (i != nums[i]) return i;
@@ -44,6 +49,6 @@ public class MissingPositive {
     System.out.println(mp.firstMissingPositive(new int[] {-1, -3, -3, 2, 6}));
     System.out.println(mp.firstMissingPositive(new int[] {-1, -3}));
     System.out.println(mp.firstMissingPositive(new int[] {6}));
-    System.out.println(mp.firstMissingPositiveDistinct(new int[] {600, 100, 60, 5}));
+    System.out.println(mp.firstMissingPositiveDistinct(new int[] {3, 2, 0, 5}));
   }
 }

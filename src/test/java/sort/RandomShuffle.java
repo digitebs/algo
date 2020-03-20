@@ -45,7 +45,7 @@ public class  RandomShuffle {
   }
 
   /*
-   given a grid and k, randomly shuffle the k bomb in the grid
+   given a char grid and k, randomly shuffle the k bomb '*' in the grid
 
    mineweeper bomb
    */

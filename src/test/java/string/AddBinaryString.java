@@ -1,5 +1,13 @@
 package string;
 
+/*
+given  two binary string add them together.
+
+Input:
+"11" ,"1"
+
+Output: "100"
+ */
 public class AddBinaryString {
   static String addBinary(String a, String b) {
     if (a.length() < b.length()) a = String.format("%" + b.length() + "s", a).replace(' ', '0');
@@ -19,6 +27,6 @@ public class AddBinaryString {
   }
 
   public static void main(String[] args) {
-    System.out.println(addBinary("11", "1"));
+    System.out.println(addBinary("11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111", "1"));
   }
 }

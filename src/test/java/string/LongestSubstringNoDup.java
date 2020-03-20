@@ -5,6 +5,10 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
+
+/*
+  given a string, find the longets substring that has no dup
+ */
 public class LongestSubstringNoDup {
   // using hashmap to store dup index
   // a b c d e f g h c a

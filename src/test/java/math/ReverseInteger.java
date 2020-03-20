@@ -4,6 +4,9 @@ import static java.lang.Integer.*;
 import static java.lang.Math.abs;
 
 /*
+
+  easy*
+
   given an integer n reverse the integer digits
 
   -100
