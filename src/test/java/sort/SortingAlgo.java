@@ -41,7 +41,8 @@ public class SortingAlgo {
   private int partition2(int arr[], int lo, int hi) {
     int pivot = arr[hi];
     int i = lo;
-
+      // 1 2 40 50 30
+    // 1 2 40 50 6 7 30
     for (int j = lo; j < hi; j++) {
       if (arr[j] <= pivot) {
         swap(i, j, arr);
