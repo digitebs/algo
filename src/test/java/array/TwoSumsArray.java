@@ -8,6 +8,10 @@ import java.util.stream.IntStream;
  * given an array and target sum, find the pair that sums to the target
  *
  * <p>2 sums can be solve by storing the diff in the hash, or n^2 loop
+ *
+ * easy*
+ *
+ * given an array of move length in minutes. find the 2 movie the exactly fits the flight length
  */
 public class TwoSumsArray {
   // just the count
