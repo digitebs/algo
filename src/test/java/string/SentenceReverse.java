@@ -1,10 +1,10 @@
 package string;
 
 /**
- given an array of characters reverse the order of words in the arrayseparated by' '.
-
- @author john.lim
-*/
+ * given an array of characters reverse the order of words in the arrayseparated by' '.
+ *
+ * @author john.lim
+ */
 public class SentenceReverse {
   static void reverse(char[] arr, int start, int end) {
     // for(int i =end-1;i< start;i--){
@@ -27,23 +27,23 @@ public class SentenceReverse {
   /**
    * it doest use any buffer space excpet the current buffer
    *
-   * @param str
+   * @param chars
    * @return
    */
-  static char[] reverseString(char[] str) {
-    int end = str.length - 1;
-    reverse(str, 0, end);
-    for (int start = end; start > 0; start--) {
-      // check its a space mark teh index
-      if (str[start] == ' ') {
-        reverse(str, start + 1, end);
-        end = start - 1;
+  static char[] reverseString(char[] chars) {
+    int end = chars.length - 1;
+    reverse(chars, 0, end);
+    int s = 0;
+    for (int i = 0; i <= chars.length; i++) {
+      if (i == chars.length || chars[i] == ' ') {
+        reverse(chars, s, i - 1);
+        s = i + 1; // use 1 space
       }
     }
     // reverse the last word
-    reverse(str, 0, end);
+    // reverse(str, 0, end);
 
-    return str;
+    return chars;
   }
 
   public static void main(String[] args) {
