@@ -1,5 +1,20 @@
 package dp;
 
+import java.util.Arrays;
+
+/*
+  [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
+       [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
+        [0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 2],
+         [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2],
+          [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2],
+           [0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2],
+            [0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2]]
+ */
 public class LongestCommonSubsequence {
   // longest common subsequence of 2 string
   static int common(String s1, String s2) {
@@ -12,6 +27,7 @@ public class LongestCommonSubsequence {
         else memo[i][j] = Math.max(memo[i][j - 1], memo[i - 1][j]);
       }
     }
+
     return memo[m][n];
   }
 
