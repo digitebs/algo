@@ -156,11 +156,7 @@ public class SortingAlgo {
     int[] res = new int[left.length + right.length];
     int i = 0, j = 0, k = 0;
     while (i < left.length && j < right.length) {
-      if (left[i] <= right[j]) {
-        res[k++] = left[i++];
-      } else {
-        res[k++] = right[j++];
-      }
+        res[k++] = (left[i] <= right[j]) ? left[i++] : right[j++];
     }
     while (i < left.length) res[k++] = left[i++];
     while (j < right.length) res[k++] = right[j++];
@@ -172,7 +168,7 @@ public class SortingAlgo {
     SortingAlgo t = new SortingAlgo();
     //  int[] arr=new int[]{3,7,4,9,5,2,6,1};
     // int[] arr=new int[]{3,7,4,8,5,2,6,1};
-    int[] arr = new int[] {7, 7, 6, 5, 4, 3, 2, 1};
+    int[] arr = new int[] {7, 5, 7, 5, 4, 3, 2, 1};
     // t.quicksort(arr,0,7);
     // for(int i =0;i< arr.length;i++){
     // System.out.print(arr[i]);
@@ -180,7 +176,8 @@ public class SortingAlgo {
     // t.selectionSort(new int[]{3,7,4,9,5,2,6,1});
     // t.baloonSort(arr);
     //  List arr = new ArrayList(Arrays.asList(1,7,5,4,3,9));
-    t.quicksort(arr, 0, arr.length - 1);
+    arr = t.mergeSort(arr);
+    //t.quicksort(arr, 0, arr.length - 1);
     //insertionSort(arr);
      System.out.println(Arrays.toString(arr));
   }
