@@ -5,6 +5,9 @@ import java.util.Stack;
 
 
 /*
+
+  medium* optimzing is harder
+
     given an array of with building height, find the largest rectangular banner area  that can be attached to the building
 
        X
