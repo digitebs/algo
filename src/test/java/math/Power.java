@@ -9,6 +9,8 @@ public class Power {
   /*
      find the nth power of x
      using recursion and memo
+
+     negative exp is 1/x^n
   */
   public double myPow(double x, int n) {
     if (n == 0) return 1;
