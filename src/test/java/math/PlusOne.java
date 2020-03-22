@@ -1,5 +1,6 @@
 package math;
 
+import com.sun.tools.corba.se.idl.constExpr.Plus;
 import com.sun.tools.javac.util.List;
 
 import java.util.ArrayList;
@@ -8,8 +9,15 @@ import java.util.Iterator;
 
 import static java.lang.System.out;
 
+
+/*
+  given a non negative array, add 1 to the array.
+
+  Input:  1,2,3
+  Output: 1,2,4
+ */
 public class PlusOne {
-  static ArrayList<Integer> plusOne(ArrayList<Integer> a) {
+  ArrayList<Integer> plusOne(ArrayList<Integer> a) {
     for (int i = a.size() - 1; i >= 0; i--) {
       if (a.get(i) == 9) { // okay we will exceed 10
         a.set(i, 0);
@@ -20,16 +28,16 @@ public class PlusOne {
       }
     }
 
-    Iterator<Integer> it = a.iterator();
-    while (it.hasNext()) {
-      if (it.next() == 0) it.remove();
-      else break;
+    while (a.size() > 1 && a.get(0) == 0) {
+      a.remove(0);
     }
     return a;
   }
 
   public static void main(String[] args) {
-    out.println(plusOne(new ArrayList<>(Arrays.asList(1, 2))));
-    out.println(plusOne(new ArrayList<>(Arrays.asList(9, 9, 9))));
+    PlusOne po = new PlusOne();
+    out.println(po.plusOne(new ArrayList<>(Arrays.asList(1, 2))));
+    out.println(po.plusOne(new ArrayList<>(Arrays.asList(9, 9, 9))));
+    out.println(po.plusOne(new ArrayList<>(Arrays.asList(0, 9, 9))));
   }
 }
