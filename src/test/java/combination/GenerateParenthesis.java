@@ -1,4 +1,4 @@
-package recursion;
+package combination;
 
 import java.util.LinkedList;
 import java.util.List;

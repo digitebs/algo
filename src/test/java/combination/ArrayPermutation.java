@@ -1,4 +1,4 @@
-package math;
+package combination;
 
 import scala.collection.mutable.HashSet;
 

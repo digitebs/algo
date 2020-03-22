@@ -1,7 +1,6 @@
-package array;
+package combination;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 /** return all combination of array from i to n, where k is the number of combination */
 public class CombinationArray {
