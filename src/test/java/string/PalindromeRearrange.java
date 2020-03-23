@@ -23,12 +23,12 @@ public class PalindromeRearrange {
       count[s.charAt(i)-'a']++;
     }
 
-    int mod1 = 0;
+    int mod = 0;
     for(int i = 0; i < 26; i++){
-      if(count[i]%2 == 1) mod1++;
+      if(count[i]%2 == 1) mod++;
     }
 
-    return mod1 < 2;
+    return mod <= 2;
 
   }
 
