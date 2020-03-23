@@ -5,17 +5,18 @@ public class StockMarketDay {
   /**
    * draw a graph is easier
    *
-   * <p>maximize profit find the best buy and sell. linear solution. using buy at min price and
+   * maximize profit find the best buy and sell. linear solution. using buy at min price and
    * finding peak
    */
   static int stockmarketday(int[] price) {
 
-    int max = Integer.MIN_VALUE;
-    int min = Integer.MAX_VALUE;
-    if(price.length <= 1) throw new RuntimeException();
-    for (int i = 0; i < price.length; i++) {
+    if (price.length <= 1)
+      throw new IllegalArgumentException("Getting a profit requires at least 2 prices");
+    int min = price[0];
+    int max = price[1] - min;
+    for (int i = 1; i < price.length; i++) {
       max = Math.max(max, price[i] - min);
-      min = Math.min(price[i],min);
+      min = Math.min(price[i], min);
     }
     return max;
   }
