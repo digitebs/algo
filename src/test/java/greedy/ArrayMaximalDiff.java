@@ -1,4 +1,4 @@
-package array;
+package greedy;
 
 public class ArrayMaximalDiff {
 

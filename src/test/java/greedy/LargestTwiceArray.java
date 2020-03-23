@@ -1,4 +1,4 @@
-package array;
+package greedy;
 
 /*
   Input : arr = {3, 6, 1, 0}

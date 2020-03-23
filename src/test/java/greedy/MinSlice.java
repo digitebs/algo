@@ -1,4 +1,4 @@
-package math;
+package greedy;
 
 import org.junit.Test;
 
