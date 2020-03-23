@@ -1,4 +1,4 @@
-package array;
+package greedy;
 
 /*
 
@@ -20,7 +20,7 @@ package array;
 
     Output: true
 */
-public class FirstComeFirstServe {
+public class CafeOrderChecker {
   boolean isFirstComeFirstServed(int[] a, int[] b, int[] c) {
 
     int j = 0;
@@ -36,7 +36,7 @@ public class FirstComeFirstServe {
   }
 
   public static void main(String[] args) {
-    FirstComeFirstServe fcfs = new FirstComeFirstServe();
+    CafeOrderChecker fcfs = new CafeOrderChecker();
     System.out.println(
         fcfs.isFirstComeFirstServed(new int[] {1, 9}, new int[] {7, 8}, new int[] {1, 7, 8}));
   }
