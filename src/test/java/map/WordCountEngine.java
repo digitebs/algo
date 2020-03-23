@@ -46,11 +46,42 @@ public class WordCountEngine {
     return res.toArray(new String[0][]);
   }
 
+  // O(n) engine 2
+  Map<String, Integer> populateWordsToCounts(String str) {
+
+    final String ESC = "\'-";
+    Map<String, Integer> hm = new HashMap<>();
+    int s = 0;
+    str = str + " "; //hack add space
+    for(int i = 0; i < str.length(); i++){
+      char c= str.charAt(i);
+      if(!Character.isLetter(c) && !ESC.contains(c+"")){
+        String key =str.substring(s,i);
+        if(!key.isEmpty() && !ESC.contains(key)){
+          String cap = Character.toUpperCase(str.charAt(s))
+                  + str.substring(s+1,i);
+          if(hm.containsKey(cap)){
+            hm.put(key,hm.getOrDefault(cap,0)+1);
+            hm.remove(cap);
+          }else
+            hm.put(key,hm.getOrDefault(key,0)+1);
+        }
+        s = i+1;// exclude sapce
+      }
+    }
+    return hm;
+  }
+
   public static void main(String[] args) {
-    String[][] res = wordCountEngine("hello, hello, barcelona barcelona! ");
+    WordCountEngine wce = new WordCountEngine();
+    String[][] res = wce.wordCountEngine("hello, hello, barcelona barcelona! ");
 
     for (String[] s : res) {
       System.out.println(Arrays.toString(s));
     }
+
+    System.out.println(wce.populateWordsToCounts("Dessert - mille-feuille cake"));
+    System.out.println(wce.populateWordsToCounts("Mmm...mmm...decisions...decisions"));
+    System.out.println(wce.populateWordsToCounts("Allie's Bakery: Sasha's Cakes"));
   }
 }
