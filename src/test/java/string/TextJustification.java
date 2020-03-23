@@ -30,7 +30,8 @@ public class TextJustification {
     List<String> ans = new ArrayList<>();
     while (i < words.length) {
       int wc = i - start; // word count
-      if (len + words[i].length() + wc > maxWidth) { // if current line exceed the max width, justify evenly
+      if (len + words[i].length() + wc
+          > maxWidth) { // if current line exceed the max width, justify evenly
         /* Distribute evenly */
         int c = Math.max(1, wc - 1); // the number of words - 1
         int free = maxWidth - len; // free space left

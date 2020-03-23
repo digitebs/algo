@@ -3,6 +3,10 @@ package array;
 /*
     Given array of integers, find the maximal possible sum of some of its k consecutive elements.
 
+   given an array of nearby building in club street. return the maximum number of people that potentially can be affected
+   by COVD-100
+   the virus can only be transmitted up to max k buildings
+
     arr = 2, 3, 5, 1, 6
     k= 2
 
@@ -18,8 +22,7 @@ public class MaxConsectiveSum {
     int i = 0;
     int max = 0;
 
-    do max += arr[i];
-    while (++i < k);
+    while(i++<k) max += arr[i];
 
     int temp = max;
     do max = Math.max(temp += (arr[i] - arr[i - k]), max);
