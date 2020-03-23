@@ -1,8 +1,8 @@
 package greedy;
 
 /*
-  Given an array of integers, find the highest product you can get from three of the integers.
- */
+ Given an array of integers, find the highest product you can get from three of the integers.
+*/
 public class HighestProductOfThree {
   public static int highestProductOf3(int[] arr) {
 
@@ -25,9 +25,9 @@ public class HighestProductOfThree {
   }
 
   public static void main(String[] args) {
-      highestProductOf3(new int[]{-10, 1, 3, 2, -10});
-      highestProductOf3(new int[]{-5, -1, -3, -2});
-      highestProductOf3(new int[]{-5, 4, 8, 2,3 });
-      highestProductOf3(new int[]{6, 1, 3, 5, 7, 8, 2});
+    System.out.println(highestProductOf3(new int[] {-10, 1, 3, 2, -10}));
+    System.out.println(highestProductOf3(new int[] {-5, -1, -3, -2}));
+    System.out.println(highestProductOf3(new int[] {-5, 4, 8, 2, 3}));
+    System.out.println(highestProductOf3(new int[] {6, 1, 3, 5, 7, 8, 2}));
   }
 }
