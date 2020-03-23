@@ -3,12 +3,15 @@ package array;
 /*
     Given array of integers, find the maximal possible sum of some of its k consecutive elements.
 
-   given an array of nearby building in club street. return the maximum number of people that potentially can be affected
-   by COVD-100
-   the virus can only be transmitted up to max k buildings
+    given an array of nearby building in club street. return the maximum total number of people
+    that potentially can be affected by COVD-100
+    the virus can only be transmitted up to max k buildings nearby from source, the source can be anywhere
 
+    Input:
     arr = 2, 3, 5, 1, 6
     k= 2
+
+    Output: 8
 
     2 + 3 = 5;
     3 + 5 = 8; // highest
