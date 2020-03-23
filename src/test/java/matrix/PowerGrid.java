@@ -13,7 +13,7 @@ import java.util.stream.IntStream;
 
     per day an active cell can only power its adjacent neighbor(up, down, left,right).
  */
-public class MinimumDays {
+public class PowerGrid {
   int minimumDays(int rows, int columns, List<List<Integer>> grid) {
     int zeroCount,days=-1;
     final int[] dx = {1, -1, 0, 0}, dy = {0, 0, 1, -1};
@@ -47,7 +47,7 @@ public class MinimumDays {
   public static void main(String[] args) {
     //
 
-    MinimumDays md = new MinimumDays();
+    PowerGrid md = new PowerGrid();
     List<List<Integer>> arr = new ArrayList<>();
     arr.add(Arrays.asList(1, 0, 0, 0, 0));
     arr.add(Arrays.asList(0, 1, 0, 0, 0));
