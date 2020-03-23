@@ -1,4 +1,4 @@
-package math;
+package greedy;
 
 /** A[0] = 23171 A[1] = 21011 A[2] = 21123 A[3] = 21366 A[4] = 21013 A[5] = 21367 A[5]-A[1] 356 */
 public class StockMarketDay {
@@ -10,12 +10,12 @@ public class StockMarketDay {
    */
   static int stockmarketday(int[] price) {
 
-    int max = 0;
-    int bi = 0;
+    int max = Integer.MIN_VALUE;
+    int min = Integer.MAX_VALUE;
+    if(price.length <= 1) throw new RuntimeException();
     for (int i = 0; i < price.length; i++) {
-      if (price[bi] > price[i]) bi = i; // update the buy and sell index
-      // calculate
-      max = Math.max(max, price[i] - price[bi]);
+      max = Math.max(max, price[i] - min);
+      min = Math.min(price[i],min);
     }
     return max;
   }
@@ -37,6 +37,8 @@ public class StockMarketDay {
   }
 
   public static void main(String args[]) {
+
     System.out.println(stockmarketday(new int[] {7, 1, 5, 3, 6, 4}));
+    System.out.println(stockmarketday(new int[] {9, 7, 4, 1}));
   }
 }
