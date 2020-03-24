@@ -58,12 +58,43 @@ public class BinarySearchPivot {
     return left;
   }
 
+  public static int pivot3(int[] arr) {
+
+    // find the rotation point in the array
+    // pivot is mid-1 > && mid < mid +1
+    // start > mid
+    // move left
+    // move right
+    // 2 3 4 5 1
+    // 3 4 5 6 7 1 2
+    // 4 5 6 7 1 2 3
+    //6 7 1 2 3 4 5
+    // 3 4 5 6 7 1 2
+
+    int left = 0;
+    int right = arr.length-1;
+    if(arr[right] > arr[left]) return 0;//  force???
+    while (left < right) {
+      int mid = left +(right-left) / 2;
+     // System.out.println("mid"+mid);
+      if (arr[0] >= arr[mid] ) {
+        right = mid;
+      } else {
+        left = mid;
+      }
+      if(left +1 == right) break;
+
+    }
+    return right;
+  }
+
   public static void main(String[] args) {
     // Arrays.binarySearch()
-    System.out.println(pivot2(new int[] {8, 1, 2, 3, 4, 5,6,7}));
-    System.out.println(pivot2(new int[] {2, 3, 4, 5,6,7,8,1}));
-    System.out.println(pivot2(new int[] {1, 2, 3, 4, 5,6,7,8}));
-    System.out.println(pivot2(new int[] {3, 4, 5, 1, 2}));
-    System.out.println(pivot2(new int[] {9, 12, 17, 2, 4, 5}));
+    System.out.println(pivot3(new int[] {1,2}));
+    System.out.println(pivot3(new int[] {8, 1, 2, 3, 4, 5,6,7}));
+    System.out.println(pivot3(new int[] {2, 3, 4, 5,6,7,8,1}));
+    System.out.println(pivot3(new int[] {1, 2, 3, 4, 5,6,7,8}));
+    System.out.println(pivot3(new int[] {3, 4, 5, 1, 2}));
+    System.out.println(pivot3(new int[] {9, 12, 17, 2, 4, 5}));
   }
 }
