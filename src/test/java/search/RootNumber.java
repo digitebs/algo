@@ -4,7 +4,7 @@ public class RootNumber {
   /*
      root of a number
 
-     false positive method
+     false position method
         newton method // using tangent line, 1 point
         secant line // using triangle, 2 points
      bisection method
