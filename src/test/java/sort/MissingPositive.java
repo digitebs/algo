@@ -6,6 +6,7 @@ import java.util.Arrays;
   find the 1st missing positive number in an array  input is >= 0
  */
 public class MissingPositive {
+
   public int firstMissingPositive(int[] nums) {
     Arrays.sort(nums);
     /*int min = 1;
@@ -17,12 +18,16 @@ public class MissingPositive {
       }
     }*/
     for (int i = 0; i < nums.length; i++) {
-      if (i != nums[i]-1) return i+1; // exclude 0
+      if (i != nums[i] - 1) {
+        return i + 1; // exclude 0
+      }
     }
     return nums.length;
   }
 
-  /** the missing positive should be within the array, no duplicate allowed */
+  /**
+   * the missing positive should be within the array, no duplicate allowed
+   */
   public int firstMissingPositiveDistinct(int[] nums) {
     for (int i = 0; i < nums.length; i++) {
       int temp = nums[i];
@@ -37,18 +42,20 @@ public class MissingPositive {
       System.out.println(Arrays.toString(nums));
     }
     for (int i = 0; i < nums.length; i++) {
-      if (i != nums[i]) return i;
+      if (i != nums[i]) {
+        return i;
+      }
     }
     return nums.length;
   }
 
   public static void main(String[] args) {
     MissingPositive mp = new MissingPositive();
-    System.out.println(mp.firstMissingPositive(new int[] {2, 3, 3, 6}));
-    System.out.println(mp.firstMissingPositive(new int[] {1, 1, 2}));
-    System.out.println(mp.firstMissingPositive(new int[] {-1, -3, -3, 2, 6}));
-    System.out.println(mp.firstMissingPositive(new int[] {-1, -3}));
-    System.out.println(mp.firstMissingPositive(new int[] {6}));
-    System.out.println(mp.firstMissingPositiveDistinct(new int[] {3, 2, 0, 5}));
+    System.out.println(mp.firstMissingPositive(new int[]{2, 3, 3, 6}));
+    System.out.println(mp.firstMissingPositive(new int[]{1, 1, 2}));
+    System.out.println(mp.firstMissingPositive(new int[]{-1, -3, -3, 2, 6}));
+    System.out.println(mp.firstMissingPositive(new int[]{-1, -3}));
+    System.out.println(mp.firstMissingPositive(new int[]{6}));
+    System.out.println(mp.firstMissingPositiveDistinct(new int[]{3, 2, 0, 5}));
   }
 }

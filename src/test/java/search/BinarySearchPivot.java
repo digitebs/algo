@@ -73,7 +73,7 @@ public class BinarySearchPivot {
 
     int left = 0;
     int right = arr.length-1;
-    if(arr[right] > arr[left]) return 0;//  force???
+    //if(arr[right] > arr[left]) return 0;//  force???
     while (left < right) {
       int mid = left +(right-left) / 2;
      // System.out.println("mid"+mid);

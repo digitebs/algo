@@ -1,4 +1,4 @@
-package sort;
+package search;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ Find all the elements of [1, n] inclusive that do not appear in this array.
  */
 public class FindDisappearNumber {
   /*
-     using chainning swap
+     using chainning swap (NUTS)
 
      works only on element that fits in the array
   */
