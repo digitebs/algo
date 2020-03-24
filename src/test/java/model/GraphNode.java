@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Comparator;
+
 public class GraphNode {
   public GraphNode[] children;
   public int val;
