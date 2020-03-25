@@ -15,7 +15,7 @@ public class TreeIsBinary {
 
     if (tn.val < min || tn.val > max) return false;
 
-    return isBst(tn.left, min, tn.val - 1)
+      return isBst(tn.left, min, tn.val - 1)
         && isBst(tn.right, tn.val + 1, max); // dig it, pre order traversal go left then right
   }
 
@@ -55,5 +55,21 @@ public class TreeIsBinary {
     tn1.right = tn4;
     // System.out.println(isBst(tn, Integer.MIN_VALUE, Integer.MAX_VALUE));
     System.out.println(isBST(tn,null,null));
+
+    tn = new Node(5);
+     tn1 = new Node(4);
+     tn2 = new Node(3);
+     tn3 = new Node(2);
+     tn4 = new Node(1);
+
+     tn.left = tn1;
+     tn1.left = tn2;
+     tn2.left = tn3;
+     tn3.left = tn4;
+    System.out.println(isBST(tn,null,null));
+
+    tn = new Node(5);
+    System.out.println(isBST(tn,null,null));
+
   }
 }
