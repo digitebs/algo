@@ -14,8 +14,7 @@ a balance binary tree is a where all nodes in a tree has a maxium difference of 
 */
 public class TreeIsBalance {
 
-  static int height(TreeNode node)
-  {
+  static int height(TreeNode node) {
     /* base case tree is empty */
     if (node == null)
       return 0;
@@ -27,11 +26,11 @@ public class TreeIsBalance {
 
   static int checkHeight(TreeNode node) {
     if (node == null) return 0;
-    int left,right ;
-    if ((left=checkHeight(node.left)) < 0) return left;
-    if ((right=checkHeight(node.right)) < 0) return right;
-
-    if (Math.abs(left - right) > 1) return -1;
+    int left = checkHeight(node.left);
+    int right = checkHeight(node.right);
+    if (Math.min(left, right) < 0 || Math.abs(
+        left -
+            right) > 1) return -1;
     return Math.max(left, right) + 1;
   }
 
@@ -59,7 +58,7 @@ public class TreeIsBalance {
     TreeNode root = new TreeNode(6);
     root.left = new TreeNode(1);
     root.right = new TreeNode(0);
-    root.right.right= new TreeNode(7);
+    root.right.right = new TreeNode(7);
     root.right.right.right = new TreeNode(8);
 
     System.out.println(isBalanced(root));
