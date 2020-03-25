@@ -18,15 +18,15 @@ public class TreeIsBalance {
   static int checkHeight(TreeNode node) {
     if (node == null) return 0;
     int left,right ;
-    if ((left=checkHeight(node.left)) == -1) return left;
-    if ((right=checkHeight(node.right)) == -1) return right;
+    if ((left=checkHeight(node.left)) < 0) return left;
+    if ((right=checkHeight(node.right)) < 0) return right;
 
     if (Math.abs(left - right) > 1) return -1;
     return Math.max(left, right) + 1;
   }
 
   static boolean isBalance(TreeNode root) {
-    return checkHeight(root) != -1 || root.left== null ^ root.right==null;
+    return checkHeight(root)  >= 0 || root.left== null ^ root.right==null;
   }
 
   public static void main(String[] args) {
