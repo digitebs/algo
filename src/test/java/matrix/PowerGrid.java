@@ -12,6 +12,14 @@ import java.util.stream.IntStream;
      determine how days it will take to turn all the power on. 1 is active 0 inactive.
 
     per day an active cell can only power its adjacent neighbor(up, down, left,right).
+
+
+    Input:
+    1, 0, 0, 0, 0
+    1, 1, 0, 0, 0
+    0, 0, 1, 0, 0
+    0, 0, 0, 1, 0
+    0, 0, 0, 0, 1
  */
 public class PowerGrid {
   int minimumDays(int rows, int columns, List<List<Integer>> grid) {
@@ -49,11 +57,11 @@ public class PowerGrid {
 
     PowerGrid md = new PowerGrid();
     List<List<Integer>> arr = new ArrayList<>();
-    arr.add(Arrays.asList(1, 0, 0, 0, 0));
+    arr.add(Arrays.asList(0, 0, 0, 0, 0));
+    arr.add(Arrays.asList(0, 0, 0, 0, 0));
+    arr.add(Arrays.asList(0, 0, 0, 0, 0));
     arr.add(Arrays.asList(0, 1, 0, 0, 0));
-    arr.add(Arrays.asList(0, 0, 1, 0, 0));
-    arr.add(Arrays.asList(0, 0, 0, 1, 0));
-    arr.add(Arrays.asList(0, 0, 0, 0, 1));
+    arr.add(Arrays.asList(1, 0, 0, 0, 0));
     System.out.println(md.minimumDays(5, 5, arr));
 
     List<List<Integer>> arr1 = new ArrayList<>();
