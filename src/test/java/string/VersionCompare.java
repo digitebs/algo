@@ -59,6 +59,9 @@ public class VersionCompare {
     out.println(new VersionCompare().compareVersion("1.0", "1"));
     out.println(new VersionCompare().compareVersion("01", "1"));
     out.println(new VersionCompare().compareVersion("13.1.2", "13.1"));
+    out.println(new VersionCompare().compareVersion("13.1.01", "13.1.1000"));
+    out.println(new VersionCompare().compareVersion("13.1.1", "13.1.1000"));
+    out.println(new VersionCompare().compareVersion("13.1.11", "13.1.1000"));
     out.println(new VersionCompare().compareVersion("4444371174137455", "5.168"));
     out.println(new VersionCompare().compareVersion("2", "4"));
   }

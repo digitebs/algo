@@ -10,8 +10,8 @@ Output: "100"
  */
 public class AddBinaryString {
   static String addBinary(String a, String b) {
-    if (a.length() < b.length()) a = String.format("%" + b.length() + "s", a).replace(' ', '0');
-    else b = String.format("%" + a.length() + "s", b).replace(' ', '0');
+    a = String.format("%" + b.length() + "s", a).replace(' ', '0');
+    b = String.format("%" + a.length() + "s", b).replace(' ', '0');
 
     String ans = "";
     int c = 0;
@@ -27,6 +27,6 @@ public class AddBinaryString {
   }
 
   public static void main(String[] args) {
-    System.out.println(addBinary("11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111", "1"));
+    System.out.println(addBinary("1", "10001"));
   }
 }
