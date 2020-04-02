@@ -17,7 +17,6 @@ public class HappyNumber {
 
   // x^2 - y^2 == (x-y)(x+y) if - can factor out
   public int sumOfSquare(int n){
-    //System.out.println(n);
     int sum = 0;
     do {
       int r = n%10;
@@ -43,6 +42,7 @@ public class HappyNumber {
     return n == 1;
   }
 
+  // you can use fast and slow pointer for cycle detection
   public boolean isHappy(int n) {
 
     Set<Integer> hs = new HashSet<>();
@@ -53,6 +53,6 @@ public class HappyNumber {
 
   public static void main(String[] args) {
     HappyNumber hn = new HappyNumber();
-    System.out.println(hn.isHappy(26));
+    System.out.println(hn.isHappy(19));
   }
 }
