@@ -1,11 +1,12 @@
 package map;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class RomanInteger {
   public String intToRoman(int num) {
-    TreeMap<Integer, String> hm = new TreeMap<>((a, b) -> b - a);
+    LinkedHashMap<Integer, String> hm = new LinkedHashMap<>();
     hm.put(1000, "M");
     hm.put(900, "CM");
     hm.put(500, "D");
@@ -23,8 +24,8 @@ public class RomanInteger {
     StringBuilder sb = new StringBuilder();
 
     for (Map.Entry<Integer, String> e : hm.entrySet()) {
-      System.out.println(e.getKey());
-      while (num >= e.getKey()) {
+      // System.out.println(e.getKey());
+      while (num >= e.getKey()) { // if statement can be converted to while statement
         sb.append(e.getValue());
         num -= e.getKey();
       }
@@ -34,6 +35,7 @@ public class RomanInteger {
 
   public static void main(String args[]) {
     RomanInteger rm = new RomanInteger();
-    System.out.println(rm.intToRoman(143043));
+    // 1 - 3999
+    System.out.println(rm.intToRoman(3999));
   }
 }
