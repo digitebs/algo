@@ -16,18 +16,19 @@ A happy number is a number defined by the following process: Starting with any p
 public class HappyNumber {
 
   // x^2 - y^2 == (x-y)(x+y) if - can factor out
-  public int sumOfSquare(int n){
+  public int sumOfSquare(int n) {
     int sum = 0;
     do {
-      int r = n%10;
-      sum += r*r;
-    }while((n/=10)> 0);
+      int r = n % 10;
+      sum += r * r;
+    } while ((n /= 10) > 0);
     return sum;
   }
+
   public boolean isHappy2(int n) {
 
     // cycle only happens for this 8 values:
-    Set<Integer> hs = new HashSet(){{
+    Set<Integer> hs = new HashSet() {{
       add(1);
       add(4);
       add(16);
@@ -38,7 +39,7 @@ public class HappyNumber {
       add(20);
     }};
 
-    while(!hs.contains(n = sumOfSquare(n)));
+    while (!hs.contains(n = sumOfSquare(n))) ;
     return n == 1;
   }
 
@@ -47,8 +48,21 @@ public class HappyNumber {
 
     Set<Integer> hs = new HashSet<>();
     hs.add(n);
-    while(hs.add(n = sumOfSquare(n)));
+    while (hs.add(n = sumOfSquare(n))) ;
     return hs.contains(1);
+  }
+
+  // no hash, 6 tries is a cycle????
+  public boolean isHappy3(int n) {
+    for (int i = 0; i < 6; i++) { // 6 loops is mostly a cycle
+      int sum = 0;
+      do {
+        int r = n % 10;
+        sum += r * r;
+      } while ((n /= 10) > 0);
+      if ((n = sum) == 1) return true;
+    }
+    return false;
   }
 
   public static void main(String[] args) {
