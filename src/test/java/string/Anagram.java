@@ -2,11 +2,15 @@ package string;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-/** @author john.lim */
+/**
+ * @author john.lim
+ */
 public class Anagram {
+
   private static boolean isAnagram(String s, String t) {
     HashMap<Character, Integer> map = new HashMap<>();
 
@@ -64,9 +68,32 @@ public class Anagram {
       hm.putIfAbsent(key, new ArrayList<>());
       hm.get(key).add(strs[i]);
     }
-
     return new ArrayList<>(hm.values());
   }
+
+
+  int[] primes = {
+      2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89,
+      97,101};
+
+  int score(String s) {
+    int score=0;
+    for (int i = 0; i < s.length(); i++) {
+      score*=primes[s.charAt(i)-'a'];
+    }
+    return score;
+  }
+
+  public List<List<String>> groupAnagrams2(String[] strs) {
+    HashMap<Integer, List<String>> hm = new HashMap<>();
+    for (int i = 0; i < strs.length; i++) {
+      int key = score(strs[i]);
+      hm.putIfAbsent(key, new ArrayList<>());
+      hm.get(key).add(strs[i]);
+    }
+    return new ArrayList<>(hm.values());
+  }
+
 
   public static void main(String[] arg) {
     System.out.println(isAnagram("xx", "rr"));
