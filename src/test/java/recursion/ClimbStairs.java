@@ -10,7 +10,9 @@ Each time you can either climb 1 or 2 steps. In how many distinct ways can you c
 
 
  There are n people in a room. in how many ways can you infect all the people in the room.
-  Assuming a person can infect a number of people at min 1 and max k.
+  Assuming a person can only infect a number of people at min 1 and max 2.
+
+  your initially not included in the room.
 
  */
 public class ClimbStairs {
@@ -29,7 +31,7 @@ public class ClimbStairs {
   }
 
   public static void main(String[] args) {
-    System.out.println(climbStairs(3,2));
+    System.out.println(climbStairs(4,2));
     // System.out.println(climbStairs(5));
   }
 }

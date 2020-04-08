@@ -75,5 +75,11 @@ public class PowerGrid {
     arr2.add(Arrays.asList(0, 0, 0));
     arr2.add(Arrays.asList(0, 0, 0));
     System.out.println(md.minimumDays(3, 3, arr2));
+
+    List<List<Integer>> arr3 = new ArrayList<>();
+    arr3.add(Arrays.asList(0, 1, 0, 0));
+    arr3.add(Arrays.asList(0, 0, 1, 0));
+    arr3.add(Arrays.asList(0, 1, 0, 0));
+    System.out.println(md.minimumDays(3, 4, arr3));
   }
 }
