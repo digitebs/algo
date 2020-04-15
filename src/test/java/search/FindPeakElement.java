@@ -1,5 +1,12 @@
 package search;
 
+
+/*
+  given an array of infected disease find any peak of cases in the array
+  // no same duplicate case
+  Input: 42, -14, -5, 7, 8, 40, 8, 3
+  Output: 40
+ */
 public class FindPeakElement {
   /** peak element log n solution where pivot is bigger than left && right */
   public int findPeakElement(int[] arr) {
@@ -22,7 +29,11 @@ public class FindPeakElement {
   public static void main(String[] args) {
     FindPeakElement fpe = new FindPeakElement();
     int[] nums = {42, -14, -5, 7, 8, 40, 8, 3};
-    // System.out.println(nums[fpe.findPeakElement(nums)]);
-    System.out.println(fpe.findPeakElement(new int[] {1, 3}));
+    System.out.println(nums[fpe.findPeakElement(nums)]);
+    nums = new int[]{6,3,2,3,5};
+     System.out.println(nums[fpe.findPeakElement(nums)]);
+     nums = new int[]{2,6,3,3,3,3,1};
+    System.out.println(nums[fpe.findPeakElement(nums)]);
+    //System.out.println(fpe.findPeakElement(new int[] {1, 3}));
   }
 }

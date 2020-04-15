@@ -47,6 +47,7 @@ public class ArrayRotateVolleyball {
     return formation;
   }
 
+  // counter clockwise, means to the left
   public void rotateReverse(String[] nums, int k) {
     k %= nums.length;
     reverse(nums, 0, k - 1);
