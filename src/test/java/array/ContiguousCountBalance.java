@@ -6,7 +6,15 @@ import java.util.HashMap;
 /**
  * @author john.lim
  */
-// Given a binary array, find the maximum length of a contiguous subarray with equal number of 0 and 1.
+/*
+    Given a binary array, find the maximum length of a contiguous subarray with equal number of 0 and 1.
+    Input: 0,1
+    Output: 2
+
+    Input: 0,0,1,0,0,0,1,1
+    Ouptut: 6, == 1,0,0,0,1,1
+
+ */
 public class ContiguousCountBalance {
 
 
