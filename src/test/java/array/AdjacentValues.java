@@ -14,32 +14,15 @@ import java.util.*;
    (3,6) or (6,9) has the maximum difference 3.
  */
 public class AdjacentValues {
-  public boolean isAdjacent(HashSet<Integer> hs, int a, int b) {
-    if (a > b) {
-      // swap
-      int temp = a;
-      a = b;
-      b = temp;
-    }
-
-    // iterate the gap
-    for (int i : hs) { // 40k this is the bottle neck
-      if (i > a + 1 && i < b) return false;
-    }
-    return true;
-  }
-
-  public int solution(int[] A) {
+  public int solution(int[] nums) {
     // write your code in Java SE 8
-    int max = -1;
-    HashSet<Integer> hs = new HashSet<>();
-    for (int value : A) {
-      hs.add(value); // store all unique values;
+    if (nums == null || nums.length < 2){
+      return 0;
     }
-    for (int i = 0; i < A.length; i++) {
-      for (int j = i + 1; j < A.length; j++) {
-        if (isAdjacent(hs, A[i], A[j])) max = Math.max(max, A[j] - A[i]);
-      }
+    Arrays.sort(nums);
+    int max = Integer.MIN_VALUE;
+    for (int i = 1; i < nums.length; i++){
+      max = Math.max(max, nums[i] - nums[i-1]);
     }
     return max;
   }

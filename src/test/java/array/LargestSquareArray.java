@@ -7,6 +7,10 @@ import static java.lang.Math.min;
 import static java.lang.System.out;
 
 /** running time of this is O(n^2) */
+
+/* Given a 2D binary matrix filled with 0's and 1's,
+ find the largest square containing only 0's and return its area. */
+
 public class LargestSquareArray {
   // check if subset
 
