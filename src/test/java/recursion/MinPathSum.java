@@ -9,7 +9,6 @@ Given a m x n grid filled with non-negative numbers,
 
  */
 public class MinPathSum {
-  int min;
   int[][] memo;
 
   int paths(int x, int y, int[][] arr) {
