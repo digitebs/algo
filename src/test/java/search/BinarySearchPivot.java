@@ -60,6 +60,36 @@ public class BinarySearchPivot {
     return left;
   }
 
+  // binary array 1 and 0 only sorted
+  public static int pivot4(int[] arr) {
+    int m = arr.length;
+    int l = 0;
+    int r = m-1;
+    int mid = (l + r) / 2;
+
+    while(l <= r){
+      int a = arr[mid];
+      if(a == 1) r = mid-1;
+      else l = mid+1;
+
+      mid = (l + r) / 2;
+    }
+    return l;
+/*
+    while (l <= r) {
+      int b = arr[mid];
+      int a = arr[mid+1];
+      if (b < a) {
+        return mid + 1;
+      } else if (mid == 0 && b == 1) {
+        return mid;
+      } else if (a == 0 && b == 0) l = mid + 1;
+      else r = mid - 1;
+      mid = (l + r) / 2;
+    }
+    return -1;*/
+}
+
   public static int pivot3(int[] arr) {
 
     // find the rotation point in the array
@@ -102,5 +132,14 @@ public class BinarySearchPivot {
     System.out.println(pivot3(new int[] {3, 4, 5, 1, 2}));
     System.out.println(pivot3(new int[] {9, 12, 17, 2, 4, 5}));
     System.out.println(pivot3(new int[] {4,5,6,7,0,1,2}));
+
+
+
+    System.out.println(pivot4(new int[] {0,0,0,1}));
+    System.out.println(pivot4(new int[] {0,0,1,1}));
+    System.out.println(pivot4(new int[] {1,1,1,1}));
+    System.out.println(pivot4(new int[] {0,0,0,0}));
+
+
   }
 }
