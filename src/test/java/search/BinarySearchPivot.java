@@ -1,5 +1,7 @@
 package search;
 
+import java.util.Arrays;
+
 /*
    right can be n-1( using mid-1) or n (using mid) as range
 
@@ -72,7 +74,7 @@ public class BinarySearchPivot {
     // 3 4 5 6 7 1 2
 
     int left = 0;
-    int right = arr.length-1;
+    int right = arr.length;
     //if(arr[right] > arr[left]) return 0;//  force???
     while (left < right) {
       int mid = left +(right-left) / 2;
@@ -89,12 +91,16 @@ public class BinarySearchPivot {
   }
 
   public static void main(String[] args) {
+
+
     // Arrays.binarySearch()
     System.out.println(pivot3(new int[] {1,2}));
+    System.out.println(pivot3(new int[] {3,1}));
     System.out.println(pivot3(new int[] {8, 1, 2, 3, 4, 5,6,7}));
     System.out.println(pivot3(new int[] {2, 3, 4, 5,6,7,8,1}));
     System.out.println(pivot3(new int[] {1, 2, 3, 4, 5,6,7,8}));
     System.out.println(pivot3(new int[] {3, 4, 5, 1, 2}));
     System.out.println(pivot3(new int[] {9, 12, 17, 2, 4, 5}));
+    System.out.println(pivot3(new int[] {4,5,6,7,0,1,2}));
   }
 }
