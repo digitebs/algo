@@ -65,6 +65,6 @@ public class MinPathSum {
     };
 
     MinPathSum mps = new MinPathSum();
-    System.out.println(mps.minPaths(arr3));
+    System.out.println(mps.minPaths(arr));
   }
 }
