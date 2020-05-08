@@ -65,14 +65,14 @@ public class BinarySearchPivot {
     int m = arr.length;
     int l = 0;
     int r = m-1;
-    int mid = (l + r) / 2;
+    int mid = l + (r-l) / 2;
 
     while(l <= r){
       int a = arr[mid];
       if(a == 1) r = mid-1;
       else l = mid+1;
 
-      mid = (l + r) / 2;
+      mid = l + (r-l) / 2;
     }
     return l;
 /*
@@ -106,15 +106,15 @@ public class BinarySearchPivot {
     int left = 0;
     int right = arr.length;
     //if(arr[right] > arr[left]) return 0;//  force???
-    while (left < right) {
-      int mid = left +(right-left) / 2;
+    while (left + 1 < right) {
+      int mid = left +(right-left) / 2; // forces no overflow
      // System.out.println("mid"+mid);
       if (arr[0] >= arr[mid] ) {
         right = mid;
       } else {
         left = mid;
       }
-      if(left +1 == right) break;
+      //if(left +1 == right) break;
 
     }
     return right;
@@ -123,6 +123,17 @@ public class BinarySearchPivot {
   public static void main(String[] args) {
 
 
+    /*
+    2
+0
+0
+7
+8
+3
+3
+4
+
+     */
     // Arrays.binarySearch()
     System.out.println(pivot3(new int[] {1,2}));
     System.out.println(pivot3(new int[] {3,1}));
@@ -135,10 +146,10 @@ public class BinarySearchPivot {
 
 
 
-    System.out.println(pivot4(new int[] {0,0,0,1}));
-    System.out.println(pivot4(new int[] {0,0,1,1}));
-    System.out.println(pivot4(new int[] {1,1,1,1}));
-    System.out.println(pivot4(new int[] {0,0,0,0}));
+//    System.out.println(pivot4(new int[] {0,0,0,1}));
+//    System.out.println(pivot4(new int[] {0,0,1,1}));
+//    System.out.println(pivot4(new int[] {1,1,1,1}));
+//    System.out.println(pivot4(new int[] {0,0,0,0}));
 
 
   }
