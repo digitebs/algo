@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 /**
  * @author john.lim
- * sort the string by frequency
+ * sort the string by frequency of character, apPle == Ppael
  *
  * lexo order if its the same frequency, case sensitive
  */
@@ -34,5 +34,6 @@ public class FrequencySort {
       FrequencySort fs = new  FrequencySort();
       System.out.println(fs.frequencySort("tree"));
       System.out.println(fs.frequencySort("Aabb"));
+      System.out.println(fs.frequencySort("apple"));
   }
 }
