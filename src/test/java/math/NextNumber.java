@@ -1,12 +1,14 @@
 package math;
 
+import java.util.Arrays;
+
 /** @author john.lim 2-> 5 -> 25 -> 52 -> 55 -> 222... */
 public class NextNumber {
 
   public String nextNumber(String num) {
         char[] numchar = num.toCharArray();
       if (num.indexOf("2") == -1) {
-          for (int i = 0; i < num.length(); i++) numchar[i] ='2';
+        Arrays.fill(numchar,'2');
           return '2' + new String(numchar);
       }
 
@@ -25,6 +27,7 @@ public class NextNumber {
     NextNumber nn = new NextNumber();
     System.out.println(nn.nextNumber("25"));
     System.out.println(nn.nextNumber("222"));
+    System.out.println(nn.nextNumber("55"));
     System.out.println(nn.nextNumber("52"));
     //
   }

@@ -11,22 +11,14 @@ import java.util.stream.Collectors;
  */
 public class FrequencySort {
     public String frequencySort(String s) {
-
         HashMap<Character, Integer> hm = new HashMap<>();
-
         for (char c :s.toCharArray() ) {
             hm.put(c, hm.getOrDefault(c,0)+1);
         }
-
         return s.chars().mapToObj(c -> (char)c).sorted((a,b)->{
             int c = hm.get(b)  -  hm.get(a);
-            if(c== 0){
-                return a-b;
-            }else{
-                return c;
-            }
+            return (c== 0)? a-b: c;
         }).map(String::valueOf).collect(Collectors.joining(""));
-
     }
 
   public static void main(String[] args) {
