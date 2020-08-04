@@ -5,11 +5,20 @@ import java.util.Stack;
 
 /*
 
-Given two strings S and T, return if they are equal when both are typed into empty text editors.
+Given 2 strings, return if they are equal when both are typed into empty text editors.
  # means a backspace character.
 
 
-  Input: S = "ab##", T = "c#d#"
+Input: "ab##", "c#d#"
+Ouput: True
+
+Input: "eab##", "c#d#e"
+Ouput: True
+
+Input: a#c, b
+Output: False
+
+
  */
 public class BackSpaceCompare {
 
@@ -40,5 +49,6 @@ public class BackSpaceCompare {
     BackSpaceCompare bsc = new BackSpaceCompare();
     System.out.println(bsc.backspaceCompare("a##c","#a#c"));
     System.out.println(bsc.backspaceCompare("a#c","b"));
+    System.out.println(bsc.backspaceCompare("ab##", "c#d#"));
   }
 }

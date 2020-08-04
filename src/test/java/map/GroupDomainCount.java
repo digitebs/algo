@@ -2,10 +2,29 @@ package map;
 
 import java.util.HashMap;
 
+
+// perfect for 30 minutes
+
 /**
+
+
  given a string list of "click count , domain"
 
- return the sum of click count by domain,subdomain, 1st level, 2nd level etc...
+ return the sum of click count group by domain(subdomain, 1st level, 2nd level etc...)
+
+
+ Input:
+ [
+ "1,mail.yahoo.co.uk",
+ "1,yahoo.co.uk"
+ ]
+
+ Output
+ {uk=2,co.uk=2,yahoo.co.uk=2,mail.yahoo.co.uk=1}
+
+
+
+
 
  Input:
  [
@@ -34,17 +53,14 @@ public class GroupDomainCount {
     for (int i = 0; i < counts.length; i++) {
       String[] val = counts[i].split(",");
       int count = Integer.parseInt(val[0]);
-      String tmp = val[1];
+      String domain = val[1];
 
       int c = -1;
       do {
-        tmp = tmp.substring(c + 1);
-        if (!hm.containsKey(tmp)) hm.put(tmp, count);
-        else hm.put(tmp, hm.get(tmp) + count);
-
-      } while ((c = tmp.indexOf(".")) != -1);
+        domain = domain.substring(c + 1);
+        hm.put(domain, hm.getOrDefault(domain,0) + count);
+      } while ((c = domain.indexOf(".")) != -1);
     }
-
     System.out.println(hm);
   }
 

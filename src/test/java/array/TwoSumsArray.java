@@ -5,7 +5,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
 /**
- * given an array and target sum, find the pair that sums to the target
+ *
+ *
+ * given an arrayy find all the 2 numbers that return the sum in that array
  *
  * <p>2 sums can be solve by storing the diff in the hash, or n^2 loop
  *
