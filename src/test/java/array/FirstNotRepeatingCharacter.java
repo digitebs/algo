@@ -5,6 +5,13 @@ package array;
 Given a string s consisting of small English letters,
  find and return the first instance of a non-repeating character in it.
   If there is no such character, return '_'.
+
+  Input
+  abacabad
+
+  Output
+  c
+
  */
 public class FirstNotRepeatingCharacter {
   char firstNotRepeatingCharacter(String s) {

@@ -1,5 +1,7 @@
 package search;
 
+import java.util.Arrays;
+
 /*
    right can be n-1( using mid-1) or n (using mid) as range
 
@@ -58,6 +60,36 @@ public class BinarySearchPivot {
     return left;
   }
 
+  // binary array 1 and 0 only sorted
+  public static int pivot4(int[] arr) {
+    int m = arr.length;
+    int l = 0;
+    int r = m-1;
+    int mid = l + (r-l) / 2;
+
+    while(l <= r){
+      int a = arr[mid];
+      if(a == 1) r = mid-1;
+      else l = mid+1;
+
+      mid = l + (r-l) / 2;
+    }
+    return l;
+/*
+    while (l <= r) {
+      int b = arr[mid];
+      int a = arr[mid+1];
+      if (b < a) {
+        return mid + 1;
+      } else if (mid == 0 && b == 1) {
+        return mid;
+      } else if (a == 0 && b == 0) l = mid + 1;
+      else r = mid - 1;
+      mid = (l + r) / 2;
+    }
+    return -1;*/
+}
+
   public static int pivot3(int[] arr) {
 
     // find the rotation point in the array
@@ -72,29 +104,53 @@ public class BinarySearchPivot {
     // 3 4 5 6 7 1 2
 
     int left = 0;
-    int right = arr.length-1;
+    int right = arr.length;
     //if(arr[right] > arr[left]) return 0;//  force???
-    while (left < right) {
-      int mid = left +(right-left) / 2;
+    while (left + 1 < right) {
+      int mid = left +(right-left) / 2; // forces no overflow
      // System.out.println("mid"+mid);
       if (arr[0] >= arr[mid] ) {
         right = mid;
       } else {
         left = mid;
       }
-      if(left +1 == right) break;
+      //if(left +1 == right) break;
 
     }
     return right;
   }
 
   public static void main(String[] args) {
+
+
+    /*
+    2
+0
+0
+7
+8
+3
+3
+4
+
+     */
     // Arrays.binarySearch()
     System.out.println(pivot3(new int[] {1,2}));
+    System.out.println(pivot3(new int[] {3,1}));
     System.out.println(pivot3(new int[] {8, 1, 2, 3, 4, 5,6,7}));
     System.out.println(pivot3(new int[] {2, 3, 4, 5,6,7,8,1}));
     System.out.println(pivot3(new int[] {1, 2, 3, 4, 5,6,7,8}));
     System.out.println(pivot3(new int[] {3, 4, 5, 1, 2}));
     System.out.println(pivot3(new int[] {9, 12, 17, 2, 4, 5}));
+    System.out.println(pivot3(new int[] {4,5,6,7,0,1,2}));
+
+
+
+//    System.out.println(pivot4(new int[] {0,0,0,1}));
+//    System.out.println(pivot4(new int[] {0,0,1,1}));
+//    System.out.println(pivot4(new int[] {1,1,1,1}));
+//    System.out.println(pivot4(new int[] {0,0,0,0}));
+
+
   }
 }

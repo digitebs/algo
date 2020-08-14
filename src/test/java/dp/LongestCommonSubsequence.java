@@ -14,6 +14,15 @@ import java.util.Arrays;
           [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2],
            [0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2],
             [0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2]]
+
+
+Given two strings text1 and text2, return the length of their longest common subsequence.
+
+A subsequence of a string is a new string generated from the original string with some characters(can be none) deleted without changing the relative order of the remaining characters. (eg, "ace" is a subsequence of "abcde" while "aec" is not). A common subsequence of two strings is a subsequence that is common to both strings.
+
+
+
+If there is no common subsequence, return 0.
  */
 public class LongestCommonSubsequence {
   // longest common subsequence of 2 string

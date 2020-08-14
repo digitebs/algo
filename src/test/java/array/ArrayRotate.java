@@ -44,6 +44,7 @@ public class ArrayRotate {
   }
 
   // rotate by reversal O(n)
+  //  clockwise, means to the right
   public void rotateReverse(int[] nums, int k) {
     k %= nums.length;
     reverse(nums, 0, nums.length - 1);

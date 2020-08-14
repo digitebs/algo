@@ -2,17 +2,19 @@ package array;
 
 import java.util.Scanner;
 
-import static java.lang.Math.max;
-import static java.lang.Math.min;
 import static java.lang.System.out;
 
 /** running time of this is O(n^2) */
+
+/* Given a 2D binary matrix filled with 0's and 1's,
+ find the largest square containing only 0's and return its area. */
+
 public class LargestSquareArray {
   // check if subset
 
   private static int maxEmptySquare(int[][] arr, int[][] memo, int x, int y, int depth) {
     int d =
-        max(
+        Math.max(
             x - 1 >= 0 ? memo[x - 1][y] - 1 : 0,
             y - 1 >= 0 ? memo[x][y - 1] - 1 : 0); // starting dept, quick jump
     for (; d < depth; d++)
@@ -27,8 +29,8 @@ public class LargestSquareArray {
     int max = 0;
     int[][] memo = new int[m][n];
     for (int x = 0; x < m; x++)
-      for (int y = 0; y < n && min(m - x, n - y) > max; y++)
-        max = max(maxEmptySquare(arr, memo, x, y, min(m - x, n - y)), max);
+      for (int y = 0; y < n && Math.min(m - x, n - y) > max; y++)
+        max = Math.max(maxEmptySquare(arr, memo, x, y, Math.min(m - x, n - y)), max);
     return max * max;
   }
 

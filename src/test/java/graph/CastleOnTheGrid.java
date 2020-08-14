@@ -7,7 +7,19 @@ import java.util.Queue;
 /*
 You are given a square grid with some cells open (.) and some blocked (X).
 Your playing piece can move along any row or column until it reaches the edge of the grid or a blocked cell.
-Given a grid, a start and an end position, determine the number of moves it will take to get to the end position.
+Given a grid, a start and an end position,
+determine the number of moves it will take to get to the end position.
+
+IInput:
+              ".X.",
+             ".X.",
+             "..."
+
+             0,0
+             0,2
+     Explanation: down, right up
+
+   Output: 3
  */
 public class CastleOnTheGrid {
   /*
@@ -47,7 +59,12 @@ public class CastleOnTheGrid {
   }
 
   public static void main(String[] args) {
-    System.out.println(minimumMoves(new String[] {".X.", ".X.", "..."}, 0, 0, 0, 2));
+    System.out.println(minimumMoves(new String[]
+            {
+             ".X.",
+             ".X.",
+             "..."}, 0, 0, 0, 2));
+
 
     System.out.println(
         minimumMoves(

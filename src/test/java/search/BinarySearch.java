@@ -61,6 +61,23 @@ public class BinarySearch {
     return -1;
   }
 
+  static int binarySearch2(int[] arr, int target) {
+    int left = 0;
+    int right = arr.length;
+    int mid = (left + right) / 2;
+    while (left < right) {
+      if (target == arr[mid]) {
+        return mid;
+      } else if (target < arr[mid]) {
+        right = mid;
+      } else {
+        left = mid;
+      }
+      mid = (left + right) / 2;
+    }
+    return -1;
+  }
+
   /*
   Given a sorted array arr of distinct integers,
   write a function indexEqualsValueSearch that returns the lowest index i for which arr[i] == i. Return -1 if there is no such index.
@@ -95,6 +112,7 @@ public class BinarySearch {
     System.out.println(binarySearchS(new int[] {5, 7, 7, 8, 8, 10, 10, 10}, 10));
     // end target
     System.out.println(binarySearchS(new int[] {5, 7, 7, 8, 8, 10}, 8));
+    System.out.println(binarySearch2(new int[] {0,1,2,3,4,5,6,7,8,9,10}, 8));
     System.out.println(indexEqualsValueSearch(new int[] {-8, 0, 2, 5}));
     // shiftedArrSearch(new int[]{9,12,17,2,4,5},2);
   }

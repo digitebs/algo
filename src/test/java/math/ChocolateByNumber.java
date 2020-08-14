@@ -5,6 +5,11 @@ public class ChocolateByNumber {
   /**
    * using loop N
    *
+   *
+   *  given circular N candies (numbered 0-N), everytime you eat the candy the wrapper
+   *  remains then you to move to + M position of candy,
+   *  return the number of candies eaten before an empty wrapper is encountered.
+   *
    * @param N
    * @param M
    * @return
