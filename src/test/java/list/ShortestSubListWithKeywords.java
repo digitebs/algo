@@ -3,6 +3,20 @@ package list;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/*
+
+medium
+
+  given a string description and keyword1 and keyword2,
+   find the the minimum substring containing both keywords
+
+   Input:
+   john likes to visit jane but jane doesn't want john to visit
+
+   Output:
+   jane doesn't want john
+
+ */
 public class ShortestSubListWithKeywords {
   public void subList(String desc, String k1, String k2) {
     String[] arr = desc.split(" ");
@@ -41,5 +55,7 @@ public class ShortestSubListWithKeywords {
     sswk.subList("a c b c a c b x","a", "b");
     sswk.subList("a a a a a a b","a", "b");
     sswk.subList("c b e f g a b","a", "b");
+    sswk.subList(
+        "john likes to visit jane but jane doesn't want john to visit", "jane", "john");
   }
 }
