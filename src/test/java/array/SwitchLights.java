@@ -8,6 +8,9 @@ import java.util.Arrays;
    which candle will remain lit after  applying to all candles.
 
     [1, 1, 1, 1, 1] => [0, 1, 0, 1, 0]
+
+    Explanation:
+    1 1 1 1 1
     0 1 1 1 1
     1 0 1 1 1
     0 1 0 1 1
@@ -15,9 +18,12 @@ import java.util.Arrays;
     0 1 0 1 0
 
     [0, 0] => [0, 0]
+
     [1, 0, 0, 1, 0, 1, 0, 1] => [1, 1, 1, 0, 0, 1, 1, 0]
 */
 public class SwitchLights {
+
+  //n^2. space and time
   int[] switchLights2(int[] a) {
     int n = a.length;
     int[] c = Arrays.copyOf(a, n);
@@ -30,6 +36,8 @@ public class SwitchLights {
     return a;
   }
 
+
+  // O(n)
   int[] switchLights(int[] a) {
     int n = a.length;
     int flip = 0;
