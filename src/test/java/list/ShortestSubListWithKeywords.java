@@ -7,11 +7,11 @@ import java.util.stream.IntStream;
 
 medium
 
-  given a string description and keyword1 and keyword2,
-   find the the minimum substring containing both keywords
+  given a string description and word1 and word2,
+   find the the minimum substring containing both words
 
    Input:
-   john likes to visit jane but jane doesn't want john to visit
+   john likes to play and visit jane but jane doesn't want john to visit her.
 
    Output:
    jane doesn't want john
@@ -56,6 +56,6 @@ public class ShortestSubListWithKeywords {
     sswk.subList("a a a a a a b","a", "b");
     sswk.subList("c b e f g a b","a", "b");
     sswk.subList(
-        "john likes to visit jane but jane doesn't want john to visit", "jane", "john");
+        "john likes to visit and play with jane  but jane doesn't want john to visit her", "jane", "john");
   }
 }
