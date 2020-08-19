@@ -39,6 +39,7 @@ public class PowerGrid {
         for (int j = 0; j < columns; j++) {
           if (grid.get(i).get(j) == 1) {
             temp.get(i).set(j, 1);
+
             for (int k = 0; k < 4; k++) { // neighbors or child nodes
               int a = i + dx[k];
               int b = j + dy[k];
