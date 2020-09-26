@@ -37,7 +37,6 @@ public class CombinationArray {
 
     for(int i =1; i< src.size();i++ )
     ca.combine2(res,src, arr, 0, i);
-
     /* Collections.sort(res, (o1, o2) -> {
         for (int i = 0; i < Math.min(o1.size(), o2.size()); i++) {
             int c = o1.get(i).compareTo(o2.get(i));
