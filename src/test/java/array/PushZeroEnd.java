@@ -2,9 +2,14 @@ package array;
 
 import java.util.Arrays;
 
+
+/*
+    push zero at the end of array
+ */
 public class PushZeroEnd {
 
   // damn 2 loops one is to check its zero
+  // n2
   static void push(int[] num) {
     for (int i = 0; i < num.length; i++) {
       if (num[i] == 0)
@@ -16,6 +21,7 @@ public class PushZeroEnd {
   }
 
   // linear, just override then increase position
+  // O(n)
   static void push2(int[] num) {
     int pos = 0;
     for (int i = 0; i < num.length; i++) {

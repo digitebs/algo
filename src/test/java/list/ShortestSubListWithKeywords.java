@@ -8,13 +8,24 @@ import java.util.stream.IntStream;
 medium
 
   given a string description and word1 and word2,
-   find the the minimum substring containing both words
+   find the shortest phrase(word count) in the description containing BOTH words
 
    Input:
-   john likes to play and visit jane but jane doesn't want john to visit her.
+   john likes to play and visit his girlfriend julia but julia doesn't want john to visit her.
+   julia, john
 
    Output:
-   jane doesn't want john
+   julia doesn't want john
+
+   Input:
+  Today is priyanka  suppose to do interview but priyanka forgot to join the interview
+
+  interview, priyanka
+
+  Output:
+  interview but priyanka
+
+
 
  */
 public class ShortestSubListWithKeywords {
@@ -32,6 +43,7 @@ public class ShortestSubListWithKeywords {
       } else if (arr[i].equals(k1) && !arr[j].equals(k2)
           || arr[i].equals(k2) && !arr[j].equals(k1)) {
       //  j++;
+        continue;
       } else if (arr[i].equals(k1) && arr[j].equals(k2) || arr[i].equals(k2) && arr[j].equals(k1)) {
         if (min > j - i) {
           min = j - i;

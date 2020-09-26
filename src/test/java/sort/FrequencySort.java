@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
  * @author john.lim
  * sort the string by frequency of character, apPle == Ppael
  *
- * lexo order if its the same frequency, case sensitive
+ * lexographical order if its the same frequency, case sensitive
  */
 public class FrequencySort {
     public String frequencySort(String s) {

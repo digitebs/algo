@@ -13,7 +13,6 @@ public class StringInPattern {
     static boolean isMatch2(String a, String s) {
       String[] words = s.split(" ");
       if (a.length() != words.length) return false;
-
       Map<Character, Integer> hm = new HashMap<>();
       Map<Integer, Character> rev = new HashMap<>();
       for (int i = 0, k = 0; i < words.length; i++) {
@@ -23,15 +22,15 @@ public class StringInPattern {
         }
       }
 
-      StringBuilder result = new StringBuilder();
+      StringBuilder sb = new StringBuilder();
       Map<String, Integer> hm2 = new HashMap<>();
       for (int i = 0, l = 0; i < words.length; i++) {
         if (!hm2.containsKey(words[i])) {
           hm2.put(words[i], l++);
         }
-        result.append(rev.get(hm2.get(words[i])));
+        sb.append(rev.get(hm2.get(words[i])));
       }
-      return result.toString().equals(a);
+      return sb.toString().equals(a);
     }
 
   public static boolean isMatch(String pattern, String input) {
@@ -53,7 +52,7 @@ public class StringInPattern {
     return true;
   }
 
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     // System.out.println(isMatch("aaba", "apple apple orange apple"));
 
     System.out.println(isMatch("aaaa", "dog apple apple dog"));
