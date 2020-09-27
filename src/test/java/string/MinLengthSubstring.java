@@ -30,13 +30,13 @@ class MinLengthSubstring {
 
     int min = Integer.MAX_VALUE;
     int limit = t.length();
-    int c=0;
     Deque<Integer[]> q = new LinkedList<>();
     for (int i = 0; i < s.length(); i++) {
       char ch = s.charAt(i);
       int count = hm.getOrDefault(ch, -1);
 
-      if (count <= 0 && limit != q.size()) ;// have you reach the limit???
+      if (count <= 0 && limit != q.size() )
+        ; // have you reach the limit???
       else {
 
         if (limit == q.size()) {
@@ -47,8 +47,8 @@ class MinLengthSubstring {
         }
 
         q.offer(new Integer[] {(int) ch, i});
-        //q.forEach(x -> System.out.print((char) x[0].intValue()));
-        //System.out.println();
+        // q.forEach(x -> System.out.print((char) x[0].intValue()));
+        // System.out.println();
         if (limit == q.size()) {
           min = Math.min(min, q.getLast()[1] - q.peek()[1] + 1);
         }
@@ -62,9 +62,7 @@ class MinLengthSubstring {
     MinLengthSubstring mls = new MinLengthSubstring();
     System.out.println(mls.minLengthSubstring("abfdeghijkflmf", "ff"));
     System.out.println(mls.minLengthSubstring("dcbefebce", "fd"));
-    System.out.println(mls.minLengthSubstring("bfbeadbcbcbfeaaeefcddcccbbbfaaafdbebedddf",
-                                              "cbccfafebccdccebdd"));
-
+    System.out.println(
+        mls.minLengthSubstring("bfbeadbcbcbfeaaeefcddcccbbbfaaafdbebedddf", "cbccfafebccdccebdd"));
   }
-
 }

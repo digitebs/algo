@@ -30,6 +30,5 @@ public class GraphCycle {
     adj[4] = new LinkedList<>(Arrays.asList(3));
 
     System.out.println(hasCycle(3, new boolean[n], -1)); //
-    // TODO:
   }
 }

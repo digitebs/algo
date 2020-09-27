@@ -6,10 +6,32 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * @author john.lim
- */
+/** @author john.lim */
 public class Anagram {
+
+  /*
+   Given two arrays A and B of length N, determine if there is a way to make A equal to B by reversing any subarrays from array B any number of times.
+
+   Input
+   A = [1, 2, 3, 4]
+   B = [1, 4, 3, 2]
+   output = true
+   After reversing the subarray of B from indices 1 to 3, array B will equal array A.
+  */
+  boolean areTheyEqual(int[] array_a, int[] array_b) {
+    HashMap<Integer, Integer> map = new HashMap<>();
+
+    if (array_a.length != array_b.length) return false;
+    for (int i : array_a) {
+      map.put(i, map.getOrDefault(i, 0) + 1);
+    }
+
+    for (int i : array_b) {
+      map.put(i, map.getOrDefault(i, 0) - 1);
+      if (map.get(i) < 0) return false;
+    }
+    return true;
+  }
 
   private static boolean isAnagram(String s, String t) {
     HashMap<Character, Integer> map = new HashMap<>();
@@ -57,6 +79,8 @@ public class Anagram {
   }
 
   /*
+
+  given an array of string group string by anagrams
   via sorting
    */
   public List<List<String>> groupAnagrams(String[] strs) {
@@ -71,15 +95,16 @@ public class Anagram {
     return new ArrayList<>(hm.values());
   }
 
-
   int[] primes = {
-      2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89,
-      97,101};
+    2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97,
+    101
+  };
+  // muliplying primes results in unique whole number
 
   int score(String s) {
-    int score=0;
+    int score = 0;
     for (int i = 0; i < s.length(); i++) {
-      score*=primes[s.charAt(i)-'a'];
+      score *= primes[s.charAt(i) - 'a'];
     }
     return score;
   }
@@ -93,7 +118,6 @@ public class Anagram {
     }
     return new ArrayList<>(hm.values());
   }
-
 
   public static void main(String[] arg) {
     System.out.println(isAnagram("xx", "rr"));

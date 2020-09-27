@@ -1,7 +1,6 @@
 package string;
 
-import java.util.Deque;
-import java.util.Queue;
+import static java.lang.Character.*;
 
 /*
  given a string rotate the the character for A-Z, a-z, and 0-9
@@ -12,15 +11,17 @@ import java.util.Queue;
 
 */
 public class RotationalCipher {
+
+
   String rotationalCipher(String input, int rotationFactor) {
     // Write your code here
     String res = "";
     for (char c : input.toCharArray()) {
       int n = c;
-      if (Character.isLetter(c)) {
-        if (Character.isLowerCase(c)) n = 'a' + ((c - 'a') + rotationFactor) % 26;
+      if (isLetter(c)) {
+        if (isLowerCase(c)) n = 'a' + ((c - 'a') + rotationFactor) % 26;
         else n = 'A' + ((c - 'A') + rotationFactor) % 26;
-      } else if (Character.isDigit(c)) {
+      } else if (isDigit(c)) {
         n = '1' + ((c - '1') + rotationFactor) % 10;
       }
       res += (char) n;
