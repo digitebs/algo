@@ -7,9 +7,10 @@ import java.util.List;
 Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
  */
 public class GenerateParenthesis {
-  List<String> arr = new LinkedList<>();
+  LinkedList<String> arr = new LinkedList<>();
 
   public void gen(StringBuilder sb, int o, int c) {
+
     if (o == 0 && c == 0) {
       arr.add(sb.toString());
       return; // stop opening

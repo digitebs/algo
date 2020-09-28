@@ -6,6 +6,7 @@ public class LinkedListAddTwo {
   public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
     ListNode res = new ListNode(0); // starts;
     ListNode cur = res; // starts;
+
     int carry = 0;
     while (l1 != null || l2 != null) {
       int v1 = l1 == null ? 0 : l1.val;
