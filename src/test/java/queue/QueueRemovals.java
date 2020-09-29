@@ -1,6 +1,7 @@
 package queue;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.stream.IntStream;
@@ -26,6 +27,8 @@ Compute a list of x integers output, the ith of which is the 1-based index
   arr = [1, 2, 2, 3, 4, 5]
   x = 5
   output = [5, 6, 4, 1, 2]
+
+  easy*
  */
 public class QueueRemovals {
   int[] findPositions(int[] arr, int x) {
@@ -46,7 +49,7 @@ public class QueueRemovals {
         q1.offer(q.poll());
       }
 
-      int[] max = q1.stream().max((a, b) -> a[0] - b[0]).get();
+      int[] max = q1.stream().max(Comparator.comparingInt(a -> a[0])).get();
       q1.remove(max); // remove once;
 
       q1.forEach(

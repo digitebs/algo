@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 /*
-You are given two strings s and t. You can select any substring of string s and rearrange the
-characters of the selected substring. Determine the minimum length of the substring of s
-such that string t is a substring of the selected substring.
+  You are given two strings s and t. You can select any substring of string s and rearrange the
+  characters of the selected substring. Determine the minimum length of the substring of s
+  such that string t is a substring of the selected substring.
 
   s = "dcbefebce"
   t = "fd"'
@@ -40,7 +40,7 @@ class MinLengthSubstring {
       else {
 
         if (limit == q.size()) {
-          if (q.peek()[0].intValue() != (int) ch) continue;
+          if (q.peek()[0] != ch) continue;
           q.pop();
         } else {
           hm.put(ch, count - 1); // store all chars?
