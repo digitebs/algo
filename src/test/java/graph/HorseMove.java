@@ -3,10 +3,6 @@ package graph;
 import java.util.*;
 
 public class HorseMove {
-  // Class name must be "Main"
-  // Libraries included:
-  // json simple, guava, apache commons lang3, junit, jmock
-
   // Knight moves for 2 squares in one direction and in 1 square in the anothre direction.
   // from 4,4 he can move to 8 different positions? (3,2), (5,6), (3,6) ...
   // What is the shortest PATH from the position A to postion B using ONLY the knight moves.
@@ -63,27 +59,23 @@ public class HorseMove {
     int count;
     while (!q.isEmpty()) {
 
-      //  int j = q.size();
-      // while(j--> 0){
-      Path path1 = q.poll();
-      //  count++;
-      // System.out.println(q.size());
-      p = path1.getLast();
+      Path path = q.poll();
+      p = path.getLast();
 
       if (p[0] == b[0] && p[1] == b[1]) {
-        return path1;
+        return path;
       }
 
       for (int i = 0; i < 8; i++) {
 
         int x = p[0] + dx[i]; //
-        int y = p[1] + dy[i]; // ouside border
+        int y = p[1] + dy[i]; // outside border
 
         if (x >= n || y >= m || x < 0 || y < 0 || board[x][y] == 1)
           ;
         else {
           board[x][y] = 1; // means visited
-          List<int[]> mypath = new ArrayList<>(path1.paths); // <-- copy  very slow?????/
+          List<int[]> mypath = new ArrayList<>(path.paths); // <-- copy  very slow?????/
 
           int[] coord = new int[] {x, y};
           mypath.add(coord);
