@@ -5,7 +5,18 @@ import java.util.List;
 
 import static java.lang.System.out;
 
-/** given an array of movie len, return all possible movie that can fit in the flight len */
+/*
+ given an array of movie len, return all possible movie that can fit in the flight len
+
+
+ input:
+ [2,6,5,3,3,4] hrs
+ 9 hours
+
+ output:
+ [[2, 3, 4], [2, 3, 4], [6, 3], [6, 3], [5, 4]]
+
+ * */
 public class PermutationSumArray {
   List<List<Integer>> res = new ArrayList<>();
 
@@ -30,6 +41,6 @@ public class PermutationSumArray {
 
   public static void main(String[] args) {
     //  out.println(new CombinationSumArray().combinationSum(new int[]{7,8,10,6,8},28));
-    out.println(new PermutationSumArray().permutationSum(new int[] {2, 3,4,5,6}, 9));
+      out.println(new PermutationSumArray().permutationSum(new int[]{2, 6, 5, 3, 3, 4}, 9));
   }
 }

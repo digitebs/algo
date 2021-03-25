@@ -17,13 +17,11 @@ public class FindDisappearNumber {
   */
   public List<Integer> findDisappearedNumbers(int[] nums) {
     int p = 0;
-    int s = 0;
-    while (p < nums.length && s < nums.length) {
+    while (p < nums.length) {
       int temp = nums[p];
       if (temp - 1 != p && temp != nums[temp - 1]) {
         nums[p] = nums[temp - 1];
         nums[temp - 1] = temp;
-        s++;
       } else {
         p++;
       }
