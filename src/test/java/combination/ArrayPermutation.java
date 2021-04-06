@@ -1,12 +1,16 @@
 package combination;
 
-import scala.collection.mutable.HashSet;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
+/*
+
+  given a string array return all permutation
+
+['a','b','c']
+
+  ['r', 'a', 'k', 'u','t','e','n']
+ */
 public class ArrayPermutation {
   static char[] swap(char[] arr, int i, int j) {
     char t = arr[i];
@@ -28,8 +32,10 @@ public class ArrayPermutation {
   }
 
   public static void main(String args[]) {
-    char[] arr = new char[] {'r', 'a', 'k', 'u','t','e','n'};
-    combine(arr, 0);
-    System.out.println(res);
+     char[] arr = new char[] {'r', 'a', 'k', 'u','t','e','n'};
+     char[] arr2 = new char[] {'a','b','c'};
+    combine(arr2, 0);
+     System.out.println(res);
+
   }
 }

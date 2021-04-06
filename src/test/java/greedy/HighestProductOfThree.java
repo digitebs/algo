@@ -2,6 +2,16 @@ package greedy;
 
 /*
  Given an array of integers, find the highest product you can get from three of the integers.
+
+ input:-10, 1, 3, 2, -10
+output:300
+
+input: -5, -1, -3, -2
+output: -6
+
+input: -5, 4, 8, 2, 3
+output: 96
+
 */
 public class HighestProductOfThree {
   public static int highestProductOf3(int[] arr) {
