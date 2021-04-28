@@ -1,11 +1,10 @@
 package array;
 
 /*
-    Given array of integers, find the maximal possible sum of some of its k consecutive elements.
 
     given an array of nearby building in club street. return the maximum total number of people
-    that potentially can be affected by COVD-100
-    the virus can only be transmitted up to max k buildings nearby from source, the source can be anywhere
+    that potentially can be affected by COViD-19
+    the virus can only be transmitted up to max k buildings nearby from source, the source can start anywhere
 
     Input:
     arr = 2, 3, 5, 1, 6

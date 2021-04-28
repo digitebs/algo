@@ -1,25 +1,31 @@
 package recursion;
 
 /*
-   Given an array of equal-length strings,
-    you'd like to know if it's possible to rearrange the order of the elements in such a way
-     that each consecutive pair of strings differ by exactly one character.'
-      Return true if it's possible, and false if not.
+     Given an array of equal-length strings,
+      you'd like to know if it's possible to rearrange the order of the elements in such a way
+       that each consecutive pair of strings differ by exactly one character.'
+        Return true if it's possible, and false if not.
 
-    "aba", "bbb", "bab"
+      "aba", "bbb", "bab"
 
-    false
+      false
 
 
-    There are 6 possible arrangements for these strings:
+      There are 6 possible arrangements for these strings:
 
-    ["aba", "bbb", "bab"]
-    ["aba", "bab", "bbb"]
-    ["bbb", "aba", "bab"]
-    ["bbb", "bab", "aba"]
-    ["bab", "bbb", "aba"]
-    ["bab", "aba", "bbb"]
-    None of these satisfy the condition of consecutive strings differing by 1 character, so the answer is false.
+      ["aba", "bbb", "bab"]
+      ["aba", "bab", "bbb"]
+      ["bbb", "aba", "bab"]
+      ["bbb", "bab", "aba"]
+      ["bab", "bbb", "aba"]
+      ["bab", "aba", "bbb"]
+      None of these satisfy the condition of consecutive strings differing by 1 character, so the answer is false.
+
+
+
+          Given an array of equal-length strings,
+    check if each consecutive pair of strings differ by exactly one character.'
+        Return true if it's possible, and false if not.
 */
 public class StringRearrangement {
   boolean dfs(String[] arr, boolean visited[], int j, int n) {
