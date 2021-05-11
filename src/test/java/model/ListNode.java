@@ -33,7 +33,10 @@ public class ListNode {
     ListNode ln = this;
     String res =String.valueOf(ln.val);
     assert ln != null;
-    while ((ln = ln.next) != null) res+= String.format("->%d", ln.val);
+    while ((ln = ln.next) != null) {
+      res+= String.format("->%d", ln.val);
+      System.out.println(res);
+    }
     return res;
   }
 }
