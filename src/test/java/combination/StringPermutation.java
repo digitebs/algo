@@ -1,5 +1,6 @@
 package combination;
 
+import java.util.LinkedHashSet;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -26,9 +27,24 @@ public class StringPermutation {
   public void testPermute() throws Exception {
     // permute("", "apple");
    // permute("", "abc");
-    permute("", "rakuten");
+   // permute("", "eren");
+    substr("eren");
+    System.out.println(words);
   }
 
+  static LinkedHashSet<String> words = new LinkedHashSet<>();
+  public static  void substr(String front){
+
+    for(int i =0;i < front.length(); i++){
+      //for(int j = i;  j < front.length() - i; j++){
+        for(int k = i+1; k < front.length() +1 ; k++){
+          //System.out.println(j+" "+k);
+          words.add(front.substring(i,k));
+        }
+     // }
+    }
+
+  }
   public static void permute(String front, String back) {
 
     if (back.length() == 0) {
