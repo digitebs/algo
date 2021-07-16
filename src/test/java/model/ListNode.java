@@ -35,7 +35,7 @@ public class ListNode {
     assert ln != null;
     while ((ln = ln.next) != null) {
       res+= String.format("->%d", ln.val);
-      System.out.println(res);
+     // System.out.println(res);
     }
     return res;
   }
