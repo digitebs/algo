@@ -38,12 +38,12 @@ public class MergeKSortedList {
 
   public ListNode mergeKLists2(ListNode[] lists) {
     int n = lists.length;
-    if(lists.length == 1)
+    if(n == 1)
       return lists[0];
 
     ListNode[] temp = new ListNode[n / 2 + n % 2];
-    for (int i = 0, j=0; i < lists.length; i += 2,j++) {
-      temp[j] = (i == lists.length - 1) ? lists[i] : merge(lists[i], lists[i + 1]);
+    for (int i = 0, j=0; i < n; i += 2,j++) {
+      temp[j] = (i == n - 1) ? lists[i] : merge(lists[i], lists[i + 1]);
     }
 
     return mergeKLists2(temp);
