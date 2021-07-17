@@ -94,7 +94,7 @@ public class MergeKSortedList {
     // ln[4] = new ListNode(7);
     // ln[4].next = new ListNode(11);
 
-    ListNode result = mergeKSortedList.mergeKLists2(ln, ln.length);
+    ListNode result = mergeKSortedList.mergeKLists2(ln);
     result.print();
   }
 }
