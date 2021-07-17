@@ -37,6 +37,7 @@ public class MergeKSortedList {
   }
 
   public ListNode mergeKLists2(ListNode[] lists, int n) {
+
     if (n == 1) return lists[0];
 
     for (int i = 0, j = 0; i < n; i += 2, j++)
