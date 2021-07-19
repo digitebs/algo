@@ -23,7 +23,7 @@ public class RollTarget {
                     if (k >= j) break;
                     dp[i][j] += dp[i-1][j-k];
                 }
-                dp[i][j] = dp[i][j]%1000000007;
+                    dp[i][j] = dp[i][j]%1000000007;
             }
         }
         System.out.println(Arrays.deepToString(dp));
