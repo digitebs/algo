@@ -21,6 +21,7 @@ class FreqStack {
   HashMap<Integer, Integer> hm = new HashMap<>();
 
   public void push(int x) {
+
     hm.put(x, hm.getOrDefault(x, 0) + 1);
     pq.add(new Triple(hm.get(x), x, count++)); // resorts it
   }
