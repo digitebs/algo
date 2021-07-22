@@ -38,6 +38,30 @@ public class FourSumArray {
     return new int[] {};
   }
 
+  /*
+  Given four integer arrays nums1, nums2, nums3, and nums4 all of length n, return the number of tuples (i, j, k, l) such that:
+
+  0 <= i, j, k, l < n
+  nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0
+   */
+
+  public int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
+    var count=0;
+    var hm = new HashMap<Integer,Integer>();
+    for (var x: nums1)
+      for (var y: nums2)
+        hm.compute(x+y,(k,v)-> v==null?1:v+1);
+
+    // System.out.println(hm);
+    for (var x: nums3)
+      for (var y: nums4)
+        count+= hm.getOrDefault(-(x+y),0);
+
+
+
+    return count;
+  }
+
   public static void main(String[] args) {
     System.out.println(
         Arrays.toString(findArrayQuadruplet(new int[] {2, 7, 4, 0, 9, 5, 1, 3}, 20)));
