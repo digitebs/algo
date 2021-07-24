@@ -1,14 +1,11 @@
 package list;
 
 import model.ListNode;
-import org.junit.Test;
-
-import java.util.List;
 
 /** Created by johnlim on 3/2/17. */
 public class DeleteCurrentNode {
 
-  @Test
+
   public void deleteNode() {
     ListNode a = new ListNode(0);
     ListNode b = new ListNode(1);

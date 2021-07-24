@@ -1,7 +1,5 @@
 package sort;
 
-import org.junit.Test;
-
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -9,7 +7,6 @@ import java.util.TreeSet;
 
 public class MaximumGap {
 
-  @Test
   public void maximumGap2() {
     System.out.println(maximumGap2(Arrays.asList(1, 10, 5)));
     System.out.println(maximumGap2(Arrays.asList(100, 100, 100)));
@@ -76,7 +73,6 @@ public class MaximumGap {
     return (diffMax);*/
   }
 
-  @Test
   public void maximumGap1() {
     System.out.println(maximumGap1(Arrays.asList(1, 10, 5)));
   }
@@ -100,7 +96,6 @@ public class MaximumGap {
     return (diffMax);
   }
 
-  @Test
   public void maximumGap() {
     System.out.println(maximumGap(Arrays.asList(3, 5, 4, 2)));
     System.out.println(maximumGap(Arrays.asList(100, 100, 100, 100, 100)));

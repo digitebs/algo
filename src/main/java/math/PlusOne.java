@@ -1,13 +1,9 @@
 package math;
 
-import com.sun.tools.corba.se.idl.constExpr.Plus;
-import com.sun.tools.javac.util.List;
+import static java.lang.System.out;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
-
-import static java.lang.System.out;
 
 
 /*

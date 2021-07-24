@@ -1,10 +1,5 @@
 package array;
 
-import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.List;
-
 /*
 Given an array a that contains only numbers in the range from 1 to a.length,
  find the first duplicate number for which the second occurrence has the minimal index.

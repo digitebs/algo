@@ -35,7 +35,6 @@ public class CheapestPreviousCost {
     return Math.min(cost[A.length - 1], 25);
   }
 
-  @org.junit.Test
   public void test() {
     System.out.println("shit" + solution(new int[] {1, 2, 4, 5}));
   }

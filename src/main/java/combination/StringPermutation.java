@@ -1,10 +1,6 @@
 package combination;
 
 import java.util.LinkedHashSet;
-import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 /*
@@ -23,7 +19,7 @@ import java.util.List;
   input: rakuten
  */
 public class StringPermutation {
-  @Test
+
   public void testPermute() throws Exception {
     // permute("", "apple");
    // permute("", "abc");
@@ -58,7 +54,6 @@ public class StringPermutation {
     }
   }
 
-  @Test
   public void isPermution() {
 
     isPermution("", "cda", "bc");

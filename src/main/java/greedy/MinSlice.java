@@ -1,14 +1,9 @@
 package greedy;
 
-import org.junit.Test;
-
-import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /** Created by johnlim on 7/3/17. */
 public class MinSlice {
-  @Test
   public void slice() {
     int[] A = new int[] {1, 2, 3, 4, 5};
 

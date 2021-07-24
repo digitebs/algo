@@ -1,7 +1,5 @@
 package matrix;
 
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -33,7 +31,6 @@ public class PrettyPrint {
     return result;
   }
 
-  @Test
   public void prettyPrint() {
     System.out.println(prettyPrint(4));
   }

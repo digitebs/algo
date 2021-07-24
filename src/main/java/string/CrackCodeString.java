@@ -1,17 +1,17 @@
 package string;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
-
-import static org.junit.Assert.assertTrue;
 
 /** Created by johnlim on 13/1/17. */
 public class CrackCodeString {
 
-  @Test
   public void findPerm() {
     System.out.println(findPerm("ID", 3));
     System.out.println(findPerm("IDIDI", 6));
@@ -66,7 +66,6 @@ public class CrackCodeString {
     return res;
   }
 
-  @Test
   public void hotel() {
 
     System.out.println(
@@ -185,7 +184,6 @@ public class CrackCodeString {
     return true;
   }
 
-  @Test
   public void repeatedNumberY() {
 
     double k = (Math.sqrt(2) * Math.sqrt(2) * Math.sqrt(3));
@@ -216,7 +214,6 @@ public class CrackCodeString {
     return -1;
   }
 
-  @Test
   public void repeatedNumberX() {
     System.out.println(repeatedNumberX(Arrays.asList(2, 3, 4, 1, 4, 1)));
   }
@@ -242,7 +239,6 @@ public class CrackCodeString {
   }
 
 
-  @Test
   public void insert() {
     ArrayList<Interval> a = new ArrayList();
     a.add(new Interval(1, 3));
@@ -413,7 +409,7 @@ public class CrackCodeString {
     return res;
   }
 
-  @Test
+
   public void maxset() {
     ArrayList a =
         Arrays.stream(new int[] {1, 2, 5, -7, 2, 3})
@@ -469,7 +465,6 @@ public class CrackCodeString {
     return arrMax;
   }
 
-  @Test
   public void flip() {
     System.out.println(flip("1101010001"));
     System.out.println(flip("011"));
@@ -515,7 +510,7 @@ public class CrackCodeString {
     return res;
   }
 
-  @Test
+
   public void repeatedNumber() {
     ArrayList a =
         Arrays.stream(new int[] {3, 1, 2, 5, 3})
@@ -622,7 +617,6 @@ public class CrackCodeString {
     return result;
   }
 
-  @Test
   public void maxrray() {
     // System.out.println(maxSubArray(Arrays.asList(-2,1,-3,4,-1,2,1,-5,4)));
 
@@ -706,7 +700,6 @@ public class CrackCodeString {
 
   // kadane algorithm
 
-  @Test
   public void maxArr() {
     ArrayList arr =
         Arrays.stream(new int[] {-2, 1, -3, 4, -1, 2, 1, -5, 4})
@@ -783,7 +776,6 @@ public class CrackCodeString {
     return maxSum;
   }
 
-  @Test
   public void coverPoints() {
 
     ArrayList a =

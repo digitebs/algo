@@ -1,7 +1,5 @@
 package recursion;
 
-import org.junit.Test;
-
 /** Created by johnlim on 1/4/17. */
 public class LinkedinRecursion {
 
@@ -12,7 +10,7 @@ public class LinkedinRecursion {
     return n * pow(n, m - 1);
   }
 
-  @Test
+
   public void pow() {
     System.out.print(pow(2, 3));
   }
@@ -25,7 +23,7 @@ public class LinkedinRecursion {
     }
   }
 
-  @Test
+
   public void decimalTobinary() {
 
     decimalTobinary(2);

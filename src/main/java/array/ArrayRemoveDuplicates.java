@@ -1,11 +1,9 @@
 package array;
 
-import org.junit.Test;
+import static java.lang.System.out;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
-import static java.lang.System.out;
 
 /*
   only works on sort array
