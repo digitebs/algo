@@ -46,6 +46,7 @@ public class CountingBits {
     return a;
   }
   public static void main(String[] args) {
+
     CountingBits cb = new CountingBits();
     System.out.println(IntStream.of(cb.count(2)).boxed().collect(Collectors.toList()));
   }
