@@ -7,7 +7,7 @@ import model.Node;
   problem in checking binary tree is he root must be less than all the left.
   not just the imeediate parent. you need to pass reference from right and left.
  */
-public class TreeIsBinary {
+public class TreeIsBinaryValid {
   /** checks if tree is bst, need to tighten the left and right */
   static boolean isBst(Node tn, int min, int max) {
 
