@@ -30,7 +30,6 @@ public class AddString {
     }
 
   public static void main(String[] args) {
-
       AddString as = new AddString();
       System.out.println(as.addStrings("11", "1"));
       System.out.println(as.addStrings("56", "21"));
