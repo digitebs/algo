@@ -3,6 +3,19 @@ package dp;
 import java.util.Arrays;
 
 public class CoinChange {
+
+  public int coinChange2(int[] coins, int amt) {
+    int[] dp=new int[amt+1];
+    Arrays.fill(dp,amt+1);
+    dp[0]=0;
+    for(int c:coins){
+      for(int i=c;i<=amt;i++){
+        dp[i]=Math.min(dp[i],dp[i-c]+1);
+      }
+    }
+    return dp[amt]==amt+1?-1:dp[amt];
+  }
+
   public int coinChange(int[] coins, int amount) {
     int[] min = new int[amount + 1];
     if (amount == 0) return 0;
