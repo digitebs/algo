@@ -4,21 +4,17 @@ import java.util.Arrays;
 
 public class CoinChange {
   public int coinChange(int[] coins, int amount) {
-    int n = coins.length;
-    int min[] = new int[amount + 1];
-    for (int i = 0; i < coins.length; i++) {
-      if (coins[i] <= amount) min[coins[i]] = 1;
-    }
-
+    int[] min = new int[amount + 1];
     if (amount == 0) return 0;
 
-    for (int i = 1; i <= amount; i++) {
-      int m = 0;
-      for (int c : coins) {
-        int f = i - c;
-        if (f > 0 && min[f] > 0) {
-          if (min[i] == 0) min[i] = min[f] + 1;
-          else min[i] = Math.min(min[i], min[f] + 1);
+
+    for (int c : coins) {
+      for (int i = c; i <= amount; i++) {
+        min[c] = 1;
+        int r = i - c;
+        if ( min[r] != 0) {
+          if (min[i] == 0) min[i] = min[r] + 1;
+          else min[i] = Math.min(min[i], min[r] + 1);
         }
       }
       //  if(m!=0 && min[i] == 0) min[i] = m+1;
@@ -28,14 +24,14 @@ public class CoinChange {
 
   int minimalNumberOfCoins( int[] c,int n) {
     int[] dp = new int[n + 1]; // damn max; owkay?
-    Arrays.fill(dp, 250);
+    Arrays.fill(dp, 999);
     for(int i : c){
       dp[i] = 1;
     }
     for(int k = 0; k <= n ; k++){
       for(int i = 1; i <= k ; i++){
         if(dp[k-i]!=0)
-          dp[k]=Math.min(dp[k-i] + dp[i],dp[k]);
+            dp[k]=Math.min(dp[k-i] + dp[i],dp[k]);
       }
 
       //System.out.println(Arrays.toString(dp));
