@@ -5,19 +5,20 @@ import java.util.Arrays;
 public class CoinChange {
 
   public int coinChange2(int[] coins, int amt) {
-    int[] dp=new int[amt+1];
-    Arrays.fill(dp,amt+1);
-    dp[0]=0;
-    for(int c:coins){
-      for(int i=c;i<=amt;i++){
-        dp[i]=Math.min(dp[i],dp[i-c]+1);
+      int[] dp=new int[amt+1];
+      Arrays.fill(dp,amt+1);
+      dp[0]=0;
+      for(int c:coins){
+        for(int i=c;i<=amt;i++){
+          dp[i]=Math.min(dp[i],dp[i-c]+1);
+        }
       }
-    }
-    return dp[amt]==amt+1?-1:dp[amt];
+      return dp[amt]==amt+1?-1:dp[amt];
   }
 
   public int coinChange(int[] coins, int amount) {
     int[] min = new int[amount + 1];
+    Arrays.fill(min,-1);
     if (amount == 0) return 0;
 
 
@@ -25,10 +26,10 @@ public class CoinChange {
       for (int i = c; i <= amount; i++) {
         min[c] = 1;
         int r = i - c;
-        if ( min[r] != 0) {
+       // if ( min[r] != 0) {
           if (min[i] == 0) min[i] = min[r] + 1;
           else min[i] = Math.min(min[i], min[r] + 1);
-        }
+        //}
       }
       //  if(m!=0 && min[i] == 0) min[i] = m+1;
     }
