@@ -26,7 +26,7 @@ import java.util.Arrays;
  The total minimum cost is 10 + 30 + 50 + 20 = 110 to have half the people interviewing in each city.
 
  */
-public class TwoSortedCity {
+public class TwoCityScheduling {
   public int twoCitySchedCost(int[][] costs) {
 
     Arrays.sort(
@@ -49,7 +49,7 @@ public class TwoSortedCity {
   }
 
   public static void main(String[] args) {
-      TwoSortedCity tsc = new TwoSortedCity();
+      TwoCityScheduling tsc = new TwoCityScheduling();
     System.out.println(tsc.twoCitySchedCost(new int[][]{
             {10,20},
             {30,200},
