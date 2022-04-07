@@ -31,9 +31,23 @@ public class PushZeroEnd {
     for (int i = num.length - 1; i > pos; i--) num[i] = 0;
   }
 
+  static void push3(int[] num) {
+    int pos = 0;
+    for (int i = 0; i < num.length; i++) {
+      if (num[i] != 0) {
+        num[pos++] = num[i];
+        num[i] = 0;
+        //pos = i;
+      }
+      System.out.println(Arrays.toString(num));
+    }
+
+   // for (int i = num.length - 1; i > pos; i--) num[i] = 0;
+  }
+
   public static void main(String[] args) {
-    int[] arr = new int[] {0, 1, 2, 0, 3};
-    push2(arr);
+    int[] arr = new int[] {0,1,0,0, 2, 3, 4, 0,5,0,0};
+    push3(arr);
     System.out.println(Arrays.toString(arr));
   }
 }
