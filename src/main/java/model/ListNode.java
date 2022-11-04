@@ -1,13 +1,14 @@
 package model;
 
 public class ListNode {
-  public ListNode next;
-  private ListNode last = this; // intializs to itself
-  public int val;
 
+  private ListNode last = this; // intializs to itself
+  public ListNode next;
+  public int val;
   public ListNode(int x) {
     val = x;
   }
+  public ListNode(int val, ListNode next) {this.val = val; this.next = next;}
 
   public void add(ListNode n) {
     last.next = n;
@@ -31,12 +32,10 @@ public class ListNode {
   @Override
   public String toString() {
     ListNode ln = this;
-    String res =String.valueOf(ln.val);
-    assert ln != null;
+    StringBuilder res = new StringBuilder(String.valueOf(ln.val));
     while ((ln = ln.next) != null) {
-      res+= String.format("->%d", ln.val);
-     // System.out.println(res);
+      res.append(String.format("->%d", ln.val));
     }
-    return res;
+    return res.toString();
   }
 }
