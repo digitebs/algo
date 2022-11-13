@@ -16,17 +16,17 @@ public class BfsMap {
     q.offer(start);
     int[][] dist = new int[n][m];
     for (int[] d : dist) Arrays.fill(d, -1);
-    dist[start.x][start.y] = 0;
+    dist[start.x()][start.y()] = 0;
 
 
     while (!q.isEmpty()) {
       Point p = q.poll();
       for (int i = 0; i < 4; i++) { // neighbors or child nodes
-        int a = p.x + dx[i];
-        int b = p.y + dy[i];
+        int a = p.x() + dx[i];
+        int b = p.y() + dy[i];
         if (a >= 0 && b >= 0 && a < n && b < m && dist[a][b] == -1 && area.get(a).get(b) != 0) {
-          if (area.get(p.x).get(p.y) == 9) return dist[a][b]; // destination found return
-          dist[a][b] = 1 + dist[p.x][p.y]; // add the val to dist
+          if (area.get(p.x()).get(p.y()) == 9) return dist[a][b]; // destination found return
+          dist[a][b] = 1 + dist[p.x()][p.y()]; // add the val to dist
           q.offer(new Point(a, b)); // add this to out dfs
         }
       }
@@ -43,15 +43,15 @@ public class BfsMap {
     q.offer(start);
     int[][] dist = new int[n][m];
     for (int[] d : dist) Arrays.fill(d, -1);
-    dist[start.x][start.y] = 0;
+    dist[start.x()][start.y()] = 0;
     while (!q.isEmpty()) {
       Point p = q.poll();
       for (int i = 0; i < 4; i++) { // neighbors or child nodes
-        int a = p.x + dx[i];
-        int b = p.y + dy[i];
+        int a = p.x() + dx[i];
+        int b = p.y() + dy[i];
         if (a >= 0 && b >= 0 && a < n && b < m && dist[a][b] == -1 && arr[a][b] != 0) {
-          dist[a][b] = 1 + dist[p.x][p.y]; // add the val to dist
-          if (arr[p.x][p.y] == 9) return dist[a][b]; // destination found return
+          dist[a][b] = 1 + dist[p.x()][p.y()]; // add the val to dist
+          if (arr[p.x()][p.y()] == 9) return dist[a][b]; // destination found return
           q.offer(new Point(a, b)); // add this to out dfs
         }
       }

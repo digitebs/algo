@@ -17,7 +17,7 @@ public class ShortestPath {
   // distance???
   public int[] dijkstra(List<Tuple>[] adj, int src) {
     int V = adj.length;
-    PriorityQueue<Tuple> pq = new PriorityQueue<>(V, (a, b) -> a._2 - b._2);
+    PriorityQueue<Tuple> pq = new PriorityQueue<>(V, (a, b) -> a._2() - b._2());
     int[] dist = new int[V]; // number of vertices
     Arrays.fill(dist, Integer.MAX_VALUE);
     boolean[] visited = new boolean[V];
@@ -25,14 +25,14 @@ public class ShortestPath {
     pq.add(new Tuple(src, 0));
     dist[src] = 0;
     while (!pq.isEmpty()) {
-      int u = pq.poll()._1;
+      int u = pq.poll()._1();
       visited[u] = true;
       for (int i = 0; i < adj[u].size(); i++) {
         Tuple v = adj[u].get(i);
-        int d = dist[u] + v._2;
-        if (!visited[v._1]) {
-          dist[v._1] = Math.min(dist[v._1], d);
-          pq.add(new Tuple(v._1, dist[v._1]));
+        int d = dist[u] + v._2();
+        if (!visited[v._1()]) {
+          dist[v._1()] = Math.min(dist[v._1()], d);
+          pq.add(new Tuple(v._1(), dist[v._1()]));
         }
       }
     }

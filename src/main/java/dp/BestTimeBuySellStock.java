@@ -1,5 +1,7 @@
 package dp;
 
+import java.util.Map;
+
 /**
  * You are given an array prices where prices[i] is the price of a given stock on the ith day.
  *

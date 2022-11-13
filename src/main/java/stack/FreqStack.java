@@ -17,7 +17,7 @@ Use priorityqueue
 class FreqStack {
   int count = 0;
   PriorityQueue<Triple> pq =
-      new PriorityQueue<>((a, b) -> (b._1 == a._1 ? b._3 - a._3 : b._1 - a._1));
+      new PriorityQueue<>((a, b) -> (b._1() == a._1() ? b._3() - a._3() : b._1() - a._1()));
   HashMap<Integer, Integer> hm = new HashMap<>();
 
   public void push(int x) {
@@ -28,7 +28,7 @@ class FreqStack {
 
   public int pop() {
     Triple t = pq.remove();
-    hm.put(t._2, hm.get(t._2) - 1);
-    return t._2;
+    hm.put(t._2(), hm.get(t._2()) - 1);
+    return t._2();
   }
 }

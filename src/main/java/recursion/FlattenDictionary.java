@@ -15,7 +15,7 @@ public class FlattenDictionary {
 
   static HashMap<String, String> flattenDictionary(String key, Object value) {
     HashMap<String, String> res = new HashMap<>();
-    if (value instanceof String || value instanceof Integer) {
+    if (value instanceof String s  || value instanceof Integer i) {
       res.put(key, value.toString());
     } else {
       HashMap<String, Object> v = (HashMap<String, Object>) value;
