@@ -30,15 +30,10 @@ public class Combs {
         comb1
             .chars()
             .mapToObj(
-                x -> {
-                  switch (x) {
-                    case '.':
-                      return '0';
-                    case '*':
-                      return '1';
-                    default:
-                      return (char) x;
-                  }
+                x -> switch (x) {
+                  case '.' -> '0';
+                  case '*' -> '1';
+                  default -> (char) x;
                 })
             .map(String::valueOf)
             .collect(Collectors.joining());
@@ -47,16 +42,13 @@ public class Combs {
         comb2
             .chars()
             .mapToObj(
-                x -> {
-                  switch (x) {
-                    case '.':
-                      return '0';
-                    case '*':
-                      return '1';
-                    default:
-                      return (char) x;
-                  }
-                })
+                x ->
+                    switch (x) {
+                      case '.' -> '0';
+                      case '*' -> '1';
+                      default -> (char) x;
+                    }
+            )
             .map(String::valueOf)
             .collect(Collectors.joining());
 
